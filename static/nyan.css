@@ -39,4 +39,4 @@ a:active {color: var(--maincolor); background-color: var(--lightmain); text-deco
 div#block {padding: 5px; border: 2.5px solid var(--maincolor); background-color: var(--lightmain);width:99%; border-width: 2px; display:block;
 border-radius: 5px;}
 
-div#quote{display:block; margin-left:20%; margin-right:20%;}
+div#quote{display:block; margin-left:20%; margin-right:20%;margin-top:10px; margin-bottom:10px; position:relative;}
