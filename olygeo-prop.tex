@@ -1,0 +1,144 @@
+\documentclass{seto}
+\title{Mathematical Potpourri}
+\author{Neal Yan}
+\date\today
+\begin{document}
+\maketitle
+\remark[Note]{``$\perp$'' denotes relative primality as a binary operator in NT contexts.}
+\toc
+\section{Angular harmonics + reverse Ceva-Menelaus }
+\solnoteprob{In acute triangle $ABC$, equilateral triangle $ABX$ and regular hexagon $BCPQRS$ are externally constructed on their respective sides. Let line $XP$ intersect $\ol{AB}$, $\ol{BC}$, and $\ol{AR}$ at $Y,Z,K$, respectively. Prove that $\ol{AZ}$, $\ol{BK}$, $\ol{CY}$ are concurrent.}
+\begin{center}
+\begin{asy}
+size(10cm);
+pair A=(5,12);
+pair B=(0,0);
+pair C=(14,0);
+draw(A--B--C--A,linewidth(1));
+pair X=(-7.892304845413264,10.330127018922196);
+pair P=(21,-12.124355652982153);
+pair Q=(14,-24.24871130596429);
+pair R=(0,-24.248711305964285);
+pair S=(-7,-12.124355652982139);
+pair Y=(1.3207932550578922,3.1699038121389407);
+pair Z=(5.399525711697857,0);
+draw(A--X--B,RGB(148,102,117)+linewidth(1)); 
+draw(B--S--R--Q--P--C,RGB(148,102,117)+linewidth(1)); 
+draw(circle((7,-12.124355652982143), 14)); 
+draw(circle((-0.9641016151377555,7.443375672974066), 7.505553499465134)); 
+draw(Z--A); 
+draw(Y--C);
+draw(X--P,linewidth(1)+RGB(13,83,76));
+draw(A--R,linewidth(1)+RGB(13,83,76));
+pair K=extension(X,P,A,R);
+label("$A$",A,dir(45));
+label("$B$",B,dir(-70));
+label("$C$",C,dir(50));
+label("$X$",X,dir(160));
+label("$P$",P,dir(0));
+label("$Q$",Q,dir(-60));
+label("$R$",R,dir(-120));
+label("$S$",S,dir(180));
+label("$Y$",Y,dir(95));
+label("$Z$",Z,dir(-105));
+label("$K$",K,dir(170));
+pair M=extension(P,X,A,C);
+pair N=extension(B,K,A,C);
+draw(C--M--P,dashed);
+draw(B--N,dashed);
+label("$M$",M,dir(40));
+label("$N$",N,dir(40));
+\end{asy}
+\end{center}
+
+Extend lines $XP$, $BK$ to meet line $AC$ at points $M,N$, respectively. Then, we have,
+\claim{$(AC; MN)=-1$.}
+\pro{First, because rotations are spiral similarities, and $\overline{AR}$, $\overline{XP}$ are related by a $\pi/3$ one, $K$ is also the second intersection of $(ABX)$ and $(BPR)$ distinct from $B$, that is, the second intersection of the circumcircles of the two regular polygons.\\
+Due to this we have $\angle AKC=2\pi-\angle AKB-\angle BKC=\pi/2.$\\
+Now we obtain $\angle NKC=\pi-\angle BKC=\pi/6$, and $\angle MKC=\angle PKC=\pi/6$, and $\overline{CK}$ bisects $\angle MKN$. By a well-known lemma the claim is proven.}
+Now Ceva-Menelaus in reverse trivializes the problem. 
+\newpage
+\section{Source?}
+\solnoteprob{Find $d$, given that real numbers $a,b,c,d\in\R$ satisfy
+\[a^2+b^2+c^2+1=d+\sqrt{a+b+c-d}.\]}
+Rearranging and squaring gives 
+\[\parenth{d-(a^2+b^2+c^2+1)}^2=a+b+c-d.\]
+Now expressing this as a quadratic in $d$ gives
+\[d^2-d(2(a^2+b^2+c^2)+1)+\parenth{(a^2+b^2+c^2)^2+2(a^2+b^2+c^2)+1-(a+b+c)}=0.\]
+Setting the ``discriminant'' of this to at least zero implies
+\begin{align*}
+\parenth{2(a^2+b^2+c^2)+1}^2-4\parenth{(a^2+b^2+c^2)+2(a^2+b^2+c^2)+1-(a+b+c)}
+&=-4(a^2+b^2+c^2)+4(a+b+c)-3\\
+&=-\cycsum(2a-1)^2\geq0.
+\end{align*}
+Trivial inequality then implies $a=b=c=1/2$, whence $7/4=d+\sqrt{3/2-d}$, $(7/4-d)^2=3/2-d$, and $(d-5/4)^2=0$. Hence, if solution exists, then it must be $(a,b,c,d)=(1/2,1/2,1/2,\boxed{5/4})$.\\
+(We may trivially check that this works.)
+\newpage
+\section*{Random geo}
+%prob
+\solnoteprob{Let acute $\triangle ABC$ have orthocenter $H$. Let $D,E,F$ be the feet of the altitudes from $B,C$ respectively, with $BD=3/2,CD=11/2,AH=17/\sqrt{15}$. Point $P$ lies on $\ol{EF}$ such that $\ol{PA}\parallel \ol{BC}$. If the tangent from $P$ to $(AEF)$ not parallel to $\ol{BC}$ meets the median from $A$ at $K$, and $X=\ol{HK}\cap\ol{EF}$, then $BX$ is expressible as $a/b$ for coprime positive integers $a,b$. Compute $a+b$.}
+
+% sol
+The line through $A$ parallel to $\ol{BC}$ is tangent to $(AEF)$, because its diameter $\ol{AH}$ is perpendicular to said line.\\
+
+Let the harmonic conjugate of $A$ wrt $\ol{EF}$ be $K'$. To show that $K=K'$, it we need two claims:
+\claim{$\ol{PK'}$ touches $(AEF)$.}
+\pro{It is well-known that because $(AK';EF)=-1$, $\ol{EF}$ and the tangents to $(AEF)$ at $A,K'$ concur at a point, which we are given is $P$. Hence $\ol{PK'}$ touches $(AEF)$ as needed.}
+\claim{$\ol{AK'}$ is a median of $\triangle ABC$.}
+\begin{proof}Because $(AK';EF)=-1$, $\ol{AK'}$ is a symmedian of $\triangle AEF$. Hence it is a median of $\triangle ABC$ because $\ol{BC},\ol{EF}$ are antiparallel wrt $\angle A$.\end{proof}
+Having shown that $K=K'$, the problem is finished via;
+\claim{$\ol{HK},\ol{BC},\ol{EF}$ are concurrent.}
+(Equivalently, $X\in\ol{EF}$.)
+\pro{We will show that $\ol{EF}\cap \ol{BC}=\ol{HK}\cap\ol{BC}$.
+\\[4pt]
+Observe that by a well-known harmonic bundle lemma, $(\ol{EF}\cap\ol{BC},D;B,C)=-1$, while
+\[(\ol{HK}\cap\ol{BC},D;B,C)\overset{H}=(KA;EF)=-1.\]
+As both $\ol{EF}\cap \ol{BC}$ and $\ol{HK}\cap\ol{BC}$ are the harmonic conjugate of $D$ wrt $\ol{BC}$, they are the same point.}
+Now it is routine to compute $BX$ seeing as $(XD;BC)=-1$ and all sides are given.
+\remark{For the particular set of sides I chose, $X$ is on ray $CB$, and $BX$ may be computed as follows, letting $a,b,c=BC,CA,AB$:
+\[BD=\frac{a^2+c^2-b^2}{2b}=19/16,CD=a-BD=109/16\Rightarrow BD/CD=19/109;\]
+\[\Rightarrow BX/CX=19/109,BX/BC=19/90;\]
+\[BX=\frac{19}{90}a=76/45\Rightarrow\boxed{121}.\]
+}
+
+\newpage
+\section*{More random geo}
+\solnoteprob{Tetrahedron $ABCD$ has the property that $\ol{DA},\ol{DB},\ol{DC}$ are mutually perpendicular. Define the {\em A-exsphere} to be the sphere tangent to face $BCD$ and to the extensions of the other faces. We also define the other exspheres similarly. Let the radius of such a sphere be called an exradius. It is known that $DA^{-2}+DB^{-2}+DC^{-2}=9409.$ If the $A$-,$B$-, $C$-exradii are $1/138,1/168,1/152$, respectively, then the $D$-exradius may be expressed as $a/b$ for coprime positive integers $a,b$. Find $a+b$.}
+Let the `legs' be $DA,DB,DC=a,b,c$, and we may let the vertices be $A=(a,0,0),B=(0,b,0), C=(0,0,c),D=(0,0,0)$. Hence plane $BCD$ has equation $x/a+y/b+z/c=1$.
+Let the exradii be $r_a$, etc.\\
+\claim{$1/r_a=-1/a+1/b+1/c+\sqrt{\cycsum a^{-2}}$.}
+\begin{proof}
+The $A$-excenter is of the form $(-r_a,r_a,r_a)$, and is $r_a$ from face $BCD$, so applying the (directed) distance formula gives:
+\[\frac{(-r_a)/a+r_a/b+r_a/c-1}{\sqrt{\cycsum a^{-2}}}=-r_a.\]
+Solving for $1/r_a$ gives $1/r_a=-1/a+1/b+1/c+\sqrt{\cycsum a^{-2}}$ as claimed.\end{proof}
+\remark[Note]{A similar calculation gives
+\[1/r_d=\cycsum a^{-1}-\sqrt{\cycsum a^{-2}}.\]}
+Summing the claim statement cyclically gives $\cycsum(1/r_a)=1/a+1/b+1/c+3\sqrt{\cycsum a^{-2}}$. As we are given $\sqrt{\cycsum a^{-2}}=\sqrt{9409}=97$, we get 
+\[1/r_d=\cycsum 1/r_a-4\sqrt{\cycsum a^{-2}}=70;\]
+\[r_d=1/50\Rightarrow\boxed{071}.\]
+\remark{The original legs intended were $a,b,c=1/63,1/48,1/56$.}
+\newpage
+\section{Compuational antiproblem}
+\solnoteprob{In (convex) cyclic quadrilateral $ABCD$ with circumcenter $O$ and diagonals $AC,BD=\sqrt{78},13$ respectively, we have $BC=CD$.  Let the circumcenter $P$ of $\triangle OAC$ lie on $\overline{BD}$. If the perpendicular from $P$ to $\overline{AC}$ meets the circumcircle of $\triangle OBD$ at a point $X$ on the opposite side of $\overline{AC}$ as $P$, then $BX/DX=(a-\sqrt{b})/c$ for some positive integers $a,b,c$ with $\gcd(a,b,c)=1$. Find $a+b+c.$}
+For brevity let $\ell$ be the perpendicular bisector of $\ol{AC}$ aka the perpendicular from $P$ to $\ol{AC}$. 
+\claim{$\angle BOD=120\deg$.}
+\begin{proof}
+Observe that $P$ lies on $\ol{BD}$ and the perpendicular bisector of $\ol{OC}$ which are supposed to be parallel. Thus the two mentioned lines are coincident which implies the result.
+\end{proof}
+\claim{$X$ is the orthocenter of $\triangle ABD$.}
+\begin{proof}
+Proceed by phantom points, letting $H$ be the mentioned orthocenter. Then, assuming $ABCD$ is oriented clockwise, $\dangle BHD=60\deg=\dangle BOD$ so $H\in(OBD)$;\\
+Now we use the lemma that in a triangle with an $60\deg$ angle, that vertex is equidistant from.
+Now $C,A$ are the circumcenter and orthocenter of $\triangle BHD$, so $HC=HA$ and $H\in\ell$ whence $H=X$ as needed.
+\end{proof}
+Now, to the answer extraction\dots in some horrible notation, let $BH=u<v=HD$. Then we'll use the following lemma:
+\begin{block}[Problem]
+Triangle $ABC$ has $\angle A=60\deg$, circumcenter $O$, orthocenter $H$, incenter $I$, and $A$-excenter $I_a$ . Point $K$ is on $\ol{BC}$ with $\angle AIK=90\deg$, and let $M_a$ be the midpoint of minor arc $BC$ on $(ABC)$. Define $D=\ol{AI}\cap\ol{BC}$, $L=\ol{OI}\cap\ol{BC}$ and $O'=\ol{AK}\cap\ol{HI}$. Point $P$ is constructed on $\ol{LI_a}$ so that $\angle AM_aP=90\deg$. Given that $\ol{AK}$ bisects $\angle LAH$, prove that the circle centered at $O'$ through $P$ is orthogonal to $(ADK)$.
+\end{block}
+Define the phantom point $L'$ as the reflection of $L$ in $\ol{AK}$. It's easy to see that the problem condition implies that $L'\in\ol{AH}$. Also, define $J=\ol{HI}\cap\ol{BC}$.\\
+We will next show that $L'$ lies on the following lines:
+\\[4pt]
+\emph{1. Polar of L' wrt (ADK); }Let $F$ be the foot of $D$ onto $\ol{AK}$, and let 
+Observe that $(LJ;DK)=(\ol{IO},\ol{IH};\ol{IK},\ol{IA})=-1$; because $\angle KFD=90\deg$, it follows that $\angle LFK=\angle KFJ$. But simultaneously $\angle LFK=\angle L'FK$ by symmetry about $\ol{AK}$, so $L'\in\ol{FJ}$, as desired;
+I also claim that $\ol{FJ}$ is the polar of $L$ wrt $(ADK)$.
+\end{document}
