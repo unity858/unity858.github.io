@@ -1,41 +1,40 @@
 @import url(https://fonts.googleapis.com/css?family=Alegreya);
 /* @import url(https://raw.githubusercontent.com/tac-nayn06/sundry/main/aops1958800.css);*/
 /* "I would not marry someone who puts a newline between a curly brace and the end of a line." -- TheUltimate123 */ 
-/* OLD COLORS: 64dfd7, e0f4f4*/
-/* blackpink: ff00ff,fcaefc*/
-:root {
-    --maincolor:#64dfd7; --lightmain:#e0f4f4; --mainfont: Alegreya;
-}
+/*Color themes:
+blackpink -> #f0f,
+tropical -> # 64dfd7, #e0f4f4*/
+:root {--maincolor:#64dfd7; --lightmain:#e0f4f4; --mainfont: Alegreya;}
 
 /*=======================*/
 body {width: 100%; vertical-align: middle;
     background-color: white;font-family:  var(--mainfont); font-size:13pt;
-opacity: 0.88;
-margin-top:50px;padding:0px;}
+    opacity: 0.88; margin-top:50px;padding:0px;}
+
 div#page-wrapper{/*background-color:white;
-background-image:url("./bigsur5.jpg");
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: top center;*/
-height: auto;
-margin-left:20%;margin-right:20%;}
+    background-image:url("./bigsur5.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;*/
+    height: auto; margin:auto; width:1100px;}
 
 div#navigation_box {background-color: var(--lightmain); 
     transition: all 0.5s; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; box-shadow: 0px 0px 10px 0px #dddddd;
-    margin-bottom: 40px; padding: 20px; width:58%; position: fixed; top: 0px; z-index: 5; height: 19px; margin-top:10px;}
+    margin-bottom: 40px; padding: 20px; width:1100px; position: fixed; top: 0px; z-index: 5; height: 19px; margin-top:10px}
 #navigation_box a {font-size:15px; font-family: var(--mainfont); color:var(--maincolor); margin-left:10px; margin-right:10px;}
 #left_navigation_box {font-size:15px; font-family: var(--mainfont); color: var(--maincolor);}
 #right_navigation_box {margin-left:60%;
-font-size:15px; font-family: var(--mainfont); color: var(--maincolor);
-text-align:right;}
+    font-size:15px; font-family: var(--mainfont); color: var(--maincolor);
+    text-align:right;}
 
 div#content {padding:40px; background-color:transparent;}
-h1 {color:var(--maincolor);}
-a:link {color: var(--maincolor); background-color: transparent;  text-decoration: none;}
-a:visited {color: var(--maincolor); background-color: transparent; text-decoration: none;}
-a:hover {color: var(--maincolor); background-color: transparent; text-decoration: bold;}
+h1 {color:var(--maincolor);
+}
+a:link {color: var(--maincolor);text-decoration:none;}
+a:hover {color: var(--maincolor);text-shadow: 0 0 1px var(--maincolor);}
 a:active {color: var(--maincolor); background-color: var(--lightmain); text-decoration: none;}
+a:visited {color: var(--maincolor);}
 div#block {padding: 5px; border: 2.5px solid var(--maincolor); background-color: var(--lightmain);width:99%; border-width: 2px; display:block;
 border-radius: 5px;}
 
