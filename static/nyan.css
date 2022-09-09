@@ -34,17 +34,18 @@ div#content {padding:40px; background-color:transparent;}
 /* color headings*/
 h1 {color:var(--maincolor);}
 h2 {color:var(--maincolor);}
-/*liink spam*/
+h3 {color:var(--maincolor);display:inline;}
+/*link spam*/
 a:link {color: var(--maincolor);text-decoration:none;}
 a:hover {color: var(--maincolor);text-shadow: 0 0 1px var(--maincolor);}
 a:active {color: var(--maincolor); background-color: var(--lightmain); text-decoration: none;}
 a:visited {color: var(--maincolor);}
 
 /* me attempting to implement mdframed*/
-block {padding-left:10px; padding-right:10px; padding-top:5px;padding-bottom:5px;
-    border: 2.5px solid var(--maincolor); border-radius: 5px; border-width: 2px;
-    display:block; background-color: var(--lightmain);width:99%;}
-
+block {padding:5px 10px 5px 10px;
+    border: 3px solid var(--maincolor); border-width: 0px 0px 0px 4px;
+    display:block; background-color: var(--lightmain);width:99%;
+    margin:5px 0px 5px 0px;}
 /*why not*/
 div#quote{display:block; margin-left:20%; margin-right:20%;margin-top:10px;
     margin-bottom:10px; position:relative;}
@@ -62,3 +63,4 @@ div.fancy-links block {width:90%; padding:10px;border: 2.5px solid var(--maincol
 div.fancy-links a {display:block; font-size:14pt;}
 a#footnote-ref {}
 a#footnote-back {margin-left: 0.4rem;}
+li {margin-top:5px;margin-bottom:5px;}
