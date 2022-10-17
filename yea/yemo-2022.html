@@ -1,59 +1,53 @@
 <!DOCTYPE html>
 <html class="svg">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="../static/nyan.css"/>
-<title>Exploring WI geography</title>
-<link rel="icon" type="image/x-icon" href="../static/wi.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Youth EUCLID MO 2022">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/nyan.css"/>
+    <title>Exploring WI geography</title>
+    <link rel="icon" type="image/x-icon" href="../static/wi.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Youth EUCLID MO 2022">
 
-<style>
-table {
+    <style>
+table.hidden {
   width: 100%;
   margin:auto;
 }
-
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
+/*.hidden {display:none!important;}*/
 th {background-color: var(--lightmain); border: 2px solid var(--maincolor);}
 tr:nth-child(odd) {
   background-color: #eee;
 }
-</style>
+.name {width:45%;} .num {width: 20px;}
+    </style>
 </head>
 <body>
 <div id="page-wrapper">
-    <div id="navbar">
-        <div id="navbar-left">
-            <a href="./index.html"> Home </a>
-            <a href="./writing.html"> Writing </a>
-            <a href="./math.html"> Math </a>
-            <a href="./code.html"> Code </a>
-        </div>
+<div id="navbar">
+    <div id="navbar-left">
+        <a href="./index.html"> Home </a>
+        <a href="./writing.html"> Writing </a>
+        <a href="./math.html"> Math </a>
+        <a href="./code.html"> Code </a>
     </div>
-    <div id="content">
-        <div id="main">
-          <h1>Youth EUCLID MO 2022</h1>
-          Signups on AoPS, but hopefully some brave-hearted souls within Youth EUCLID will take it too!
-            Link <a href="https://artofproblemsolving.com/community/c5h2931308">here</a>.
-            <h2>Papers</h2>
-            These links don't lead anywhere yet, so hold tight!
-            <a href="">Problems</a>&#x2022 <a href="">Solutions</a>
-            <h2>Results</h2>
-            Here's a blank table.
-            <table>
-  <tr>
-    <th>Name</th><th>#1</th><th>#2</th><th>#3</th><th>Rank</th><th>Award</th>
-  </tr>
-  <tr>
-    <td>Test row</td> <td>7</td> <td>7</td><td>0</td><td>1</td><td>Platinum</td>
-  </tr>
-</table>
-        </div>
 </div>
-</body>
-</html>
+<div id="content">
+<div id="main">
+    <h1>Youth EUCLID MO 2022</h1>
+    Signups on AoPS, but hopefully some brave-hearted souls within Youth EUCLID will take it too :p
+    <br>Link <a href="https://aops.com/community/c5h2931308">here</a>.
+    <h2>Papers</h2>
+    These links don't lead anywhere yet, so hold tight! <br>
+    <a href="">Problems</a>&#x2022 <a href="">Solutions</a>
+
+    <h2 class="hidden">Results</h2>
+    If you happen to come across a nascent version of this table, then a dash denotes cell TBD.
+<table class="hidden">
+    <tr><th class="name">Name</th><th class="num">#1</th><th class="num">#2</th><th class="num">#3</th><th>Total</th><th>Rank</th><th>Award</th></tr>
+    <tr><td class="name">john0512</td><td class="num">7</td><td class="num">7</td><td class="num">0</td><td class="num">14</td><td class="num">-</td><td>-</td></tr>
+</table></div></div></body></html>
