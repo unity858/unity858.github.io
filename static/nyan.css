@@ -31,9 +31,7 @@ div#navbar {background-color: var(--lightmain);
 div#content {padding:40px; background-color:transparent;}
 
 /* color headings*/
-h1 {color:var(--maincolor);}
-h2 {color:var(--maincolor);}
-h3 {color:var(--maincolor);}
+h1,h2,h3 {color:var(--maincolor);}
 /*link spam*/
 a:link {color: var(--maincolor);text-decoration:none;}
 a:hover {color: var(--maincolor);text-shadow: 0 0 1px var(--maincolor);}
