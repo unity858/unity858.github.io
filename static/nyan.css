@@ -16,7 +16,7 @@ body {width: 100%; vertical-align: middle;
     opacity: 0.88; margin:0px 0px 0px 0px; padding:50px 0px 0px 0px;}
 
 /**/
-div#page-wrapper{height: auto; margin:auto; width:100%; max-width:1100px; background-color:white;}
+div#page-wrapper{height: auto; margin:auto; width:100%; max-width:1100px; background-color:white;
     display:flex; justify-content:center;}
 
 /* navbar */
@@ -25,8 +25,7 @@ div#navbar {background-color: var(--lightmain);
     -moz-transition: all 0.5s; -o-transition: all 0.5s;
     box-shadow: 0px 0px 10px 0px #dddddd; padding: 15px; 
     width:100%; max-width:1100px;
-    position: fixed; top: 0px; z-index: 5; margin-top:10px;
-    border:1px solid transparent; border-radius:7px;}
+    position: fixed; top: 0px; z-index: 5; margin-top:10px; border-radius:7px;}
 #navbar a {font-size:20px; font-family: var(--mainfont); 
     color:var(--maincolor); margin-left:10px; margin-right:10px;}
 #navbar-left {font-size:15px; font-family: var(--mainfont); color: var(--maincolor);}
