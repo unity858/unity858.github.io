@@ -13,7 +13,7 @@ html {background-image: url("https://unity858.github.io/static/lost-sky-dreams-1
      background-size: cover; background-attachment:fixed;}
 body {width: 100%; vertical-align: middle;
     background-color: white;font-family:  var(--mainfont); font-size:13pt;
-    opacity: 0.88; margin-top:50px;padding:0px 0px 200px 0px;}
+    opacity: 0.88; margin:0px 0px 0px 0px; padding:50px 0px 0px 0px;}
 
 /**/
 div#page-wrapper{height: auto; margin:auto; width:100%; max-width:1100px;}
