@@ -17,7 +17,7 @@ body {width: 100%; vertical-align: middle;
      }
 
 /**/
-div#page-wrapper{height: auto; margin:auto; width:100%; max-width:1100px; color:white;}
+div#page-wrapper{height: auto; margin:auto; width:100%; max-width:1100px; background-color:white;}
 
 /* navbar */
 div#navbar {background-color: var(--lightmain);
