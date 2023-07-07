@@ -9,6 +9,8 @@ tropical -> # 64dfd7, #e0f4f4*/
 :root {--maincolor:#64dfd7; --lightmain:#e0f4f4; --mainfont: Alegreya,serif;}
 
 /*=======================*/
+html {background-image: url("https://unity858.github.io/static/lost-sky-dreams-1.png");
+     background-size: cover; background-attachment:fixed;}
 body {width: 100%; vertical-align: middle;
     background-color: white;font-family:  var(--mainfont); font-size:13pt;
     opacity: 0.88; margin-top:50px;padding:0px;}
