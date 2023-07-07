@@ -10,7 +10,7 @@ tropical -> # 64dfd7, #e0f4f4*/
 
 /*=======================*/
 html {background-image: url("https://unity858.github.io/static/lost-sky-dreams-1.png");
-     background-size: cover; background-attachment:fixed;}
+     background-size: cover; background-attachment:fixed; height:100%;}
 body {width: 100%; vertical-align: middle;
     background-color: white;font-family:  var(--mainfont); font-size:13pt;
     opacity: 0.88; margin:0px 0px 0px 0px; padding:50px 0px 0px 0px;
