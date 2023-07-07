@@ -33,7 +33,7 @@ div#navbar {background-color: var(--lightmain);
     color: var(--maincolor); text-align:right;}
 
 /* default */
-div#content {padding:40px; background-color:transparent; display:block;}
+div#content {padding:40px; background-color:transparent; display:block; width:100%;}
 
 /* color headings*/
 h1,h2,h3 {color:var(--maincolor);}
