@@ -46,7 +46,7 @@ a:visited {color: var(--maincolor);}
 /* me attempting to implement mdframed*/
 block {padding:5px 10px 5px 10px;
     border: 3px solid var(--maincolor); border-width: 0px 0px 0px 4px;
-    display:block; background-color: var(--lightmain);width:99%;
+    display:block; background-color: var(--lightmain); width:99%;
     margin:5px 0px 5px 0px;}
 /*why not*/
 div#quote{display:block; margin-left:20%; margin-right:20%;margin-top:10px;
