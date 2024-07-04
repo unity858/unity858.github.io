@@ -43,6 +43,8 @@ a:hover {color: var(--maincolor);text-shadow: 0 0 1px var(--maincolor);}
 a:active {color: var(--maincolor); background-color: var(--lightmain); text-decoration: none;}
 a:visited {color: var(--maincolor);}
 
+/*diagrams*/
+img.center {min-width:360px; } /*hard coded but whatever*/
 /* me attempting to implement mdframed*/
 block {padding:5px 10px 5px 10px;
     border: 3px solid var(--maincolor); border-width: 0px 0px 0px 4px;
