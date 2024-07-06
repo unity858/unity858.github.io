@@ -1,0 +1,1244 @@
+\documentclass{seto}
+\graphicspath{./images}
+\title{Geometry Favorites}
+\date{updated \today}
+\displaytitle{Geometry Favorites}
+\author{Nyan}
+\DeclareMathOperator\Pow{Pow}
+\renewcommand\insertdisplaydate\today
+\begin{document}
+\maketitle
+(Note: here $\infty_{XY},\infty_{\perp XY}$ refer to the points \@\ $\infty$ along in directions parallel and perpendicular to $XY$, respectively.)
+\setcounter{section}{-2}
+\section{Credits + remarks}
+Inspired by chapter $11$ of EGMO book, and \href{http://ericshen.net/handouts/GeometryAtItsBest.pdf}{\emph{Geometry At Its Best}} by Eric Shen.
+These are roughly in order of difficulty, but no promises!\\
+Also thanks to collaborators\dots
+\toc
+\section{Problems}
+\begin{remark}
+Some attempt has been made to deviate from the aformentioned two famous geometry papers.
+\end{remark}
+\exercise[SL 2009/G3]Let $ABC$ be a triangle. The incircle of $\triangle ABC$
+touches $AB$ and $AC$ at the points $Z$ and $Y$, respectively. Let
+$G=\ol{BY}\cap\ol{CZ}$, and let $R$ and $S$ be points such that the two
+quadrilaterals $BCYR$ and $BCSZ$ are parallelograms. Prove that $GR=GS$.
+\exercise[SL 2015/G4]Let $ABC$ be an acute triangle and let $M$ be the midpoint
+of $AC$. A circle $\omega$ passing through $B$ and $M$ meets the sides $AB$ and
+$BC$ at points $P$ and $Q$ respectively. Let $T$ be the point such that $BPTQ$
+is a parallelogram. Suppose that $T$ lies on the circumcircle of $ABC$.
+Determine all possible values of $\frac{BT}{BM}$. 
+\exercise[USEMO 2023/4] Let $ABC$ be an acute triangle with orthocenter $H$. Points $A_1$, $B_1$, $C_1$ are
+chosen in the interiors of sides $BC$, $CA$, $AB$, respectively, such that
+$\triangle A_1B_1C_1$ has orthocenter $H$. Define $A_2 = \ol{AH} \cap
+\ol{B_1C_1}$, $B_2 = \ol{BH} \cap \ol{C_1A_1}$, and $C_2 =
+\ol{CH} \cap \ol{A_1B_1}$.\\[4pt]
+Prove that triangle $A_2B_2C_2$ has orthocenter $H$.
+\exercise[SL 2016/G7]Let $I$ be the incentre of a non-equilateral triangle $ABC$, $I_A$ be the $A$-excentre,
+$I'_A$ be the reflection of $I_A$ in $BC$, and $l_A$ be the reflection of line
+$AI'_A$ in $AI$. Define points $I_B$, $I'_B$ and line $l_B$ analogously. Let $P$
+be the intersection point of $l_A$ and $l_B$.
+\begin{enumerate}[label=(\alph*)]
+\item Prove that $P$ lies on line $OI$ where $O$ is the circumcentre of triangle $ABC$.
+\item Let one of the tangents from $P$ to the incircle of triangle $ABC$ meet
+the circumcircle at points $X$ and $Y$. Show that $\angle XIY = 120^{\circ}$.
+\end{enumerate}\vspace{-7pt} 
+\exercise[EGMO 2020/3] Let $ABCDEF$ be a convex hexagon such that $\angle
+A=\angle C=\angle E$, $\angle B=\angle D=\angle F$ and the (interior) angle
+bisectors of $\angle A,\angle C,\angle E$ are concurrent. Prove that the
+(interior) angle bisectors of $\angle B,\angle D,\angle F$ are also concurrent.
+\exercise[IMO 2008/6]Let $ ABCD$ be a convex quadrilateral with $ BA\neq BC$.
+Denote the incircles of triangles $ ABC$ and $ ADC$ by $ \omega_1$ and $
+\omega_2$ respectively. Suppose that there exists a circle $ \omega$ tangent to
+ray $ BA$ beyond $ A$ and to the ray $ BC$ beyond $ C$, which is also tangent to
+the lines $ AD$ and $ CD$. Prove that the common external tangents to $
+\omega_1$ and $\omega_2$ intersect on $ \omega$. 
+\exercise[Iran TST 2018/1/4]Let $ABC$ be a triangle ($\angle A\neq 90^\circ$),
+with altitudes $\ol{BE},\ol{CF}$. The bisector of $\angle A$ intersects
+$\ol{EF},\ol{BC}$ at $M,N$. Let $P$ be a point such that $\ol{MP}\perp\ol{EF}$
+and $\ol{NP}\perp\ol{BC}$. Prove that $\ol{AP}$ bisects $\ol{BC}$.
+\exercise[Eric Shen]In $\triangle ABC$, let $D,E, F$ be the feet of the
+altitudes from $A,B,C$ respectively, and let $O$ be the circumcenter. Let
+$Z=\ol{AO}\cap\ol{EF}$. There exists a point $T$ such that $\angle DTZ=90^\circ$
+and $AZ=AT.$ If $P=\ol{AD}\cap\ol{TZ}$, and $Q$ lies on $\ol{EF}$ such that
+$\ol{PQ}\parallel\ol{BC}$, prove that $\ol{AQ}$ bisects $\ol{BC}$. 
+\exercise[SL 2018/G5] Let $ABC$ be a triangle with circumcircle $\omega$ and
+incenter $I$. A line $\ell$ meets the lines $AI$, $BI$, $CI$ at points $D$, $E$,
+$F$ respectively, all distinct from $A$, $B$, $C$, $I$. Prove that the
+circumcircle of the triangle determined by the perpendicular bisectors of
+$\ol{AD}$, $\ol{BE}$, $\ol{CF}$ is tangent to $\omega$. 
+\exercise[SL 2009/G6] Let the sides $AD$ and $BC$ of the quadrilateral $ABCD$
+(such that $AB$ is not parallel to $CD$) intersect at point $P$. Points $O_1$
+and $O_2$ are circumcenters and points $H_1$ and $H_2$ are orthocenters of
+triangles $ABP$ and $CDP$, respectively. Denote the midpoints of segments
+$O_1H_1$ and $O_2H_2$ by $E_1$ and $E_2$, respectively. Prove that the
+perpendicular from $E_1$ on $CD$, the perpendicular from $E_2$ on $AB$ and the
+lines $H_1H_2$ are concurrent.
+\exercise[MOP 2019 \& USA TST 2019/6]Let $ABC$ be a triangle with incenter $I$,
+and let $D$ be a point on line $BC$ satisfying $\angle AID=90^{\circ}$. Let the
+excircle of triangle $ABC$ opposite the vertex $A$ be tangent to $\ol{BC}$
+at $A_1$. Define points $B_1$ on $\ol{CA}$ and $C_1$ on $\ol{AB}$
+analogously, using the excircles opposite $B$ and $C$, respectively.
+\begin{parts}
+\item {\sffamily\maincolor(MOP 2019)} Let $E,F$ be the feet of the altitudes
+from $B,C$ respectively. Prove that if $\ol{EF}$ touches the incircle, then
+quadrilateral $AB_1A_1C_1$ is cyclic. 
+\item {\sffamily\maincolor(USA TST 2019/6)} Prove that if quadrilateral
+$AB_1A_1C_1$ is cyclic, then $\ol{AD}$ is tangent to $(DB_1C_1)$.
+\end{parts}\vspace{-7pt}
+\exercise[ELMO SL 2024/G4] In quadrilateral $ABCD$ with incenter $I$, 
+points $W,X,Y,Z$ lie on sides $AB, BC,CD,DA$ with $AZ=AW$, $BW=BX$, $CX=CY$, $DY=DZ$. 
+Define $T=\ol{AC}\cap\ol{BD}$ and $L=\ol{WY}\cap\ol{XZ}$. 
+Let points $O_a,O_b,O_c,O_d$ be such that $\angle O_aZA=\angle O_aWA=90^\circ$ (and cyclic variants), 
+and $G=\ol{O_aO_c}\cap\ol{O_bO_d}$. Prove that $\ol{IL}\parallel\ol{TG}$.
+\exercise[APMO 2014/5] Circles $\omega$ and $\Omega$ meet at points $A$ and $B$.
+Let $M$ be the midpoint of the arc $AB$ of circle $\omega$ ($M$ lies inside
+$\Omega$). A chord $MP$ of circle $\omega$ intersects $\Omega$ at $Q$ ($Q$ lies
+inside $\omega$). Let $\ell_P$ be the tangent line to $\omega$ at $P$, and let
+$\ell_Q$ be the tangent line to $\Omega$ at $Q$. Prove that the circumcircle of
+the triangle formed by the lines $\ell_P$, $\ell_Q$ and $AB$ is tangent to
+$\Omega$.
+\exercise[DeuX MO 2020/II/3] In triangle $ ABC$ with circumcenter $O$ and
+orthocenter $H$, line $OH$ meets $\ol{AB},\ol{AC}$ at $E$, $F$ respectively. Let
+$\omega$ be the circumcircle of triangle $AEF$ with center $S$, meeting $(ABC)$
+again at $J \neq A$. Line $OH$ also meets $(JSO)$ again at $D \neq O$. Define
+$K=(JSO)\cap(ABC)\enskip(\neq J)$, $M=\ol{JK}\cap\ol{OH}$, and
+$G=\ol{DK}\cap(ABC)\enskip(\neq K)$. Prove that $(GHM)$ and $(ABC)$ are tangent
+to each other.
+\exercise[IMO 2021/3] Let $D$ be an interior point of the acute triangle $ABC$
+with $AB > AC$ so that $\angle DAB = \angle CAD.$ The point $E$ on the segment
+$AC$ satisfies $\angle ADE =\angle BCD,$ the point $F$ on the segment $AB$
+satisfies $\angle FDA =\angle DBC,$ and the point $X$ on the line $AC$ satisfies
+$CX = BX.$ Let $O_1$ and $O_2$ be the circumcenters of the triangles $ADC$ and
+$EXD,$ respectively. Prove that the lines $BC, EF,$ and $O_1O_2$ are concurrent.
+\exercise[USAMO 2021/6]Let $ABCDEF$ be a convex hexagon satisfying
+$\ol{AB} \parallel \ol{DE}$, $\ol{BC} \parallel
+\ol{EF}$, $\ol{CD} \parallel \ol{FA}$, and
+\[ AB \cdot DE = BC \cdot EF = CD \cdot FA. \]
+Let $X$, $Y$, and $Z$ be the midpoints of $\ol{AD}$, $\ol{BE}$, and
+$\ol{CF}$. Prove that the circumcenter of $\triangle ACE$, the
+circumcenter of $\triangle BDF$, and the orthocenter of $\triangle XYZ$ are
+collinear.
+\exercise[SL 2021/G8]Let $ABC$ be a triangle with circumcircle $\omega$ and let
+$\Omega_A$ be the $A$-excircle. Let $X$ and $Y$ be the intersection points of
+$\omega$ and $\Omega_A$. Let $P$ and $Q$ be the projections of $A$ onto the
+tangent lines to $\Omega_A$ at $X$ and $Y$ respectively. The tangent line at $P$
+to the circumcircle of the triangle $APX$ intersects the tangent line at $Q$ to
+the circumcircle of the triangle $AQY$ at a point $R$. Prove that $\ol{AR}
+\perp \ol{BC}$.
+\exercise[USEMO 2020/3]Let $ABC$ be an acute triangle with circumcenter $O$ and
+orthocenter $H$. Let $\Gamma$ denote the circumcircle of triangle $ABC$, and $N$
+the midpoint of $OH$. The tangents to $\Gamma$ at $B$ and $C$, and the line
+through $H$ perpendicular to line $AN$, determine a triangle whose circumcircle
+we denote by $\omega_A$. Define $\omega_B$ and $\omega_C$ similarly. \\
+Prove that the common chords of $\omega_A$,$\omega_B$ and $\omega_C$ are
+concurrent on line $OH$. 
+%--------------------------------------
+%
+% SOLS $$$$$
+%
+%--------------------------------------
+\newpage
+\section{Solutions}
+\subsection{SL 2009/G3, by Hossein Karke Abadi} \pretocmd\subsection\newpage{}{}
+\solnoteprob{Let $ABC$ be a triangle. The incircle of $\triangle ABC$ touches
+$AB$ and $AC$ at the points $Z$ and $Y$, respectively. Let
+$G=\ol{BY}\cap\ol{CZ}$, and let $R$ and $S$ be points such that the two
+quadrilaterals $BCYR$ and $BCSZ$ are parallelograms. Prove that $GR=GS$.}
+\begin{center}
+\begin{asy}
+//setup
+size(8cm); defaultpen(fontsize(10pt)); pen darkgrn=RGB(13,83,76); 
+//09slg3
+//defn
+pair A,B,C,I,Ia; A=(-2,10); B=(0,0); C=(14,0); I=incenter(A,B,C); Ia=2*circumcenter(B,I,C)-I; path w=incircle(A,B,C);
+pair D,E,F,X,Y,Z; D=foot(Ia,B,C); E=foot(Ia,C,A); F=foot(Ia,A,B);
+X=foot(I,B,C); Y=foot(I,C,A); Z=foot(I,A,B);
+path wa=circle(Ia,distance(Ia,D));
+pair R,S; R=B+Y-C; S=C+Z-B;
+
+//draw
+draw(E--A--F^^B--C);
+draw(w,dotted); draw(wa,darkgrn+dashdotted);
+draw(Y--R--B^^Z--S--C,darkgrn);
+draw(D+(1,0)--D-(1,0));
+draw(B--Y^^C--Z,darkgrn+linewidth(1));
+clip((23,13)--(13,-12)--(-13,-12)--(-13,13)--cycle);
+
+//label
+label("$A$",A,dir(90)); label("$B$",B,-dir(30)); label("$C$",C,dir(30));
+label("$D$",D,dir(-90)); label("$E$",E,dir(60)); label("$F$",F,dir(10));
+label("$Y$",Y,dir(60)); label("$Z$",Z,-dir(20));
+label("$R$",R,dir(90)); label("$S$",S,dir(90));
+label("$G$",extension(B,Y,C,Z),-dir(90)); 
+\end{asy}
+\end{center}
+This is a very ``troll'' problem. Let $(R),(S),\omega_a$ denote the point
+circles at $R,S$ ($\text{radius}=0$) and the $A$-excircle respectively. Let
+$\omega_a$ touch $\ol{BC},\ol{CA},\ol{AB}$ at $D,E,F$ respectively. Also, for
+brevity, let $a=BC,b=CA,c=AB,s=(a+b+c)/2$.
+\claim{$\ol{BY}$ is the radical axis of $(R),\omega_a$.}
+\begin{proof}
+$BD=BR=s-c$, while $YE=YR=a$; because $\ol{BD},\ol{YE}$ touch $\omega_a$, $B,Y$ have powers $(s-c)^2,a^2$ wrt each of $(R),\omega_a$ as promised.
+\end{proof}
+By the claim, $G=\ol{BY}\cap\ol{CZ}$ must be the radical center of $(R),(S),\omega_a$, implying the desired $GR=GS$.
+
+\subsection{SL 2015/G4}
+\solnoteprob{Let $ABC$ be an acute triangle and let $M$ be the midpoint of $AC$.
+A circle $\omega$ passing through $B$ and $M$ meets the sides $AB$ and $BC$ at
+points $P$ and $Q$ respectively. Let $T$ be the point such that $BPTQ$ is a
+parallelogram. Suppose that $T$ lies on the circumcircle of $ABC$. Determine all
+possible values of $\frac{BT}{BM}$.}
+\begin{center}
+\begin{asy}
+//15SLG4 (done, add to fav)
+//setup
+size(6cm); defaultpen(fontsize(10pt)); 
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn, ggb moment
+pair A,B,C; A=(0,0); B=(2.0183482099, 7.6104364877); C=(14,0); pair X,M; X=(1.1209128944, -2.1823211696); M=(A+C)/2; 
+path bpq=circumcircle(B,X,M);
+pair P,Q; P=intersectionpoints(bpq,A--2*A-B)[0]; Q=intersectionpoints(bpq,C--B)[0]; pair T,N; T=P+Q-B; N=(B+T)/2;
+//draw
+filldraw(A--B--C--cycle,blu1,blu); draw(circumcircle(A,B,C),blu); draw(bpq,purple); draw(T--B--M,purple); 
+draw(circumcircle(X,M,N),red); draw(P--Q,magenta); draw(A--P,blu);
+//label
+label("$A$",A,dir(140)); label("$B$",B,dir(100)); label("$C$",C,dir(-40)); 
+label("$X$",X,-dir(50)); label("$M$",M,dir(0)); 
+label("$P$",P,-dir(60)); label("$Q$",Q,dir(40)); label("$T$",T,dir(70)); label("$N$",N,dir(150));
+\end{asy}
+\end{center}
+The answer is $\sqrt{2}$ only. Let $X=(ABC)\cap(BPMQ)\enskip (\neq B)$, and let
+$N$ be the midpoint of $\ol{BT}$. 
+\claim[Claim 1]{$XNMT$ is cyclic, and $\ol{BM}$ is tangent to this circle.}
+\begin{proof}Since $N$ is also the midpoint of $\ol{PQ}$, there is a
+spiral similarity at $X$ sending $PNQ$ to $AMC$. Thus, we have 
+\[\measuredangle XMN=\measuredangle XAP=\measuredangle XTB,\]
+proving the concyclicity. For the tangency, check that 
+\[\measuredangle XNM=\measuredangle XPA=\measuredangle XPB=\measuredangle XMB.\qedhere\]
+\end{proof}
+By power of a point, $BM^2=BN \cdot BT=\frac{BT^2}{2}$, so $\frac{BT}{BM}=\sqrt{2}$.
+
+\subsection{USEMO 2023/4, by Ankan Bhattacharya}
+\solnoteprob{Let $ABC$ be an acute triangle with orthocenter $H$. Points $A_1$, $B_1$, $C_1$ are
+chosen in the interiors of sides $BC$, $CA$, $AB$, respectively, such that
+$\triangle A_1B_1C_1$ has orthocenter $H$. Define $A_2 = \ol{AH} \cap
+\ol{B_1C_1}$, $B_2 = \ol{BH} \cap \ol{C_1A_1}$, and $C_2 =
+\ol{CH} \cap \ol{A_1B_1}$.\\[4pt]
+Prove that triangle $A_2B_2C_2$ has orthocenter $H$.}
+\begin{center}
+\begin{asy}
+//23usemo4
+//setup;
+size(8cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair A,B,C,H; A=(4,12); B=(0,0); C=(14,0); H=orthocenter(A,B,C);
+pair A1,B1,C1,A2,B2,C2; A1=(5.9506937028, 0); B1=(7.64043997, 7.631472036); C1=(1.3115245598, 3.9345736793);
+A2=extension(B1,C1,A,H); B2=extension(A1,C1,B,H); C2=extension(A1,B1,C,H);
+pair A3=extension(B,B+A1-C1,C,C+A1-B1);
+//draw
+filldraw(A--B--C--cycle,blu1,blu); filldraw(A1--B1--C1--cycle,blu2,blu); draw(A2--B2--C2--cycle,purple+dotted);
+draw(B--H--C,purple); draw(H--A3,magenta); draw(B--A3--C,blu+dashed); 
+//label
+void pt(string s,pair P,pair v,pen a){filldraw(circle(P,.07),a,linewidth(.3)); label(s,P,v);}
+pair points[] ={A,B,C,H,A1,B1,C1,A2,B2,C2,A3};
+string labels[]={"$A$", "$B$", "$C$", "$H$", "$A_1$", "$B_1$", "$C_1$", "$A_2$", "$B_2$", "$C_2$", "$A_3?$"};
+real dirs[]={90,-130,-10,90,-120,50,150,110,-90,-80,-90};
+pen colors[] ={blu,blu,blu,blu,blu,blu,blu,purple,purple,purple,magenta};
+for (int i=0; i< 11; ++i) { pt(labels[i], points[i], dir(dirs[i]), colors[i]); }
+\end{asy}
+\end{center}
+Working backwards: suffices to prove $\ol{AA_2H}\perp\ol{B_2C_2}$, then proceed as follows: 
+\[\ol{AA_2H}\perp\ol{B_2C_2}\iff \ol{BC}\parallel\ol{B_2C_2} \iff HB_2/HB=HC_2/HC\]
+\[\iff \exists A_3\in\ol{HA_1}\text{ with }\ol{BA_3}\parallel\ol{A_1C_1}\text{ and }\ol{CA_3}\parallel\ol{A_1B_1}.\] Indeed, this point would be chosen so that 
+\[\frac{HA_3}{HA}=\frac{HB_2}{HB}=\frac{HC_2}{HC},\]
+lengths directed. This in turn equates to `$\ol{HA_1}$, $\ol{B\infty_{A_1C_1}}$, $\ol{C\infty_{A_1B_1}}$ concurrent'.\\[4pt]
+Finish with cross-ratio chase:
+\begin{align*}
+(\infty_{A_1C_1}\infty_{A_1B_1}; \infty_{\perp B_1C_1}\infty_{BC}) 
+&\overset{\text{rotate 90}^\circ}= (\infty_{HB_1}\infty_{HC_1};\infty_{B_1C_1}\infty_{HA})\\
+&\overset H= (B_1C_1;\infty_{B_1C_1}A_2)\\
+&\overset A= (\ol{AC},\ol{AB};\ol{B_1C_1},\ol{AH})\\
+&\overset{\text{rotate 90}^\circ}= (\ol{HB},\ol{HC};\ol{HA_1},\ol{BC})\\
+&\overset H= (BC;A_1\infty_{BC})
+\end{align*}
+and the concurrence follows by prism lemma.
+
+\subsection{SL 2016/G7}
+\solnoteprob{Let $I$ be the incentre of a non-equilateral triangle $ABC$, $I_A$
+be the $A$-excentre, $I'_A$ be the reflection of $I_A$ in $BC$, and $l_A$ be the
+reflection of line $AI'_A$ in $AI$. Define points $I_B$, $I'_B$ and line $l_B$
+analogously. Let $P$ be the intersection point of $l_A$ and $l_B$.
+\begin{enumerate}[label=(\alph*)]
+\item Prove that $P$ lies on line $OI$ where $O$ is the circumcentre of triangle $ABC$.
+\item Let one of the tangents from $P$ to the incircle of triangle $ABC$ meet
+the circumcircle at points $X$ and $Y$. Show that $\angle XIY = 120^{\circ}$.
+\end{enumerate}}
+\begin{center}
+\begin{asy}
+//nya pens
+size(7cm); defaultpen(fontsize(10pt)); 
+pen darkgrn, thickgrn; darkgrn=RGB(13,83,76); thickgrn=darkgrn+linewidth(1);
+pen lightblue, lightgrn; lightblue=RGB(210, 210, 252); lightgrn=RGB(184, 214, 212);
+// draw
+pair A,B,C; A=(17,9); B=(0,0); C=(14,0);
+pair O,I,Ia,Ia1; O=circumcenter(A,B,C); I=incenter(A,B,C); Ia=2*circumcenter(B,I,C)-I; Ia1=2*foot(Ia,B,C)-Ia;
+pair P=O+(distance(O,A)*distance(O,A)/distance(O,I))*unit(I-O);
+// inverse of I
+filldraw(A--I--P--cycle,lightgrn,darkgrn); filldraw(A--Ia--Ia1--cycle,lightblue,blue);
+draw(A--B--C--A); draw(circumcircle(A,B,C),dotted); draw(O--I,darkgrn);
+draw(A--O,dashdotted);
+//label
+label("$A$",A,dir(70)); label("$B$",B,-dir(30)); label("$C$",C,dir(-90)); label("$I$",I,-1.5*dir(0));
+label("$O$",O,-dir(30)); label("$I_a$",Ia,dir(-90)); label("$I_a'$",Ia1,dir(130));
+label("$P$",P,dir(-90));
+\end{asy}
+\end{center}
+Redefine $P$ as the inverse of $I$ wrt $(ABC)$. For the first part we assert more strongly that:
+\claim{$\triangle AI_aI_a'\overset+\sim \triangle API$.}
+\begin{proof}By angle chasing, $\angle I_a=\angle P$ follows easily. We contend
+that $I_aI_a'/I_aA=IP/AP$; indeed, the first ratio equals $2\cos\angle
+BI_aC=2\sin\frac A2$ because of similar triangles $I_aBC\overset-\sim \triangle
+I_aI_bI_c$, while
+\[\frac{IP}{AP}=\frac{OP}{AP}-\frac{OI}{OA}\frac{OA}{AP}=\frac{OA}{AI}-\frac{OI^2}{OA\cdot AI}
+=\frac{R}{AI}-\frac{R^2-2rR}{R\cdot AI}=\frac{R-(R-2r)}{AI}=2\sin\frac A2,\]
+so the ratios are equal. The similarity follows by SAS.
+\end{proof}
+The claim clearly implies the isogonality.
+\begin{center}
+\begin{asy}
+// 16slg7 (b)
+//setup
+size(7cm); defaultpen(fontsize(10pt)); pen darkgrn=RGB(13,83,76); 
+//defn
+pair O,M,I,X,Y; O=(0,0); M=(0,-1); I=M+dir(130); X=-dir(30); Y=dir(-30); path w,w1; w=circle(O,1); w1=circle(M,1);
+pair Z,P; Z=intersectionpoints(I--3*I-2*M,w)[0]; P=extension(O,I,X,Y);
+//draw
+draw(w); draw(w1,dashdotted);
+draw(X--O--Y--I--X,dotted); draw(O--P--Y);
+draw(incircle(X,Y,Z),darkgrn); draw(X--Z--Y,darkgrn+dotted); clip((-2.3,0)--(0,-1.3)--(1.7,0)--(1.7,1.1)--(-1.7,1.1)--cycle);
+//label
+label("$X$",X,-2*dir(90)); label("$Y$",Y,-2*dir(90)); label("$Z$",Z,dir(150)); label("$O$",O,dir(90)); label("$I$",I,dir(130)); label("$P$",P,-dir(20));
+\end{asy}
+\end{center}
+For the second part, using Poncelet, let $Z\in(ABC)$ be the unique point so that
+$\triangle XYZ,ABC$ share a incircle and circumcircle. Inverting ``$P,X,Y$
+collinear'' wrt the circumcircle gives $O,I,X,Y$ concyclic, or $\angle
+XOY=\angle XIY$.\\
+As it's well-known that $\angle XOY=2\angle Z$ and $\angle XIY=(\pi+\angle
+Z)/2$, we must have $\angle Z=\pi/3\Rightarrow\angle XIY=2\pi/3$ as needed.
+\subsection{EGMO 2020/3} 
+\solnoteprob{Let $ABCDEF$ be a convex hexagon such that $\angle A=\angle C=\angle E$, $\angle B=\angle D=\angle F$ 
+and the (interior) angle bisectors of $\angle A,\angle C,\angle E$ are concurrent. 
+Prove that the (interior) angle bisectors of $\angle B,\angle D,\angle F$ are also concurrent.} 
+\begin{center}
+\begin{asy}
+//20EGMO3
+//setup;
+size(9cm); defaultpen(fontsize(10pt)); 
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+real uv,xy; uv=-68; xy=-96; //directions of vectors UV,XY
+pair U,V,W,X,Y,Z; U=(1.3,4.5); V=U+5*dir(uv); W=U+5*dir(uv-60); X=(3,4.5); Y=X+5*dir(xy); Z=X+5*dir(xy-60);
+pair A,C,E,B,D,F; A=extension(W,U,Z,X); C=extension(U,V,X,Y); E=extension(V,W,Y,Z); B=extension(U,V,Z,X); D=extension(V,W,X,Y); F=extension(W,U,Y,Z); pair P,Q; P=extension(C,incenter(B,C,D),E,incenter(D,E,F));
+Q=extension(B,incenter(A,B,C),F,incenter(E,F,A));
+//draw
+filldraw(U--V--W--cycle,blu1,blu); filldraw(X--Y--Z--cycle,blu1,blu); filldraw(A--B--C--D--E--F--cycle,blu2,blu);
+
+void drawspiral(pair O, pair R,pair S,pair T,pen p) {
+draw(circumcircle(O,R,S),p); draw(circumcircle(O,S,T),p); draw(circumcircle(O,T,R),p);
+draw(R--O--S^^O--T, p+dashed);}
+drawspiral(P,A,C,E,purple); drawspiral(Q,B,D,F,magenta);
+//label
+void pt(string s,pair P,pair v,pen a){filldraw(circle(P,.04),a,linewidth(.3)); label(s,P,v);}
+pair points[] ={U,V,W,X,Y,Z,A,C,E,B,D,F,P,Q};
+string labels[]={"$U$","$V$","$W$","$X$","$Y$","$Z$",
+"$A$", "$C$", "$E$", "$B$", "$D$", "$F$","$P$", "$Q$"};
+real dirs[]={80,-70,190,80,-50,190, 120,50,150,-20,60,-80, 70,120};
+pen colors[] ={blu,blu,blu,blu,blu,blu, blu,blu,blu,blu,blu,blu, purple,magenta};
+for (int i=0; i< 14; ++i) { pt(labels[i], points[i], dir(dirs[i]), colors[i]); }
+\end{asy}
+\end{center}
+Since $\angle A+\angle B=240^\circ$ and cyclic variants,
+$\ol{AB},\ol{CD},\ol{EF}$ form an equilateral triangle, as do
+$\ol{BC},\ol{DE},\ol{FA}$. Label them $UVW,XYZ$ as shown, and let the given
+concurrency point be $P$. By an angle chase, $P\in (ACXU)$, $(CEYV)$, $(EAZW)$,
+so it's the center of the spiral similarity $s_1$ mapping $U,V,W\to X,Y,Z$.
+\claim{$\triangle UVW\cong\triangle XYZ$.} 
+\begin{proof} Recall that $s_1$ maps $\ol{UV}\to\ol{XY}$, but the fact that $P$
+lies on the bisector of $\angle C$ means that $P$ is equidistant from these
+lines.\\ 
+As this means that the spiral similarity above is in fact a rotation, we
+win.\end{proof} To finish the problem, note that the center
+$Q=(BDVX)\cap(DFWY)\cap(FBUZ)$ of the rotation $s_2$ mapping $U,V,W\to Z,X,Y$ is
+equidistant from the pairs of sides $(\ol{UV},\ol{XZ})$ and cyclic variants, so
+it lines on the bisectors of the angles $\angle B,\angle D,\angle F$ formed by
+those pairs of lines. 
+\begin{remark}I wish I'd seen this problem before failing \emph{USEMO 2020/5} in-contest...\end{remark} 
+
+\subsection{IMO 2008/6, by Vladimir Shmarov}
+\solnoteprob{Let $ABCD$ be a convex quadrilateral with $ BA\neq BC$. 
+Denote the incircles of triangles $ABC$ and $ ADC$ by $\omega_1$ and $\omega_2$ respectively. 
+Suppose that there exists a circle $\omega$ tangent to ray $BA$ beyond $A$ and to the ray $BC$ beyond $C$, 
+which is also tangent to the lines $AD$ and $CD$. 
+Prove that the common external tangents to $\omega_1$ and $\omega_2$ intersect on $\omega$.}
+\begin{center}
+\begin{asy}
+/* Geogebra to Asymptote conversion, documentation at artofproblemsolving.com/Wiki go to User:Azjps/geogebra */
+import graph; size(10cm); defaultpen(fontsize(10pt));
+real labelscalefactor = 0.5; /* changes label-to-point distance */
+pen dps = linewidth(0.7) + fontsize(10); defaultpen(dps); /* default pen style */
+pen dotstyle = black; /* point style */
+real xmin = -2.575095353495543, xmax = 1.04698146261685, ymin = -1.3256944966226067, ymax = 1.2473863195734167; /* image dimensions */
+pen ffqqff = RGB(13,83,76); //magenta
+pen wwccff = RGB(0,0,0); //blue
+pair A,B,C,D; A=(-1.6095499488564848,-0.36258424734726513);
+B=(-2.144340824073543,-1); C=(-1,-1); D=(-1,-0.641826889364958);
+draw(A--B--C--D--A--C,wwccff); draw(3*A-2*B--A--4*D-3*A,wwccff);
+draw(5*D-4*C--2*C-D^^C--3*C-2*B,wwccff);
+/* draw figures */
+draw(circle((0,0), 1),ffqqff);
+draw((xmin, 0*xmin-1)--(xmax, 0*xmax-1), wwccff); /* line */
+draw((xmin, 1.1918972110248216*xmin + 1.5558338476999234)--(xmax, 1.1918972110248216*xmax + 1.5558338476999234), wwccff); /* line */
+draw((xmin, -0.4581128134643468*xmin-1.099939702829305)--(xmax, -0.4581128134643468*xmax-1.099939702829305),wwccff); /* line */
+draw((-1.6095499488564848,-0.36258424734726513)--(-2.144340824073543,-1), wwccff);
+draw((-2.144340824073543,-1)--(-1,-1), wwccff);
+draw((-1,-1)--(-1.6095499488564848,-0.36258424734726513), wwccff);
+draw(circle((-1.5971265587932897,-0.7448100324645568), 0.25518996753544326), blue);
+draw(circle((-1.1142701124349845,-0.715168520176488), 0.1142701124349845), blue);
+draw((-1.6095499488564848,-0.36258424734726513)--(-1,-0.641826889364958), wwccff);
+draw((-1,-0.641826889364958)--(-1,-1),wwccff);
+draw((-2.144340824073543,-1)--(-0.7227279810867314,-0.691132596072777));
+draw((-1.4126936287628102,-0.5684399277100581)--(-0.7227279810867314,-0.691132596072777));
+draw((-1.4126936287628102,-0.5684399277100581)--(-1.7815594888237691,-0.9211801372190555));
+draw((-1.196856320093675,-0.7941443196372071)--(-1.031683904776294,-0.6361927207157689));
+/* labels */
+label("$A$", (-1.5945121231104462,-0.32610770982858284), NE * labelscalefactor);
+label("$B$", (-2.1304122606464877,-0.9608263158917083), NE * labelscalefactor);
+label("$C$", (-0.9863984918638743,-0.9608263158917083), NE * labelscalefactor);
+label("$D$", (-0.9863984918638743,-0.6111609760245973), NE * labelscalefactor);
+label("$K$", (-0.7089466476076259,-0.6605702088319064), NE * labelscalefactor);
+label("$T_{b}$", (-1.3968751929553103,-0.5389474819216069), NE * labelscalefactor);
+label("$T_{d}$", (-1.279053176901287,-0.8316021685495151), NE * labelscalefactor);
+label("$T_{d}'$", (-1.119423348699062,-0.5237446410578195), NE * labelscalefactor);
+label("$T_{b}'$", (-1.7655440818985444,-0.8924135320046648), NE * labelscalefactor);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+/* end of picture */
+pair K=(-0.7227279810867314,-0.691132596072777);
+draw(K+rotate(90)*K--K-rotate(90)*K,dotted);
+\end{asy}
+\end{center}
+Rename $\omega_1,\omega_2$ to $\omega_b,\omega_d$; by Pitot-like reasoning we have $AB+AD=CB+CD$; 
+let $T_b,T_d$ be the intouch points on $\ol{AC}$; then $T_b,T_d$ are isotomic by the obtained length condition. \\[4pt]
+If we let $T_b',T_d'$ be the antipodes of $T_b,T_d$ on their respective circles, 
+then an EGMO lemma (ch4) implies that $B,T_d,T_b'$ and sym variant are collinear. \\
+Construct the point $K'$ on the "closer" side to the rest of the figure so that the tangent to $\omega$ at $K$ is parallel to $\ol{AC}$. 
+Then by homothety $K'\in\ol{BT_d},\ol{DT_b}$, so this is the desired exsimilicenter.
+
+\subsection{Iran TST 2018/1/4, by Iman Maghsoudi \& Hooman Fattahi}
+\solnoteprob{Let $ABC$ be a triangle ($\angle A\neq 90^\circ$), with altitudes $\ol{BE},\ol{CF}$. T
+he bisector of $\angle A$ intersects $\ol{EF},\ol{BC}$ at $M,N$. 
+Let $P$ be a point such that $\ol{MP}\perp\ol{EF}$ and $\ol{NP}\perp\ol{BC}$. Prove that $\ol{AP}$ bisects $\ol{BC}$.}
+\begin{center}
+\begin{asy}
+//setup
+size(8cm); defaultpen(fontsize(10pt)); 
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair A,B,C,H,D,E,F,I; A=(3,12); B=(0,0); C=(14,0); H=orthocenter(A,B,C); D=extension(A,H,B,C); E=extension(B,H,A,C); F=extension(C,H,A,B);
+I=incenter(A,B,C);
+pair M,N,K; M=extension(A,I,E,F); N=extension(A,I,B,C); K=extension(E,F,B,C);
+path kmn=circumcircle(K,M,N);
+pair Q,P; Q=foot(H,A,(B+C)/2); P=2*circumcenter(K,M,N)-K;
+
+//draw
+filldraw(A--B--C--cycle,blu1,blu);
+draw(B--K--E,blu); draw(A--M,purple); draw(kmn,magenta); draw(A--(B+C)/2,red);
+draw(K--P,magenta); draw(K--Q,dashed+magenta);
+draw(M--Q--N--M,magenta+linewidth(1));
+draw(B--Q--E--B^^C--Q--F--C,purple+linewidth(1));
+//label
+label("$A$",A,dir(90)); label("$B$",B,dir(-90)); label("$C$",C,dir(-90));
+label("$E$",E,dir(50)); label("$F$",F,dir(130)); label("$P$",P,dir(10));
+label("$K$",K,-dir(30)); label("$M$",M,-dir(0)); label("$N$",N,dir(-50));
+label("$Q$",Q,dir(30)); label("$H$",H,-dir(20)); 
+\end{asy}
+\end{center}
+Construct $K=\ol{EF}\cap\ol{BC}$, $Q$ as the $A$-Humpty point, $H$ as the
+orthocenter of $\triangle ABC$, and $\omega=(KMN)$, so that the $P$ given is the
+antipode of $K$ on it. Let spiral similarity $s$ at $Q$ take $(E,F)\to(B,C)$.
+The main point of the problem is then:
+\claim{$MKQN$ cyclic. In other words, $Q\in\omega$.}
+\begin{proof} From angle bisector theorem, 
+\[\frac{EM}{MF}=\frac{EA}{AF}=\frac{BA}{AC}=\frac{BN}{NC}\Rightarrow (M\overset s\to N)
+\Rightarrow \dangle MQN=-\arg(s)=\dangle(\ol{EF},\ol{BC})=\dangle MKN.\qedhere\]
+\end{proof}
+Since $P$ is the antipode of $K$ on $\omega$, $\angle KQP=90^\circ=\angle KQA$, implying that $P\in\ol{AQ}$, the $A$-median.
+\subsection{Mock AIME 2019/15', by Eric Shen \& Raymond Feng}
+\solnoteprob{In $\triangle ABC$, let $D,E, F$ be the feet of the altitudes from
+$A,B,C$ respectively, and let $O$ be the circumcenter. Let
+$Z=\ol{AO}\cap\ol{EF}$. There exists a point $T$ such that $\angle DTZ=90^\circ$
+and $AZ=AT.$ If $P=\ol{AD}\cap\ol{TZ}$, and $Q$ lies on $\ol{EF}$ such that
+$\ol{PQ}\parallel\ol{BC}$, prove that $\ol{AQ}$ bisects $\ol{BC}$.}
+\begin{center}
+\begin{asy}
+//setup
+size(9cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//points
+pair A,B,C,H,D,E,F; A=(4,12); B=(0,0); C=(14,0); H=orthocenter(A,B,C);
+D=extension(A,H,B,C); E=extension(B,H,A,C); F=extension(C,H,A,B);
+
+pair K,X,Y,Z,G,T,Z1,P; K=extension(E,F,A,A+B-C); X=foot(E,A,D); Y=foot(F,A,D); Z=foot(A,E,F);
+G=E+F-Z; T=foot(Z,D,G); Z1=2*A-Z; P=extension(A,D,Z,T);
+path w,wa; w=circumcircle(X,Y,Z); wa=circle(A,distance(A,Z));
+// draw
+filldraw(A--B--C--cycle,blu1,blu); fill(D--E--F--cycle,blu2);
+draw(A--D^^E--F,blu); draw(w,red); draw(wa,magenta);
+draw(T--A--Z^^A--Z1,purple); draw(D--Z1, red); draw(T--Z,magenta);
+draw(2*E-D--D--3*F-2*D,blu); draw(E--X^^F--Y,blu+dashdotted);
+draw(incircle(D,E,F),blu+dashed);
+draw(rightanglemark(D,T,Z,10),magenta);
+
+//label
+void pt(string s,pair P,pair v, pen a) {filldraw(circle(P,0.1),a,linewidth(.3)); label(s,P,v);}
+pt("$A$",A,dir(50),blu); pt("$B$",B,dir(-90),blu); pt("$C$",C,dir(-90),blu);
+pt("$D$",D,dir(-90),blu); pt("$E$",E,dir(20),blu); pt("$F$",F,-dir(10),blu);
+pt("$G$",G,dir(170),red); pt("$T$",T,dir(170),magenta); pt("$X$",X,dir(70),red);
+pt("$Y$",Y,dir(-50),red); pt("$Z$",Z,dir(-20),purple); pt("$Z'$",Z1,dir(110),magenta);
+pt("$P$",P,dir(50),magenta);
+\end{asy}
+\end{center}
+Construct points $X,Y$ as the projections of $E,F$ onto $\ol{AD}$ respectively.
+\footnote{Eric Shen originally included these points in the problem statement (as seen in the 2019 version of ``Geometry At Its Best''), 
+but I guess the problem's made harder by deleting them. 
+For me, thinking about their relevance/use was important in making nonzero progress on the problem.}
+\\[4pt]
+After drawing a diagram on Geogebra, we obtain:
+\begin{block}[Characterization of T]
+$T$ is the harmonic conjugate of $Z$ wrt $XY$-- i.e. it lies on $\omega=(XYZ)$ so that the resulting quadrilateral is harmonic.
+\end{block}
+In American style, we show that this choice of $T$ lies on $\omega_a$ (defined as the circle at $A$ thru $Z$) and $(DZ)$, 
+\begin{block}[Verification (inspired by USA TST 2015/1)]
+For $AZ=AT$, we use power of a point / length chase to get $AZ^2=AX\cdot AY$
+whence $\ol{AZ}$ touches $\omega$. Hence, by harmonics $\ol{AT}$ is
+also tangent to $\omega$, so this property follows. \\[4pt]
+$\angle DTZ=90^\circ$ is much less straightforward.
+We define $Z'=2A-Z$ and $G=E+F-Z$ as the antipodes of $Z$ on the circle at $A$
+through $Z$. By a well-known lemma, $D,Z',G$ collinear (along the cevian through
+the intouch point in $\triangle DEF$).
+\\[4pt]
+But also at the same time, $T$ is on $\omega,\omega_a\Rightarrow \angle
+ZTG=\angle ZTZ'=\pi/2$ due to antipodes. Hence, $\angle DTZ=\pi/2$, completing
+the verification.
+\end{block}
+By this definition, we clearly have $(AP;XY)=-1$. 
+From here (the chase is best discovered backwards), harmonic chasing suffices. Define $K=\ol{EF}\cap\ol{A\infty_{BC}}$. 
+Then the bisection is established by
+\[(\ol{AQ}\cap\ol{BC}, \infty_{BC};B,C) \overset A=(QK;FE)\overset{\infty_{BC}}=(PA;YX)=-1.\]
+\subsection{SL 2018/G5, by Denmark} 
+\solnoteprob{Let $ABC$ be a triangle with circumcircle $\omega$ and incenter
+$I$. A line $\ell$ meets the lines $AI$, $BI$, $CI$ at points $D$, $E$, $F$
+respectively, all distinct from $A$, $B$, $C$, $I$. Prove that the circumcircle
+of the triangle determined by the perpendicular bisectors of $\ol{AD}$,
+$\ol{BE}$, $\ol{CF}$ is tangent to $\omega$.} 
+\begin{center}
+\begin{asy}
+//18SLG5
+//setup
+size(8cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair A,B,C,I,T; A=(3,12); B=(0,0); C=(14,0); I=incenter(A,B,C); T=(5.0684862602, 12.7895501819);
+pair reflect(pair P,pair A,pair B) {return 2*foot(P,A,B)-P;} real r=0.462579299; pair h(pair A){return T+r*(A-T);}
+pair mbc,mca,mab; mbc=h(circumcenter(B,I,C)); mca=h(circumcenter(A,I,C)); mab=h(circumcenter(B,I,A));
+pair D,E,F; D=reflect(A,mab,mca); E=reflect(B,mab,mbc); F=reflect(C,mca,mbc);
+//draw
+filldraw(A--B--C--cycle,blu1,blu); draw(circumcircle(A,B,C),blu);
+draw(1.1*A-.1*I--2.05*I-1.05*A^^
+1.15*B-.15*I--1.2*E-.2*I^^1.1*C-.1*I--1.1*F-.1*I,blu);
+draw(h(A)--h(B)--h(C)--h(A),purple+linewidth(1)); draw(1.15*E-.15*F--1.1*F-.1*E,purple); draw(T--A^^T--B^^T--C,purple+dotted); draw(T--I,red);
+draw(1.2*mab-.2*mbc--1.2*mbc-.2*mab^^1.2*mbc-.2*mca--1.2*mca-.2*mbc ^^1.2*mab-.2*mca--1.2*mca-.2*mab,magenta+linewidth(1));
+draw(circumcircle(h(A),h(B),h(C)),red);
+//label pts
+void pt(string s,pair P,pair v,pen a){filldraw(circle(P,.12),a,linewidth(.3)); label(s,P,v);} 
+pt("$A$",A,dir(160),blu); pt("$B$",B,dir(170),blu); pt("$C$",C,-dir(80),blu); 
+pt("$A'$",h(A),dir(110),purple); pt("$B'$",h(B),-dir(90),purple); pt("$C'$",h(C),dir(-50),purple); pt("$D$",D,dir(70)/2,purple); pt("$E$",E,dir(-50),purple); pt("$F$",F,dir(80),purple); 
+pt("$T$",T,dir(90),red); pt("$I$",I,-dir(80),blu); pt("$I'$",h(I),dir(-50),purple); pt(" ",mab,dir(0),magenta); pt(" ",mbc,dir(0),magenta); pt(" ",mca,dir(0),magenta); 
+//label curves
+label("$\ell$",(-4.08,6.71),purple); label("$\ell_a$",(6.3,14),purple);
+label("$\ell_b$",(2.2,3.2),purple); label("$\ell_c$",(11.5,4.9),purple);
+label("$m_a$",(0.3,9.8),magenta); label("$m_b$",(7.5, 4.3),magenta);
+label("$m_c$",(10,13.5),magenta); label("$\omega$",(14.3,5.6),blu);
+\end{asy}
+\end{center}
+Solution by \emph{TheUltimate123}.\\[4pt] 
+Let $\ell_a$ and cyclic variants be the reflections of $\ell$ in the perpendicular bisectors $x_a$ of $\ol{AD}$, etc. 
+\claim{$\ell_a,\ell_b,\ell_c,\omega$ concur at a point $T$.} 
+\begin{proof} Because \[\dangle(\ell_b,\ell_c)=2\dangle(x_b,x_c)=2\dangle
+BIC=\dangle BAC,\] $\ell_b\cap\ell_c\in\omega$; the result follows by
+symmetry.\end{proof} Let $I'=\ol{TI}\cap\ell$, and consider the homothety $h$ at
+$T$ mapping $I\to I'$. Let $P'$ denote the image of point $P$ under $h$, so $I'$
+is the incenter of $\triangle A'B'C'$. Since $\ol{A'I'}\parallel\ol{ADI}$ while
+$A'\in\ell_a$ and $I'\in\ell$, $m_a$ is also the perpendicular bisector of
+$\ol{AI}$.\\[4pt] 
+From here it follows that the pairwise intersections of $m_a,m_b,m_c$ are just
+the arc midpoints in $(A'B'C')$. By $h$, $(A'B'C'),(ABC)$ tangent at $T$, hence
+done.
+\subsection{SL 2009/G6, by Eugene Bilopitov (Ukraine)}
+\solnoteprob{Let the sides $AD$ and $BC$ of the quadrilateral $ABCD$ (such that $AB$ is not parallel to $CD$) intersect at point $P$. 
+Points $O_1$ and $O_2$ are circumcenters and points $H_1$ and $H_2$ are orthocenters of triangles $ABP$ and $CDP$, respectively. 
+Denote the midpoints of segments $O_1H_1$ and $O_2H_2$ by $E_1$ and $E_2$, respectively. 
+Prove that the perpendicular from $E_1$ on $CD$, the perpendicular from $E_2$ on $AB$ and the lines $H_1H_2$ are concurrent.}
+\begin{center}
+\begin{asy}
+//09SLG6
+//setup;
+size(7cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair P,A,D,B,C; P=(0,0); A=(26,0); D=(5,0); B=(19,14); C=.6*B;
+pair O1,H1,E1,O2,H2,E2; O1=circumcenter(P,A,B); H1=orthocenter(P,A,B); E1=(O1+H1)/2;
+O2=circumcenter(P,C,D); H2=orthocenter(P,C,D); E2=(O2+H2)/2; pair X=extension(E1,foot(E1,C,D),E2,foot(E2,A,B));
+//draw
+fill(A--B--C--D--cycle,blu1); fill(P--H1--H2--cycle,RGB(255,230,255)); fill(D--extension(H1,H2,A,D)--H1--extension(P,H1,C,D)--cycle,lightpurple); draw(C--D--P--B--A--D,blu); draw(P--H1--H2--P,magenta);
+draw(3*X-2*E1--3.5*E1-2.5*X ^^ 1.7*E2-.7*X--1.3*X-.3*E2 ,purple); draw(O1--H1^^O2--H2,red); draw(H2--O1--P--O2--H1,red+dotted);
+//label
+void pt(string s,pair P,pair v, pen a){filldraw(circle(P,.17),a,linewidth(.3)); label(s,P,v);} string labels[]={"$P$","$A$","$B$","$C$","$D$", "$O_1$","$H_1$","$E_1$", "$O_2$","$H_2$","$E_2$",""}; //12
+pair points[]={P,A,B,C,D,O1,H1,E1,O2,H2,E2,X};
+real dirs[]={200,40,90,220,120, -60,110,90, 110,-90,-100, -80};
+pen colors[]={blu,blu,blu,blu,blu, red,magenta,purple, red,magenta,purple, magenta};
+for (int i=0; i<12; ++i) {pt(labels[i],points[i],dir(dirs[i]),colors[i]); }
+\end{asy}
+\end{center}
+Trying not to bash excessively\dots consider the problem wrt $\triangle PH_1H_2$. 
+Observe that by isogonals, $\angle O_2PH_1=\angle H_1PO_2$, so they've equal sines and
+\[\frac{PH_1}{PO_1}=2\cos P=\frac{PH_2}{PO_2}\Rightarrow [PO_2H_1]=[PO_1H_2] \Rightarrow h_1(O_1)=-h_2(O_2) 
+\overset{\text{linearity}}\Rightarrow \boxed{h_1(E_1)+h_2(E_2)=1}\] 
+in barycentrics wrt $\triangle PH_1H_2$, where $p(X)$ denotes the $P$-coordinate of $X$, and similarly for the $H_k$.
+This means that the three desired lines (which can be defined as those through $E_1,E_2$ parallel to $\ol{PH_2}$, $\ol{PH_1}$ respectively) concur at 
+\[\boxed{0P+h_1(E_1)\cdot H_1+h_2(E_2)\cdot H_2}\in\ol{H_1H_2}\] 
+which is a valid barycentric point because of the first boxed equation. 
+\subsection{MOP + USA TST, by Ankan Bhattacharya}
+{\maincolor\Alegreya\small Let $ABC$ be a triangle with incenter $I$, and let $D$ be a point on line $BC$ satisfying $\angle AID=90^{\circ}$. 
+Let the excircle of triangle $ABC$ opposite the vertex $A$ be tangent to $\ol{BC}$ at $A_1$. 
+Define points $B_1$ on $\ol{CA}$ and $C_1$ on $\ol{AB}$ analogously, using the excircles opposite $B$ and $C$, respectively.}
+
+\subsubsection{MOP 2019/(?)}
+\solnoteprob{Let $E,F$ be the feet of the altitudes from $B,C$ respectively. Prove that if $\ol{EF}$ touches the incircle, then quadrilateral $AB_1A_1C_1$ is cyclic. }
+\begin{center}
+\begin{asy}
+//setup;
+size(11cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair A,B,C; A=(4.29794,8.2572); B=(0,0); C=(14,0);
+pair O,I,H,E,F,D; O=circumcenter(A,B,C); I=incenter(A,B,C); H=orthocenter(A,B,C); E=extension(B,H,A,C); F=extension(C,H,A,B); D=extension(E,F,B,C);
+pair D1,T; D1=foot(I,B,C); T=foot(I,E,F);
+pair A1,B1,C1; A1=B+C-foot(I,B,C); B1=A+C-foot(I,A,C); C1=A+B-foot(I,A,B);
+///draw
+filldraw(A--B--C--cycle,blu1,blu); filldraw(incircle(A,B,C),blu2,blu); draw(D--B,blu); draw(D--E,blu);
+draw(B--E^^C--F,blu+dotted); draw(A--I^^T--D1,magenta); draw(H--A^^I--D1,purple);
+draw(circumcircle(A1,B1,C1),purple+dotted); draw(I--A1,red);
+
+//labels
+void pt(string s,pair P,pair v, pen a) {filldraw(circle(P,0.13),a,linewidth(.3)); label(s,P,v);}
+pt("$A$",A,dir(90),blu); pt("$B$",B,dir(-90),blu); pt("$C$",C,dir(-90),blu);
+pt("$H$",H,-dir(30),blu); pt("$E$",E,dir(60),blu); pt("$F$",F,dir(120),blu);
+pt("$D'$",D1,dir(-90),blu); pt("$A_1$",A1,dir(-80),blu); pt("$T$",T,.4*dir(130),magenta);
+pt("$O$",O,1.5*dir(90),red); pt("$I$",I,dir(60),purple); pt("$D$",D,dir(-90),blu);
+\end{asy}
+\end{center}
+Call the incircle $\omega$.
+\claim[Claim 1]{$D,E,F$ are collinear.}
+\begin{proof}
+We will prove that the tangent line from $D$ is antiparallel to $\ol{BC}$ wrt $\angle A$.
+Indeed, this line is found by reflecting $\ol{DBC}$ over $\ol{DI}$, a line perpendicular to $\ol{AI}$, so we win.
+\end{proof}
+Let $\omega$ touch $\ol{DEF}$ at a point $T$, and let $D'$ denote the $A$-intouch point.
+\claim[Claim 2]{$\ol{AI}\parallel\ol{HD'}$; hence $AID'H$ is a parallelogram and $AH=r$, the inradius of $\triangle ABC$.}
+\begin{proof}Because $BCEF$ is tangential, it follows by degenerate Brianchon that lines $BE,CF,DT'$ concur, i.e. $H\in\ol{TD'}$. 
+Observe that $DT=DD'$; then $\ol{THD'}\perp\ol{DI}$ by symmetry, 
+while $\ol{AI}\perp\ol{DI}$ is given; the lines are thus parallel as claimed.\end{proof}
+Now, let $\omega_a$, etc denote $(AB_1C_1)$, etc, 
+respectively. We observe that because the perpendicular from $A_1$ to $\ol{BC}$ and its cyclic variants all concur at the point $2O-I$, 
+it follows that all three circles must concur at this point by Miquel spam. 
+
+But because $r/2=AH/2$ is the distance from $O$ to $\ol{BC}$, we actually have $2O-I=A_1$ 
+(also because of their feet onto $\ol{BC})$. Hence $A_1\in \omega_a$ as desired.
+
+\begin{remark}
+I know for a fact that this was a problem during the Red 2019 tests-
+Eric Shen seems to have thoroughly enjoyed it in contest.
+\end{remark}
+\newpage
+\subsubsection{USA TST 2019/6}
+\solnoteprob{Prove that if quadrilateral $AB_1A_1C_1$ is cyclic, then $\ol{AD}$ is tangent to the circumcircle of $\triangle DB_1C_1$. }
+\begin{center}
+\begin{asy}
+//setup;
+size(11cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+real xmin,xmax,ymin,ymax; xmin=-12; xmax=15; ymin=-1; ymax=13;
+
+//definitions
+pair A,B,C; A=(4.29794,8.2572); B=(0,0); C=(14,0);
+pair O,I,H,E,F,D; O=circumcenter(A,B,C); I=incenter(A,B,C); H=orthocenter(A,B,C); E=extension(B,H,A,C); F=extension(C,H,A,B); D=extension(E,F,B,C);
+pair A1,B1,C1; A1=B+C-foot(I,B,C); B1=A+C-foot(I,A,C); C1=A+B-foot(I,A,B);
+pair X,T,M,Q; X=extension(A,D,B1,C1); T=foot(A,B,C); M=(A+D)/2; Q=foot(A,I,H);
+pair B11,C11; B11=A+C-B1; C11=A+B-C1;
+//drawing
+filldraw(A--B--C--cycle,blu1,blu);
+draw(circumcircle(B1,C1,D),red); draw(circumcircle(A1,B1,C1),blu);
+draw(D--B,blu); draw(A--D^^M--T,magenta);
+draw(B1--extension(A,D,B1,C1),magenta+linewidth(1));
+draw(A--T^^B--E^^C--F,blu+dashed); draw(circumcircle(A,E,F),purple);
+draw(circle((A+I)/2,distance(A,I)/2),purple); draw(E--D,blu+dotted);
+draw(I--Q^^O--(A+Q)/2^^A1--A,red+dotted); draw(A1--I,red);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+draw(circumcircle(A,B,C),blu);
+//labels
+void pt(string s,pair P,pair v,pen a){filldraw(circle(P,.11),a,linewidth(.3)); label(s,P,v);}
+pt("$A$",A,dir(90),blu); pt("$B$",B,dir(-90),blu); pt("$C$",C,dir(-90),blu);
+pt("$A_1$",A1,dir(-80),blu); pt("$B_1$",B1,dir(0),blu); pt("$C_1$",C1,-dir(80),blu);
+pt("$M$",M,dir(100),magenta); pt("$T$",T,-dir(70),blu); pt("$D$",D,dir(-90),red);
+pt("$I$",I,dir(-60),purple); pt("$E$",E,dir(50),blu); pt("$F$",F,dir(140),blu);
+pt("$Q$",Q,dir(140),purple); pt("$O$",O,-dir(40),red); pt("$H$",H,-dir(50),purple);
+pt("$B_1'$",B11,dir(0),purple); pt("$C_1'$",C11,dir(170),purple);
+\end{asy}
+\end{center}
+From MOP $2019$, we make the following observations:
+\begin{itemize}
+\item By its converse, $D,E,F$ collinear; then, if $T$ is the foot from $A$ to $\ol{BC}$, we have $(TD;BC)=-1$.
+\item As $A_1$ is the Bevan point $2O-I$, its projections onto $\ol{AC},\ol{AB}$ are $B_1,C_1$ respectively. It follows that $A,A_1$ are antipodes on $\omega_a$.
+\item Since $BCEF$ is bicentric, if the incircle touches $\ol{AC},\ol{AB}$ at $B_1',C_1'$, 
+then $BC_1'/FC_1'=CB_1'/EB_1'$ , so the $A$- incenter and orthocenter Miquel points coincide, say at $Q\in(ABC)$.
+\end{itemize}
+From the last item, $\angle AQI=\angle AQH=90^\circ$.
+\claim{$\ol{AD}$ touches $\omega_a$.}
+\begin{proof}Since $(ABC)\cap(AH)=\{A,Q\}$, the projection of $O$ onto $\ol{AQD}$ is $\frac{A+Q}2$. 
+At the same time, the above implies $Q$ is the projection of $I$ onto $\ol{AQD}$. 
+By linearity the projection of $A_1=2O-I$ onto $\ol{AD}$ is $2\frac{A+Q}2-Q=A$-- in other words, $\angle A_1AD=90^\circ$. 
+This proves the tangency as $\ol{AA_1}$ is a diameter of $\omega_a$.\end{proof}
+Let $M=\frac{A+D}2$, so $\ol{MT}$ touches $\omega_a$ as well by symmetry in the perpendicular bisector $M\infty_{BC}$ of $\ol{AT}$. 
+Now, $(AT;B_1C_1)\overset A=(DT;CB)=-1$ means $M\in\ol{B_1C_1}$.\\[4pt]
+Finish by power of a point converse: $MD^2=MA^2=MB_1\cdot MC_1$ gives the needed tangency.
+
+
+\subsection{ELMO SL 2024/G4 (Nyan)}
+\solnoteprob{In quadrilateral $ABCD$ with incenter $I$, 
+points $W,X,Y,Z$ lie on sides $AB, BC,CD,DA$ with $AZ=AW$, $BW=BX$, $CX=CY$, $DY=DZ$. 
+Define $T=\ol{AC}\cap\ol{BD}$ and $L=\ol{WY}\cap\ol{XZ}$. 
+Let points $O_a,O_b,O_c,O_d$ be such that $\angle O_aZA=\angle O_aWA=90^\circ$ (and cyclic variants), 
+and $G=\ol{O_aO_c}\cap\ol{O_bO_d}$. Prove that $\ol{IL}\parallel\ol{TG}$.}
+\begin{center}
+\begin{asy}
+// IL||TG (nyan)
+//setup
+size(10cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0);
+blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+int i=0; pair I=(0,0); real r=.28;
+pair pole(pair A,pair B) {return 2*circumcenter(I,A,B);}
+real w0,x0,y0,z0; w0=74; x0=146; y0=270; z0=27;
+pair W0,X0,Y0,Z0,A,B,C,D,W,X,Y,Z; W0=dir(w0); X0=dir(x0); Y0=dir(y0); Z0=dir(z0);
+A=pole(Z0,W0); B=pole(W0,X0); C=pole(X0,Y0); D=pole(Y0,Z0);
+W=W0+r*dir(w0+90); X=X0+r*dir(x0-90); Y=Y0+r*dir(y0+90); Z=Z0+r*dir(z0-90);
+pair Oa,Ob,Oc,Od; Oa=2*circumcenter(A,Z,W)-A; Ob=2*circumcenter(B,W,X)-B; Oc=2*circumcenter(C,X,Y)-C; Od=2*circumcenter(D,Y,Z)-D;
+pair P,Q; P=extension(W,X,Y,Z); Q=extension(W,Z,X,Y);
+pair L,T,G; L=extension(W,Y,X,Z); T=extension(A,C,B,D); G=extension(Oa,Oc,Ob,Od);
+//draw
+filldraw(A--B--C--D--cycle,blu1,blu); fill(W--X--Y--Z--cycle,lightpurple); draw(X--P--Y--Q--Z,purple);
+draw(C--P^^D--Q,blu);
+draw(circle(A,distance(A,W)) ^^ circle(B,distance(B,X)) ^^ circle(C,distance(C,Y)) ^^ circle(D,distance(D,Z)), blu+dashdotted);
+clip(box((-2.4,-1.5),(2.4,2.4)) );
+draw(W--Y^^X--Z,purple+dotted+linewidth(.5)); draw(circle(I,distance(I,W)),purple+dotted);
+draw(W--Oa--Z^^X--Oc--Y,magenta+dashed+linewidth(.5));
+draw(P--1.5*Oa-.5*Oc ^^ Q--2.15*Od-1.15*Ob,magenta);
+draw(P--Q,red); draw(I--L,purple+linewidth(1)); draw(T--G,red+linewidth(1));
+
+//label
+void pt(string s,pair P,pair v, pen a){filldraw(circle(P,.019),a,linewidth(.3)); label(s,P,v);}
+string labels[]={"$I$","$A$","$B$","$C$","$D$","$W$","$X$","$Y$","$Z$", "$O_a$","$O_b$","$O_c$","$O_d$","$L$","$T$","$G$","$P$","$Q$"}; //18
+pair points[]={I,A,B,C,D,W,X,Y,Z,Oa,Ob,Oc,Od,L,T,G,P,Q};
+real dirs[]={-130,90,140,-90,-90,80,160,-90,10,-70,-170,-40,-90,80,70,-90,80,80};
+pen colors[]={blu,blu,blu,blu,blu,purple,purple,purple,purple, magenta,magenta,magenta,magenta,purple,blu,magenta,purple,purple};
+for (i=0; i<18; ++i) {pt(labels[i],points[i],dir(dirs[i]),colors[i]);}
+label("$\omega_a$",(.3,1.6),(0,0),blu); label("$\omega_b$",(-.4,1.75),(0,0),blu);
+label("$\omega_c$",(-1.4,.9),(0,0),blu); label("$\omega_d$",(1.5,.15),(0,0),blu);
+\end{asy}
+\end{center}
+Draw the circle at $A$ through $W,Z$ and its cyclic variants, which we respectively call $\omega_a,\dots,\omega_d$. 
+Then $IW=IX=IY=IZ$ follows by symmetry about $\ol{AI}$ and its cyclic variants.\\
+\claim[Claim 1]{$\ol{O_aO_c}$ is the radical axis of $\omega_b,\omega_d$.}
+\begin{proof} $O_a$ has power $O_aW^2=O_aZ^2$ wrt $\omega_d,\omega_a,\omega_b$ so it's their radical center.
+\end{proof}
+The crux of the problem is:
+\claim[Claim 2]{Let $P,Q$ be the exsimilicenters of $(\omega_b,\omega_d),(\omega_a,\omega_c)$. Then 
+$P\in\ol{WX},\ol{YZ},\ol{O_aO_c},\ol{BD}$ and similarly $Q\in\ol{WZ},\ol{XY},\ol{O_bO_d},\ol{AC}$.}
+\begin{proof} We show that the first four lines pass through the exsimilicenter of $\omega_b$ and $\omega_d$.
+\begin{itemize}
+\item $P=\ol{WX}\cap\ol{YZ}$ and $Q=\ol{WZ}\cap\ol{XY}$ follow by Monge on all sets of $3$ circles;
+\item $P\in\ol{AC}$ by design;
+\item $P\in\ol{O_aO_c}$ are obtained from radical axis theorem on $(WXYZ),\omega_b,\omega_d$ in conjunction with claim $1$;
+\end{itemize}
+\end{proof}
+To finish, note that we have the orthocentric systems:
+\begin{itemize}
+\item $PQIL$ via Brocard on $WXYZ$;
+\item $PQTG$ because $\ol{O_aO_c}\perp\ol{BD}$ and $\ol{O_bO_d}\perp\ol{AC}$.
+\end{itemize}
+
+\subsection{APMO 2014/5, by Ilya Bogdanov \& Medeubek Kungozhin} 
+\solnoteprob{Circles $\omega$ and $\Omega$ meet at points $A$ and $B$. 
+Let $M$ be the midpoint of the arc $AB$ of circle $\omega$ ($M$ lies inside $\Omega$). 
+A chord $MP$ of circle $\omega$ intersects $\Omega$ at $Q$ ($Q$ lies inside $\omega$). 
+Let $\ell_P$ be the tangent line to $\omega$ at $P$, and let $\ell_Q$ be the tangent line to $\Omega$ at $Q$. 
+Prove that the circumcircle of the triangle formed by the lines $\ell_P$, $\ell_Q$ and $AB$ is tangent to $\Omega$.} 
+\begin{center}
+\begin{asy}
+//14APMO5
+//setup;
+size(9cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(237,186,255); // blu1 lighter
+//defn
+real ao1,ao2; ao1= 26.3843; ao2=62.7204;// <(AO1,O1O2) and <(AO2,O1O2) resp
+pair O1,O2,A,B; O1=(0,0); O2=(2,0); A=extension(O1,dir(ao1),O2,O2+dir(ao2)); B=extension(O1,dir(-ao1),O2,O2+dir(-ao2));
+real r1,r2; r1=distance(O1,A); r2=distance(O2,A);
+path w,W; w=circle(O1,r1); W=circle(O2,r2);
+pair M,P,D,Q1,Q2; M=(r1,0); P=r1*dir(263); D=extension(M,P,A,B); Q1=intersectionpoints(P--D,W)[0]; Q2=intersectionpoints(2*D-P--D,W)[0]; pair D1,X,K,Y1,Y2,Z1,Z2; D1=extension(-M,P,A,B); X=(D+D1)/2; K=2*circumcenter(O2,Q1,Q2)-O2;
+Y1=extension(K,Q1,A,B); Y2=extension(K,Q2,A,B); Z1=extension(K,Q1,P,X); Z2=extension(K,Q2,P,X);
+//draw
+fill(w,blu1); fill(W,blu1);
+fill(A--arc(O1,r1,ao1,-ao1)--arc(O2,r2,360-ao2,ao2)--cycle,blu2); draw(w,blu); draw(W,blu); draw(2*A-B--3.2*B-2.2*A,blu);
+draw(circle(X,distance(X,D)),purple+dashed);
+draw(1.2*P-.2*Z1 -- 1.1*Z1-.1*P ^^ 1.2*P-.2*D -- 2.5*D-1.5*P,purple); draw(1.3*Y2-.3*Q2 -- 3.3*Z2-2.3*K ^^ 1.7*Q1-.7*K -- 1.2*Z1-.2*K,magenta);
+draw(1.2*D1-.2*K -- 2.7*K-1.7*D1,red); draw(circumcircle(X,Y1,Z1),red); //label
+void pt(string s,pair P,pair v,pen a){filldraw(circle(P,.06),a,linewidth(.3)); label(s,P,v);} pt("$A$",A,-dir(0),blu); pt("$B$",B,-dir(0),blu);
+pt("$M$",M,dir(120),purple); pt("$P$",P,dir(-70),purple); pt("$D$",D,dir(150),purple); pt("$Q_1$",Q1,-dir(0),purple); pt("$Q_2$",Q2,dir(90),purple); 
+pt("$D'$",D1,dir(-45),blu); pt("$X$",X,-dir(40),purple); pt("$Y_1$",Y1,-dir(30),red); pt("$Y_2$",Y2,-dir(0),red); pt("$K$",K,dir(20),magenta); pt("$Z_1$",Z1,dir(-80),magenta);
+pt("$Z_2$",Z2,-dir(70),magenta);
+pt("",extension(P,D,D1,K),(0,0),red);
+pt("",extension(Q2,X,O2,circumcenter(X,Y1,Z1)),(0,0),red);
+label("$\omega$",(-2.5,2.6),blu); label("$\Omega$",(.9,1.5),blu);
+label("$d$",(6.5,4),red);
+label("$\ell_p$",(-2.5,-3),purple); label("$\ell_{q1}$",(8.8,-4.7),magenta);
+label("$\ell_{q2}$",(5.2,-6.5),magenta);
+\end{asy}
+\end{center}
+We'll consider both $Q$'s at once, the one inside and outside. Call them $Q_1,Q_2$ in any order. Define (here $k=1,2$): 
+\begin{itemize} 
+\item $X=\ell_p\cap\ol{AB}$, $Y_k=\ell_{qk}\cap\ol{AB}$, $Z_k=\ell_{qk}\cap\ell_p$; 
+\item $D$ and $D'=2X-D$ as the intersections of the internal and external bisectors of $\angle APB$ with $\ol{AB}$, respectively, so that $XP=XD=XD'$;
+\item $K=\ell_{q1}\cap\ell_{q2}$ as the pole of $\ol{Q_1Q_2}$ wrt $\Omega$, so that $KQ_1=KQ_2$. 
+\end{itemize} 
+\claim[Claim 1]{$Y_1Y_2Z_1Z_2$ is cyclic.} 
+\begin{proof} Note that triangles $PXD,KQ_1Q_2$ are both isosceles. Then 
+\[\dangle(\ell_p,\ell_{q1})=\dangle XPD+\dangle PQ_1K \overset{\text{isosceles}}=-\dangle XDP-\dangle PQ_2K=-\dangle(\ol{AB},\ell_{q2}),\] 
+whence the quadrilateral formed by $\ell_p$, $\ell_{q1}$, $\ol{AB}$, $\ell_{q2}$ (in order) is cyclic. 
+\end{proof} 
+Let $i$ denote inversion at $X$ with power $XP^2=XD^2=XA\cdot XB$ (last equality by midpoints of harmonic bundles lemma). 
+\claim[Claim 2]{$i$ swaps $Y_1,Y_2$ as well.} 
+\begin{proof}Consider the polar $\ol{KD'}$ of $D$ wrt $\Omega$, which we call $d$. Then \[(Y_1Y_2; DD') \overset K=(Q_1,Q_2; D,d\cap\ol{Q_1DQ_2})=-1,\] 
+the last harmonic bundle holding by definition of polar. The claim follows by another application of midpoints of harmonics bundles lemma. 
+\end{proof} 
+By the previous two claims and power of a point at $X$, $i$ also swaps $(Z_1,Z_2)$. 
+Applying $i$ to the given ``$\ol{Y_2Z_2}$ touches $\Omega$'' yields $(XY_1Z_1)$ also tangent to $\Omega$, concluding the proof. 
+
+\subsection{DeuX MO 2020/II/3, by Hao Minyan (China)}
+\solnoteprob{In triangle $ ABC$ with circumcenter $O$ and orthocenter $H$, line $OH$ meets $\ol{AB},\ol{AC}$ at $E$, $F$ respectively. 
+Let $\omega$ be the circumcircle of triangle $AEF$ with center $S$, meeting $(ABC)$ again at $J \neq A$. 
+Line $OH$ also meets $(JSO)$ again at $D \neq O$. Define $K=(JSO)\cap(ABC)\enskip(\neq J)$, $M=\ol{JK}\cap\ol{OH}$, 
+and $G=\ol{DK}\cap(ABC)\enskip(\neq K)$. Prove that $(GHM)$ and $(ABC)$ are tangent to each other.}
+\begin{center}
+\begin{asy}
+//20DeuXMOII3
+//setup
+size(8cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair A,B,C,O,H,E,F; A=(3.1,11); B=(0,0); C=(14,0); O=circumcenter(A,B,C); H=A+B+C-2*O; E=extension(O,H,A,B); F=extension(O,H,A,C);
+pair reflect(pair P,pair A,pair B){return 2*foot(P,A,B)-P;}
+pair Hb,Hc,S,J,K; Hb=reflect(H,A,C); Hc=reflect(H,A,B); S=circumcenter(A,E,F); J=reflect(A,S,O); K=extension(Hb,F,Hc,E);
+pair M,L,G,D; M=extension(J,K,O,H); L=extension(J,H,K,K+H-O); G=reflect(J,O,H); D=extension(O,H,K,G);
+
+//draw
+fill(A--B--C--cycle,blu1); fill(extension(K,E,B,C)--extension(K,F,B,C)--F--E--cycle,blu2); fill(K--extension(K,E,B,C)--extension(K,F,B,C)--cycle,blu1); draw(K--E--F--K,blu);
+
+draw(B--A--C--B^^Hb--F^^Hc--E,blu); draw(circumcircle(A,B,C),blu); draw(Hb--A--Hc,blu+dotted);
+draw(circumcircle(A,E,F),purple+dotted); draw(E--S--F,purple+dotted);
+draw(E--D^^A--K--L^^S--J^^F--1.5*F-.5*O,purple);
+draw(circumcircle(J,H,F),purple); draw(circumcircle(J,H,E),purple);
+draw(D--J--K--D,magenta+linewidth(1)); draw(circumcircle(J,S,O),magenta); draw(S--O,magenta);
+draw(circumcircle(J,M,H),red+dashdotted); draw(circumcircle(G,M,H),red+dotted);
+draw(J--L,red);
+clip((7.2,-5.2)--(-7.4,.2)--(-7.1,16.6)--(15.7,16.6)--(15.3,-1.4)--cycle);
+//label
+void pt(string s,pair P,pair v,pen a){filldraw(circle(P,.12),a,linewidth(.3)); label(s,P,v);}
+pt("$A$",A,dir(110),blu); pt("$B$",B,dir(90),blu); pt("$C$",C,dir(90),blu);
+pt("$H$",H,dir(-20),red); pt("$H_b$",Hb,dir(50),blu); pt("$H_c$",Hc,-dir(30)/2,blu);
+pt("$O$",O,dir(70),blu); pt("$E$",E,dir(-40),blu); pt("$F$",F,-dir(70),blu);
+pt("$S$",S,dir(50),purple); pt("$J$",J,dir(160),purple); pt("$M$",M,dir(-50),magenta);
+pt("$L$",L,dir(-70),red); pt("$G$",G,-dir(80),magenta); pt("$D$",D,dir(-90),magenta);
+pt("$K$",K,dir(-60),magenta);
+//label ell, Omega
+label("$\Omega$",(12.95,7.85),blu); label("$\ell$",1.8*F-.8*O,purple);
+\end{asy}
+\end{center}
+Solution by \emph{crazyeyemoody907}, \emph{v4913}. \\[4pt]
+Let $\Omega=(ABC)$, $H_b,H_c$ be the respective reflections of $H$ in
+$\ol{AC},\ol{AB}$, and $\ell=\ol{EFOH}$. Redefine $K=\ol{H_cE}\cap\ol{H_bF}$
+(we'll see this is an equivalent definition). As $\ol{EA},\ol{FA}$ are external
+angle bisectors wrt $\triangle KEF$, we have $\angle EKF=\pi-2A$.
+\claim[Claim 1]{$J\in(HEH_c),(HFH_b)$.}
+\begin{proof}Let $J'=(HEH_c)\cap(HFH_b)\enskip(\neq H)$. Then:
+\[\dangle H_cJ'H_b=\dangle H_cJ'H+\dangle HJ'H_b=\dangle H_cEH+\dangle HFH_b =\dangle(\ol{H_cE},\ol{H_bF})=\dangle H_bKH_c =\dangle H_bAH_c\Rightarrow J'\in\Omega.\]
+The construction of $J'$ implies that $\ol{J'E},\ol{J'F}$ respectively bisect $\angle H_cJ'H,\angle H_bJ'H$, and thus
+\[\angle EJ'F=\frac12\angle H_bJ'H_c=\angle BAC=\angle EAF\Rightarrow J'\in(AEF),\]
+finishing the claim.\end{proof}
+Let $L=\ol{JH}\cap\Omega\enskip (\neq J)$; then, as $JH_cKL,JH_cEH$ cyclic, $\ell\parallel\ol{KL}$ by Reim. By homothety, $(JHM)$ touches $(JKL)=\Omega$.
+\claim[Claim 2]{For the $K$ defined in solution, $K\in\ol{AS},(JSO)$.}
+\begin{proof}
+Since $\dangle ESF=2\dangle BAC=\dangle EKF$, we have $KESF$ cyclic; as
+$SE=SF,AH_b=AH_c$, $A,S$ both lie on bisector of $\angle EKF$.\\
+Next, we prove that $O$ is the midpoint of $\widehat{JSK}$ on $(JSK)$. Because
+$\ol{OS}$ is the perpendicular bisector of $\ol{AJ}$ by symmetry, it externally
+bisects $\angle JSK$ as $K\in\ol{AS}$. At the same time, $OJ=OK$ means $O$ is on
+the perpendicular bisector of $\ol{JK}$. These two properties imply that $O$ is
+the claimed arc midpoint.
+\end{proof}
+From here, as $DJKO$ cyclic and $OJ=OK$, $\ol{DO}$ bisects $\angle JDK$, and
+$G=\ol{DK}\cap\Omega$ is the reflection of $J$ in $\ell$ by symmetry. Reflecting
+``$(JHM)$ touches $\Omega$'' over $\ell$ completes the proof.
+
+\subsection{IMO 2021/3}
+\solnoteprob{Let $D$ be an interior point of the acute triangle $ABC$ with $AB > AC$ so that $\angle DAB = \angle CAD.$ 
+The point $E$ on the segment $AC$ satisfies $\angle ADE =\angle BCD,$ the point $F$ on the segment $AB$ satisfies $\angle FDA =\angle DBC,$ 
+and the point $X$ on the line $AC$ satisfies $CX = BX.$ Let $O_1$ and $O_2$ be the circumcenters of the triangles $ADC$ and $EXD,$ respectively. Prove that the lines $BC, EF,$ and $O_1O_2$ are concurrent.}
+\begin{center}
+\begin{asy}
+//setup
+size(8cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+real r=.15;
+pair A,B,C,I,Ia; A=(1,13); B=(0,0); C=(14,0); I=incenter(A,B,C); Ia=2*circumcenter(B,I,C)-I;
+pair D,D1; D=(1+r)*I-r*Ia; D1=(I+r*Ia)/(1+r);
+path bdd,cdd; bdd=circumcircle(B,D,D1); cdd=circumcircle(C,D,D1);
+pair E,F,J; E=intersectionpoints(A--C,cdd)[0]; F=intersectionpoints(A--B,bdd)[0]; J=extension(B,C,E,F);
+pair Jreflect(pair P) {return 2*foot(P,J,bisectorpoint(B,J,E))-P;}
+pair B1,C1,E1,F1; B1=Jreflect(B); C1=Jreflect(C); E1=Jreflect(E); F1=Jreflect(F);
+//draw
+filldraw(A--B--C--cycle,blu1,blu);
+draw(B--J--C1^^A--D1,blu);
+draw(bdd,purple); draw(cdd,purple);
+draw(E--D--F^^E1--D1--F1,purple+dashdotted);
+draw(B--B1^^C--C1^^E--E1^^F--F1,dotted);
+
+//label
+label("$A$",A,dir(90)); label("$B$",B,-dir(80)); label("$C$",C,dir(-70));
+label("$D$",D,-dir(40)); label("$D'$",D1,-dir(10));
+label("$B'$",B1,dir(120)); label("$C'$",C1,dir(90));
+label("$E'$",E1,dir(-80)); label("$F'$",F1,-dir(80));
+label("$J$",J,-dir(20));
+label("$E$",E,dir(90)); label("$F$",F,dir(130));
+\end{asy}
+\end{center}
+Solution by \emph{v4913}.\\[4pt]
+Let $J=\ol{EF}\cap\ol{BC}$, and $D'\in\ol{AD}$ be the isogonal conjugate of $D$ wrt $\triangle ABC$. 
+The given angle conditions imply that $BDD'F,CDD'E$ are cyclic, while power of a point at $A$ implies $BCEF$ cyclic as well.
+\claim[Claim 1]{$J$ is the exsimilicenter of $(EDC),(FDB)$; hence, $JD=JD'$ by symmetry.}
+\begin{proof}
+Construct $E_1=(CDD'E)\cap\ol{BC}\enskip(\neq C)$, $F_1=(BDD'F)\cap\ol{BC}\enskip(\neq B)$. 
+By isogonality, $DF=D'F'$ and $DE=D'E'$ whence $DD'E'E$, $DD'F'F$ are both cyclic isosceles trapezoids. 
+$\ol{DD'},\ol{EE'},\ol{FF'}$ share a perpendicular bisector $b$, and in fact, this is the bisector of $\angle J$, i.e. $JE=JE',JF=JF'$.
+\\[4pt] Reflect $B,C$ over $b$ to obtain $B',C'$; then, because $JB/JF'=JB/JF=JE/JC=JE'/JC$, 
+there is a homothety at $J$ mapping $(B,B',F,F')\to(E',E,C',C)$ and thus their circumcircles $(BB'DD')\to(CC'DD')$ as well.
+\end{proof}
+\begin{center}
+\begin{asy}
+//setup
+size(11cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+real r=.15;
+pair A,B,C,I,Ia; A=(1,13); B=(0,0); C=(14,0); I=incenter(A,B,C); Ia=2*circumcenter(B,I,C)-I;
+pair D,D1; D=(1+r)*I-r*Ia; D1=(I+r*Ia)/(1+r);
+path bdd,cdd; bdd=circumcircle(B,D,D1); cdd=circumcircle(C,D,D1);
+pair E,F,J; E=intersectionpoints(A--C,cdd)[0]; F=intersectionpoints(A--B,bdd)[0]; J=extension(B,C,E,F);
+path jbf,j; jbf=circumcircle(J,B,F); j=circle(J,distance(J,D));
+pair X,Y,Q,T,Obf; X=extension(A,C,(B+C)/2,circumcenter(A,B,C));
+Y=intersectionpoints(circumcircle(A,D,C),circumcircle(E,X,D))[0];
+Q=intersectionpoints(jbf,circumcircle(A,B,C))[0];
+T=extension(B,Q,A,C); Obf=circumcenter(J,B,F);
+
+//draw
+filldraw(A--B--C--cycle,blu1,blu);
+draw(B--J--E^^A--D1,blu); draw(A--J,blu+dotted);
+draw(bdd,purple); draw(cdd,purple);
+draw(E--D--F,purple+dashdotted);
+draw(jbf,blu); draw(circumcircle(A,B,C),blu); draw(A--T--B,blu);
+draw(circumcircle(A,D,C),magenta); draw(circumcircle(E,X,D),magenta);
+draw(1.2*J-.2*Obf--4*Obf-3*J,blu+dashed);
+draw(X--B^^Q--E,dotted);
+draw(j,red); draw(T--D,red+linewidth(1));
+clip((-11,19)--(19,19)--(19,-5)--(-11,-5)--cycle);
+
+//label
+label("$A$",A,dir(90)); label("$B$",B,-dir(80)); label("$C$",C,dir(-70));
+label("$D$",D,-dir(40)); label("$D'$",D1,-dir(10));label("$J$",J,dir(80));
+label("$E$",E,dir(90)); label("$F$",F,dir(130));label("$T$",T,dir(90));
+label("$Y$",Y,.5*dir(170)); label("$Q$",Q,dir(120)); label("$X$",X,dir(-10));
+label("$\textcolor{red}j$",(-5.16,13.21));
+\end{asy}
+\end{center}
+Let $Y=(ADC)\cap(EXD)\enskip(\neq D)$, $Q$ be the Miquel point of $ABCJEF$, and $j$ the circle at $J$ through $D,D'$. 
+Observing that $\ol{O_1O_2}$ is the perpendicular bisector of $\ol{DY}$, it remains to prove $Y\in j$.
+\claim[Claim 2]{$XQEB$ is cyclic.}
+\begin{proof}This is a simple angle chase: using cyclic quadrilaterals $(ABCQ)$, $(JFBQ)$, $(ECJQ)$, and $(AEFQ)$, we obtain
+\[\dangle EQB=\dangle EQA+\dangle AQB=\dangle ACB+\dangle EFA=2\dangle ACB=\dangle EXB\qedhere\]
+\end{proof}
+Next, we characterize the radical axis of $j, (JBF)$-- it's perpendicular to the line of centers and through $A$:
+\claim[Claim 3]{The line through $B$ and the center of $(JBF)$ is perpendicular to $\ol{AC}$.}
+\begin{proof}
+This is equivalent to ``$t_b$, the tangent to $(JBF)$ at $J$, is parallel to $\ol{AC}$''. Because $\dangle(\ol{BJC},t_b)=\dangle BFJ=\dangle JCE$,
+the result follows.
+\end{proof}\noindent
+Because $\Pow(A,j)=AD\cdot AD'=AQ\cdot AJ=\Pow(A,(JBQF))$, $A$ is on the radical axis of $j, (JBF)$. 
+By the previous claim, it follows that $\ol{AC}$ is the radical axis of $j, (JBF)$.\\[4pt]
+To finish, define $T=\ol{DY}\cap\ol{AC}\cap\ol{BQ}$ as the radical center of $(JBF),(ABC),(EXD), (ADC)$, 
+and the phantom point $Y'=\ol{TD}\cap j\enskip(\neq D)$. Because $T$ is on $\ol{AC}$, the radical axis of $j,(JBF)$, we have (lengths directed)
+\[TY'\cdot TD=\Pow(T,j)=\Pow(T,(JBF))=\Pow(T,(ABCQ))=TA\cdot TC=TY\cdot TD\Rightarrow Y=Y',\]
+the end!
+\subsection{USAMO 2021/6, by Ankan Bhattacharya}
+\solnoteprob{Let $ABCDEF$ be a convex hexagon satisfying 
+$\ol{AB} \parallel \ol{DE}$, $\ol{BC} \parallel \ol{EF}$, $\ol{CD} \parallel \ol{FA}$, and \[ AB \cdot DE = BC \cdot EF = CD \cdot FA. \]
+Let $X$, $Y$, and $Z$ be the midpoints of $\ol{AD}$, $\ol{BE}$, and $\ol{CF}$. 
+Prove that the circumcenter of $\triangle ACE$, the circumcenter of $\triangle BDF$, and the orthocenter of $\triangle XYZ$ are collinear.}
+\begin{center}
+\begin{asy}
+//21amo6 main
+//setup
+size(11cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+real r=26;
+pair A1,C1,E1,O; A1=(3.81,5.23); C1=(0,0); E1=(14,0); O=circumcenter(A1,C1,E1); path W=circle(O,r);
+pair A,C,E; A=intersectionpoints(W,E1--10*E1-9*C1)[0];
+C=intersectionpoints(W,A1--10*A1-9*E1)[0];
+E=intersectionpoints(W,C1--10*C1-9*A1)[0];
+pair B,D,F; B=A+C-E1; D=C+E-A1; F=E+A-C1;
+pair B1,D1,F1; B1=D+F-E; D1=B+F-A; F1=B+D-C;
+pair A2,D2; A2=(C1+E1)/2; D2=(B1+F1)/2;
+//draw
+filldraw(A1--C1--E1--cycle,blu1,blu); filldraw(B1--D1--F1--cycle,blu1,blu); draw(A--B--C--D--E--F--A,blu); draw(A1--C^^C1--E^^E1--A^^B1--F^^D1--B^^F1--D,blu); draw(A--D,blu+dotted); draw(A2--D2,red+linewidth(1));
+//label
+label("$A$",A,dir(0)); label("$B$",B,dir(80)); label("$C$",C,dir(100)); label("$D$",D,-dir(0)); label("$E$",E,-dir(80)); label("$F$",F,dir(-80)); 
+label("$A'$",A1,dir(70)); label("$C'$",C1,dir(140)); label("$E'$",E1,dir(70)); label("$B'$",B1,-dir(80)); label("$D'$",D1,dir(140)); label("$F'$",F1,dir(-90)); label("$A''$",A2,dir(-80)); label("$D''$",D2,dir(-90));
+label("$X$",(A+D)/2,dir(-70));
+\end{asy}
+\end{center}
+Construct parallelogram $CDEA'$ and cyclic variants: $A'=C+E-D$, etc. 
+We may compute using vectors that $\triangle B'D'F'$ is a translation of $\triangle A'C'E'$ by the vector $(B+D+F)-(A+C+E)$. In particular, they're congruent. 
+\claim[Claim 1]{$A,C,E$ have same power wrt $(A'C'E')$; in other words, $\triangle ACE,A'C'E'$ share a circumcenter.} 
+\begin{proof} 
+Observing that $\Pow(A,(A'C'E'))=AC'\cdot AE'=BC\cdot EF$ by parallelograms, this claim follows by the given length condition.\end{proof} 
+Next, construct $A''=\frac{C'+E'}2$ and cyclic variants. The circumcenter of $\triangle A'C'E'$ is then the orthocenter of $\triangle A''C''E''$. 
+\claim[Claim 2]{$X=\frac{A''+D''}2$.} 
+\begin{proof}Using vectors, $B'+C'=E'+F'=A+D\Rightarrow 
+\frac{A+D}2=\frac{B'+C'+E'+F'}4=\frac{A''+D''}2.$
+\end{proof}
+\begin{center}
+\begin{asy}
+//21amo6 aux
+//setup
+size(7cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+real r=26;
+pair A1,C1,E1,O; A1=(3.81,5.23); C1=(0,0); E1=(14,0); O=circumcenter(A1,C1,E1); path W=circle(O,r);
+pair A,C,E; A=intersectionpoints(W,E1--10*E1-9*C1)[0];
+C=intersectionpoints(W,A1--10*A1-9*E1)[0];
+E=intersectionpoints(W,C1--10*C1-9*A1)[0];
+pair B,D,F; B=A+C-E1; D=C+E-A1; F=E+A-C1;
+pair B1,D1,F1; B1=D+F-E; D1=B+F-A; F1=B+D-C;
+pair A2,B2,C2,D2,E2,F2; A2=(C1+E1)/2; B2=(D1+F1)/2; C2=(A1+E1)/2; D2=(B1+F1)/2; E2=(A1+C1)/2; F2=(B1+D1)/2;
+pair X,Y,Z; X=(A+D)/2; Y=(B+E)/2; Z=(C+F)/2;
+//draw
+filldraw(A1--C1--E1--cycle,blu1,blu); filldraw(B1--D1--F1--cycle,blu1,blu); filldraw(A2--C2--E2--cycle,lightpurple,purple);
+filldraw(B2--D2--F2--cycle,lightpurple,purple);
+filldraw(X--Y--Z--cycle,RGB(255,230,255),magenta);
+draw(A2--D2^^B2--E2^^C2--F2,red);
+//label
+label("$A'$",A1,dir(70)); label("$C'$",C1,dir(140)); label("$E'$",E1,dir(70)); label("$B'$",B1,-dir(80)); label("$D'$",D1,dir(140)); label("$F'$",F1,dir(-90)); 
+label("$A''$",A2,dir(-80)); label("$C''$",C2,dir(70)); label("$E''$",E2,dir(140)); label("$B''$",B2,dir(140)); label("$D''$",D2,dir(-90)); label("$F''$",F2,dir(90));
+label("$X$",X,dir(-60)); label("$Y$",Y,dir(140)); label("$Z$",Z,dir(150));
+\end{asy}
+\end{center}
+By claim $2$ + symmetry, $\triangle XYZ$ is the vector average of (congruent) triangles $A''C''E'',B''D''F''$, so their orthocenters are collinear. 
+
+\subsection{SL 2021/G8}
+\solnoteprob{Let $ABC$ be a triangle with circumcircle $\omega$ and let $\Omega_A$ be the $A$-excircle. 
+Let $X$ and $Y$ be the intersection points of $\omega$ and $\Omega_A$. 
+Let $P$ and $Q$ be the projections of $A$ onto the tangent lines to $\Omega_A$ at $X$ and $Y$ respectively. 
+The tangent line at $P$ to the circumcircle of the triangle $APX$ intersects the tangent line at $Q$ to the circumcircle of the triangle $AQY$ at a point $R$. 
+Prove that $\ol{AR}\perp\ol{BC}$.}
+\begin{center}
+\begin{asy}
+//21SLG8
+//setup
+size(13cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair A,B1,C1,Ia,D,D1; A=(14.92,11.07); B1=(0,0); C1=(14,0); Ia=incenter(A,B1,C1); D=foot(Ia,B1,C1); D1=2*Ia-D;
+pair B,C; B=extension(A,B1,D1,D1+(1,0)); C=extension(A,C1,D1,D1+(1,0)); path W,wa; W=circumcircle(A,B,C); wa=incircle(A,B1,C1);
+pair X,R,V,P; X=intersectionpoints(W,wa)[1]; R=foot(A,B1,C1);
+V= extension(X,X+rotate(90)*(X-Ia),B1,C1); P=foot(A,X,V);
+pair U,X1,V1; U=extension(X,V,B,C); X1=extension(A,X,B,C); V1=extension(A,V,B,C);
+//draw
+filldraw(A--B1--C1--cycle,blu1,blu); draw(C1--V^^B--V1,blu); draw(wa,blu); draw(A--R,dashed+blu);
+draw(W,purple); draw(circumcircle(A,P,X),magenta+dashdotted); draw(circumcircle(A,X,V),red+dotted);
+draw(X--A--V,red); draw(R--P--V,magenta);
+clip((-2,-2)--(-2,15)--(16,15)--(22,-2)--cycle);
+//label
+label("$A$",A,dir(90)); label("$B$",B,dir(90)); label("$C$",C,-dir(40)); label("$B'$",B1,-dir(90)); label("$C'$",C1,-dir(90)); 
+label("$X$",X,dir(-70)); label("$D$",D,dir(-90)); label("$R$",R,dir(-90)); label("$V$",V,dir(-90)); label("$P$",P,dir(50)); label("$U$",U,dir(60));
+label("$V'$",V1,dir(10));label("$X'$",X1,dir(110));
+label("$\omega$",(10.5,11.2),purple);
+label("$\omega_a$",(8.31,2.73),blu);
+\end{asy}
+\end{center}
+Solution by \emph{crazyeyemoody907}.\\
+Let the antipode of the $A$-extouch point be $D$, and the tangent to $\omega_a$
+at $D$ intersect $\ol{AB},\ol{AC}$ at $B',C'$ respectively. Also, construct the
+tangent line to $\omega_a$ at $X$, meeting $\ol{BC},\ol{B'C'}$ at $U,V$
+respectively. Finally, let $X'=\ol{AX}\cap\ol{BC}$, $V'=\ol{AV}\cap\ol{BC}$. 
+\claim[Claim 1]{$AXUV'$ cyclic.} 
+\begin{proof}Apply DDIT to $A$, $UXV\infty_{BC}$ (inconic $\omega_a$), and
+project onto $\ol{BC}$, to obtain an involutive pairing
+$(BC;UV';\infty_{BC}X')$-- or equivalently, $X'B\cdot X'C=X'U\cdot X'V'$.
+By power of a point, $X'B\cdot X'C=X'A\cdot X'X$, so the claim follows from $X'U\cdot X'V=X'A\cdot X'X$. \end{proof}
+\claim[Claim 2]{$\ol{DV}$ is tangent to $(AXV)$.} 
+\begin{proof} Angle chase using previous claim, and the fact that $\ol{BC}\parallel\ol{B'C'}$: 
+\[\dangle XAV \overset{\text{claim }1}= \dangle XUV'=\dangle XVD.\qedhere\] \end{proof} 
+Redefine $R$ as the foot from $A$ to $\ol{B'C'}$. It remains to show,
+\claim[Claim 3]{$\ol{PR}$ touches $(APX)$.} 
+\begin{proof}Since $\angle VPA=\angle VRA=90^\circ$, $APRV$ cyclic, so we may anglechase as follows: 
+\[\dangle APR=\dangle AVR \overset{\text{claim }2} =\dangle AXV=\dangle AXP.\qedhere\] 
+\end{proof}
+
+\subsection{USEMO 2020/3, by Anant Mudgal}
+\solnoteprob{Let $ABC$ be an acute triangle with circumcenter $O$ and orthocenter $H$. 
+Let $\Gamma$ denote the circumcircle of triangle $ABC$, and $N$ the midpoint of $\ol{OH}$. 
+The tangents to $\Gamma$ at $B$ and $C$, and the line through $H$ perpendicular to line $AN$, 
+determine a triangle whose circumcircle we denote by $\omega_A$. Define $\omega_B$ and $\omega_C$ similarly.
+\\[4pt] Prove that the common chords of $\omega_A$, $\omega_B$, and $\omega_C$ are concurrent on line $OH$.}
+Let $H_a,A'$ denote the respective reflections of $H$ in $\ol{BC}$, $A$ in $O$, and their symmetric variants.
+\begin{center}
+\begin{asy}
+//20USEMO3 first
+//setup
+size(7cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair A,B,C,O,H,N; A=(4.24,25/3); B=(0,0); C=(14,0); O=circumcenter(A,B,C); H=orthocenter(A,B,C); N=(O+H)/2;
+pair B1,C1,Hb,Hc,P; B1=2*O-B; C1=2*O-C; Hb=foot(B1,B,H); Hc=foot(C1,C,H); P=extension(B,Hc,C,Hb);
+//draw
+filldraw(Hb--B1--B--Hc--C1--C--cycle,lightpurple,purple); draw(A--B--C--A^^2*A-H--H--O,blu); 
+draw(circumcircle(A,B,C),blu); draw(P--O,magenta); draw(A--N,red+dashdotted); 
+draw((-1.3101179956, 3.4410265336)--(13.373286826, 7.4799265417),red); draw(P--Hc--2*A-H--Hb--P,purple);
+//label
+label("$A$",A,-dir(20)); label("$B$",B,-dir(20)); label("$C$",C,dir(-10));
+label("$O$",O,dir(70)); label("$H$",H,-dir(40)); label("$N$",N,-dir(20));
+label("$B'$",B1,-dir(20)); label("$C'$",C1,-dir(0)); label("$P$",P,dir(90)); label("$H_b$",Hb,dir(60)); label("$H_c$",Hc,dir(140)); label("$S$",S,dir(50));
+\end{asy}
+\end{center}
+\claim[Claim 1]{The polar $\ell_a$ of $\ol{BH_c}\cap\ol{CH_b}$ passes through $H$ and is perpendicular to $\ol{AN}$.}
+\begin{proof} Let $P=\ol{BH_c}\cap\ol{CH_b}$ and $S=2A-H$. $H\in\ell_a$ is just
+Brokard, so it suffices to prove $\ol{AN}\parallel\ol{OP}$. By Pascal on
+$BB'H_bCC'H_c$, we have $P,O,S$ collinear. Taking a homothety at $H$ with
+scale factor $\frac12$ maps the latter two points to $N,A$, which implies
+the required parallel lines.\end{proof} In $\triangle ABC$, let $X_bc$ be
+the pole of $\ol{BH_c}$ wrt $\Gamma$ (and $5$ other variants), $X,Y,Z$ be
+the poles of the sides, $D,E,F$ be the feet of the altitudes. Clearly,
+$\ell_a=\ol{X_{bc}X_{cb}}$.
+\begin{remark}[Note]Here, the condition $\triangle ABC$ acute comes in: $\Gamma$ is the incircle, not excircle, of $\triangle XYZ$.\end{remark}
+We'll show that $\ol{XD}$ is the radical axis of $\omega_b,\omega_c$. (By a somewhat-known configuration (say, \emph{Brazil 2013/6}),
+$\ol{XD}\cap\ol{YE}\cap\ol{ZF}$ lies on the Euler line.) Also let $Q_a,Q_b,Q_c$ be the SD points of $\triangle XYZ$.
+\begin{center}
+\begin{asy}
+//20USEMO3-2
+//setup;
+size(7cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair X,Y,Z,O,A,B,C,H,Qa; X=(4,10); Y=(0,0); Z=(14,0); O=incenter(X,Y,Z); A=foot(O,Y,Z); B=foot(O,Z,X); C=foot(O,X,Y); H=orthocenter(A,B,C); Qa=foot(X,O,2*circumcenter(X,Y,Z)-X);
+pair pole(pair P,pair Q){return 2*circumcenter(O,P,Q)-O;}
+pair reflect(pair P, pair A,pair B){return 2*foot(P,A,B)-P;}
+pair Hb,Hc,Xab,Xac,Xbc,Xcb; Hb=reflect(H,A,C); Hc=reflect(H,A,B); Xab=pole(A,Hb); Xac=pole(A,Hc); Xbc=pole(B,Hc); Xcb=pole(C,Hb);
+
+//draw
+filldraw(X--Y--Z--cycle,blu1,blu); filldraw(A--B--C--cycle,blu2,blu);
+draw(circumcircle(X,Y,Z),blu); draw(incircle(X,Y,Z),blu);
+draw(1.7*Xab-.7*Xcb--1.6*Xcb-.6*Xab,purple); draw(1.5*Xac-.5*Xbc--1.5*Xbc-.5*Xac,purple);
+draw(circumcircle(O,B,C),magenta); draw(circumcircle(X,Xbc,Xcb),red);
+//label
+void pt(string s,pair P,pair v,pen a) {filldraw(circle(P,.09),a,linewidth(.3)); label(s,P,v);}
+pt("$X$",X,dir(100),blu); pt("$Y$",Y,-dir(20),blu); pt("$Z$",Z,dir(-20),blu);
+pt("$A$",A,-dir(90),blu); pt("$B$",B,dir(0),blu); pt("$C$",C,dir(90),blu);
+pt("$O$",O,dir(100),blu); pt("$H_b$",Hb,-dir(30),purple); pt("$H_c$",Hc,dir(-20),purple);
+pt("$Q_a$",Qa,dir(120),magenta); pt("$X_{ab}$",Xab,-dir(50),purple); pt("$X_{ac}$",Xac,dir(-50),purple);
+pt("$X_{bc}$",Xbc,dir(0),purple); pt("$X_{cb}$",Xcb,-dir(0),purple);
+\end{asy}
+\end{center}
+\claim[Claim 2]{$Q_a$ lies on $\omega_a$.}
+\begin{proof} By spiral similarity, it suffices to prove
+$YX_{bc}/YC=ZX_{cb}/ZB$. By antiparallel lines, $\triangle XYZ\overset-\sim
+\triangle X_{ab}YX_{cb},X_{ac}X_{bc}Z$. But since $\Gamma$ is the $Y$-excircle
+of $\triangle X_{ab}YX_{cb}$, we have $YX_{cb}/YC=a/s$. Similarly
+$ZX_{bc}/ZB=a/s$ as well.\\[3pt]
+(In some awful notation, $a=YZ,b=ZX,c=XY$ and $s=\frac{a+b+c}2$.)\end{proof}
+Let $L=\ol{YQ_b}\cap\ol{ZQ_c}$.
+\claim[Claim 3]{$\ol{XL}$ is the radical axis of $\omega_b,\omega_c$.}
+\begin{proof}By antiparallel lines again, $YZX_{ba}X_{ca}$ cyclic, so that
+\[\Pow(X,\omega_b)=XX_{ca}\cdot XY=XX_{ba}\cdot XZ=\Pow(X,\omega_c)\text{, while}\]
+\[\Pow(L,\omega_b)=LY\cdot LQ_b=LZ\cdot LQ_c=\Pow(L,\omega_c).\qedhere\] \end{proof}
+It remains to prove $X,D,L$ collinear.
+\begin{center}
+\begin{asy}
+//20USEMO3-3
+//setup;
+size(9cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair X,Y,Z,O,A,B,C; X=(2,10); Y=(0,0); Z=(14,0); O=incenter(X,Y,Z); A=foot(O,Y,Z); B=foot(O,Z,X); C=foot(O,X,Y);
+pair D,E,F,Qa,Qb,Qc; D=foot(A,B,C); E=foot(B,C,A); F=foot(C,A,B); Qa=foot(X,O,D); Qb=foot(Y,O,E); Qc=foot(Z,O,F);
+pair L,K; K=extension(B,C,E,F); L=extension(Y,Qb,Z,Qc);
+
+//draw
+filldraw(X--Y--Z--cycle,blu1,blu); filldraw(A--B--C--cycle,blu2,blu); draw(circumcircle(X,Y,Z),blu); draw(incircle(X,Y,Z),blu);
+draw(C--K--2.2*F-1.2*K,blu); draw(circumcircle(O,B,C),purple); draw(X--K^^Qb--L--Z,magenta);
+draw(Qb--O--Qc^^Qa--O,purple+dashdotted); draw(X--L,red);
+//label
+void pt(string s,pair P,pair v,pen a){filldraw(circle(P,.13),a,linewidth(.3)); label(s,P,v);}
+pt("$X$",X,dir(100),blu); pt("$Y$",Y,-dir(20),blu); pt("$Z$",Z,dir(-40),blu);
+pt("$A$",A,dir(-10),blu); pt("$B$",B,dir(50),blu); pt("$C$",C,dir(160),blu);
+pt("$D$",D,dir(60),blu); pt("$E$",E,dir(-90),blu); pt("$F$",F,dir(-40),blu);
+pt("$Q_a$",Qa,dir(170),purple); pt("$Q_b$",Qb,-dir(20),purple); pt("$Q_c$",Qc,dir(-60),purple);
+pt("$O$",O,dir(80),purple); pt("$K$",K,-dir(90),magenta); pt("$L$",L,-dir(90),magenta);
+\end{asy}
+\end{center}
+\claim[Claim 4]{$L$ is the pole of $\ol{EF}$ wrt $\Gamma$.}
+\begin{proof} Since $Q_a$ is the inverse of $D$ wrt $\Gamma$ and $\angle
+OQ_aX=90^\circ$, $\ol{XQ_a}$ is the polar of $D$ wrt $\Gamma$. Similarly,
+$\ol{YQ_b},\ol{ZQ_c}$ are the respective polars of $E,F$ wrt $\Gamma$. The claim
+is then established by la Hire.\end{proof} 
+\claim[Claim 5]{$\ol{BC},\ol{EF},\ol{XQ_a}$ concurrent.}
+\begin{proof} Let $K=\ol{EF}\cap\ol{BC}$ so that $(KD;BC)=-1$. Because $\ol{Q_aO}$ bisects $\angle BQ_aC$, $\angle KQ_aO=90^\circ=\angle AQ_aO\Rightarrow X,Q_a,K$ collinear.\end{proof}
+Taking poles wrt $\Gamma$ in the last claim gives the desired collinearity.
+\begin{remark}The problem can be bary'd wrt $\triangle XYZ$ after the first claim, but it's monstrous from my experience a long time ago, oops\end{remark}
+
+
+\end{document}

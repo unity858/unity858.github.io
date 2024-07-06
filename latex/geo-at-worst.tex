@@ -1,0 +1,380 @@
+\documentclass{seto}
+\usepackage{soul}
+\title{Geometry At Its Worst}
+\author{Nyan}
+\date{2022-4}
+\DeclareMathOperator\Pow{Pow}
+\begin{document}
+\maketitle
+Eric Shen's `Geometry At Its Best' compilation shows the best geo solutions he's seen. 
+Well, instead of emulating him, why not go in the opposite direction? That is, problems which are 
+just purely beyond reasonability\dots \st{Also this definitely doesn't show off the power of Geogebra.}
+\begin{remark}[Disclaimer]
+    `Worst' only means ridiculously hard, as I actually enjoyed solving these problems.
+\end{remark}
+\toc
+\setcounter{section}{-1}
+\section{Problems}
+\exercise[USA TST 2021/2] Points $A$, $V_1$, $V_2$, $B$, $U_2$, $U_1$ lie fixed
+on a circle $\Gamma$, in that order, and such that $BU_2 > AU_1 > BV_2 > AV_1$.
+Let $X$ be a variable point on the arc $V_1 V_2$ of $\Gamma$ not containing $A$
+or $B$. Line $XA$ meets line $U_1 V_1$ at $C$, while line $XB$ meets line $U_2
+V_2$ at $D$.\\[4pt] 
+Prove there exists a fixed point $K$, independent of $X$, such that the power of
+$K$ to the circumcircle of $\triangle XCD$ is constant.
+\exercise[DIMO 2022/6] In triangle $\triangle ABC$, $M$ is the midpoint of arc
+$BAC$, $I$ is the incenter and $I_a$ is the $A$-excenter. 
+Let $E=\ol{BI}\cap\ol{AC}$, $F=\ol{CI}\cap\ol{AB}$, $P=\ol{MI}\cap(ABC)$, and $S=(AEF)\cap(ABC)$ $(\neq A)$. 
+If $X,Y$ are the reflections of $I$ across $\ol{I_aE},\ol{I_aF}$ respectively, prove that $(BYF), (CXE), (PXY)$ and $\ol{PS}$ are concurrent. 
+\exercise[Brazil Revenge 2021/3] Let $I, C, \omega$ and $\Omega$
+be the incenter, circumcenter, incircle and circumcircle, respectively, of the
+scalene triangle  $XYZ$ with $XZ > YZ > XY$. The incircle $\omega$ is tangent to
+the sides $YZ, XZ$ and $XY$ at the points $D, E$ and $F$. Let $S$ be the point
+on $\Omega$ such that $XS, CI$ and $YZ$ are concurrent. Let $(XEF) \cap \Omega =
+R$, $(RSD) \cap (XEF) = U$, $SU \cap CI = N$, $EF \cap YZ = A$, $EF \cap CI = T$
+and $XU \cap YZ = O$.\\[4pt]
+Prove that $NARUTO$ is cyclic.
+
+\newpage
+\section{Solutions}
+\subsection{USA TST 2021/2, by Andrew Gu \& Frank Han} \pretocmd\subsection\newpage{}{}
+\solnoteprob{Points $A$, $V_1$, $V_2$, $B$, $U_2$, $U_1$ lie fixed on a circle
+$\Gamma$, in that order, and such that $BU_2 > AU_1 > BV_2 > AV_1$. Let $X$ be a
+variable point on the arc $V_1 V_2$ of $\Gamma$ not containing $A$ or $B$. Line
+$XA$ meets line $U_1 V_1$ at $C$, while line $XB$ meets line $U_2 V_2$ at
+$D$.\\[4pt] 
+Prove there exists a fixed point $K$, independent of $X$, such that the power of $K$ to the circumcircle of $\triangle XCD$ is constant.} 
+\begin{center}
+\begin{asy}
+//21TST2
+//setup
+size(8cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair A,B,U1,V1,U2,V2; A=dir(90); B=dir(288); U1=dir(316); V1=dir(116); U2=dir(2); V2=dir(199);
+// reflection of P in perp bisector of AB
+pair flip(pair P, pair A, pair B){return 2*foot(P,(A+B)/2,circumcenter(P,A,B)) -P; } pair X,X1,X2,B1,Z; X=dir(170); X1=flip(A,U1,V1); X2=flip(B,U2,V2); B1=flip(B,A,X2); Z=flip(X,U1,V1);
+pair C,D,E,Y,K; C=extension(X,A,U1,V1); D=extension(X,B,U2,V2); E=extension(U2,V2,A,X2); Y=extension(X,B,A,X2); K=extension(A,X2,B,X1);
+//draw
+filldraw(circle((0,0),1),blu1, blu); draw(U1--V1^^U2--V2,blu);
+draw(A--X1^^B--X2^^B--B1^^X--Z,blu+dotted); draw(X--X1^^A--Z,purple+dashed); draw(A--K--X1,magenta); draw(B--X--A,purple);
+draw(circumcircle(X,C,D),red); draw(circumcircle(A,X,D),magenta);
+//label
+void pt(string s,pair P,pair v, pen a){filldraw(circle(P,.014),a,linewidth(.3)); label(s,P,v);} 
+pt("$A$",A,dir(80),blu); pt("$U_1$",U1,dir(-50),blu); pt("$V_1$",V1,dir(140),blu); pt("$B$",B,dir(-50),blu); pt("$U_2$",U2,dir(10),blu); pt("$V_2$",V2,-dir(20),blu); 
+pt("$X$",X,-dir(10),purple); pt("$X_1$",X1,dir(-20),blu); pt("$X_2$",X2,dir(50),blu); pt("$B'$",B1,dir(60),blu); pt("$Z$",Z,-dir(60),blu);
+pt("$C$",C,dir(-10),purple); pt("$D$",D,-dir(80),purple);
+pt("$E$",E,dir(-50),magenta); pt("$Y$",Y,dir(30),magenta); pt("$K$",K,-dir(30),magenta); label("$\Gamma$",(.9,.74),blu);
+\end{asy}
+\end{center}
+Clearly, the problem statement should hold for any $X\in\Gamma$; here, all lengths are directed.\\ 
+Let $X_1,X_2$ be the respective reflections of $A,B$ in the perpendicular
+bisectors of $\ol{U_1V_1},\ol{U_2V_2}$. We assert that
+$K=\ol{AX_2}\cap\ol{BX_1}$ fits the bill. For brevity, let `$\leftrightarrow$'
+denote `is a constant multiple of', so `$x\leftrightarrow 1$' is a shorthand for
+`$x$ is constant'. \\[4pt] 
+By Reim, $E=\ol{BX}\cap\ol{AX_2}$ lies on $(ADX)$, so $\Pow(K,(ADX))=KE\cdot
+KA\leftrightarrow 1$. Now, in the spirit of linpop, let
+$f(P)=\Pow(P,(ADX))-\Pow(P,(XCD))$, so that because $f(Y)=0$, we have 
+\[f(K)=-\frac{KY}{YA}f(A)=AC\cdot AX\frac{KY}{AY}.\] 
+The rest is a wild length
+chase; let $B',Z$ be the respective reflections of $B,X$ in the perpendicular
+bisector of $\ol{U_1V_1}$, so that $XX_1=AZ$ and $\ol{AZ},\ol{ACX}$ isogonal wrt
+$\angle U_1AV_1$. Then, observing that all lengths not involving $X,C,D,Y$ are
+fixed, \[\frac{KY}{AY}=(KA;Y\infty_{AK})\overset B=(X_1A;XB') \leftrightarrow
+\frac{X_1X}{AX}=\frac{AZ}{AX};\] 
+\[\Rightarrow f(K)\leftrightarrow AC\cdot AZ=AU_1\cdot AV_1\leftrightarrow 1,\]
+where the last equality follows because $Z,C$ swapped by inversion at $A$ with power $AU_1\cdot AV_1$ composed with reflection in the angle bisector of $\angle U_1AV_1$, so we win.
+\begin{remark} How on earth would someone find $K$? 
+I considered the degenerate cases when $(XCD)$ is a straight line (which occur when $X=X_1,X_2$, hence their names). \end{remark}
+
+\subsection{DIMO 2022/6}
+\solnoteprob{In triangle $\triangle ABC$, $M$ is the midpoint of arc
+$BAC$, $I$ is the incenter and $I_a$ is the $A$-excenter. 
+Let $E=\ol{BI}\cap\ol{AC}$, $F=\ol{CI}\cap\ol{AB}$, $P=\ol{MI}\cap(ABC)$, and $S=(AEF)\cap(ABC)$ $(\neq A)$. 
+If $X,Y$ are the reflections of $I$ across $\ol{I_aE},\ol{I_aF}$ respectively, 
+prove that $(BYF), (CXE), (PXY)$ and $\ol{PS}$ are concurrent. }
+Solved with \emph{v4913}.
+\begin{center}
+\begin{asy}
+//dimo6 base
+//setup
+size(8cm); defaultpen(fontsize(10pt)); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0);
+blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+int i=0;
+pair A,B,C,I,Ma,Mb,Mc,A1,B1,C1,Ia,Ib,Ic,M; A=(3,12); B=(0,0); C=(14,0); I=incenter(A,B,C); Ma=circumcenter(B,I,C); Mb=circumcenter(C,I,A); Mc=circumcenter(A,I,B); 
+A1=2*A-I; B1=2*B-I; C1=2*C-I; Ia=2*Ma-I; Ib=2*Mb-I; Ic=2*Mc-I; M=(Ib+Ic)/2;
+pair E,F,X,Y,P,S; E=extension(B,I,A,C); F=extension(C,I,A,B); X=2*foot(I,Ia,E)-I; Y=2*foot(I,Ia,F)-I; P=foot(Ma,I,M); S=intersectionpoints(circumcircle(A,B,C),circumcircle(A,E,F))[1];
+
+//draw
+filldraw(Ia--Ib--Ic--cycle,blu1,blu); filldraw(A--B--C--cycle,blu2,blu+dotted); draw(Ic--Mb,blu+dashdotted);
+draw(A1--Ia^^B1--Ib^^C1--Ic,blu+dashed); draw(circumcircle(A,B,C)^^circumcircle(A1,B1,C1),blu);
+draw(circumcircle(B1,I,C1),purple); draw(Ia--E^^M--P,purple); clip(box((-10,-12),(28,25)) );
+draw(circumcircle(B1,Ia,C),magenta); draw(I--X,magenta); draw(P--S,red); draw(circumcircle(A,E,F),red);
+
+//label
+void pt(string s,pair P,pair v, pen a){filldraw(circle(P,.2),a,linewidth(.3)); label(s,P,v);}
+string labels[]={"$A$","$B$","$C$","$I$","$M_a$","$M_b$","$M_c$","$A'$","$B'$","$C'$",
+"$I_a$","$I_b$","$I_c$","$M$",  "$E$","$F$","$X$","$Y$","$P$","$S$"}; 
+pair points[]={A,B,C,I,Ma,Mb,Mc,A1,B1,C1,Ia,Ib,Ic,M,  E,F,X,Y,P,S}; //20
+real dirs[]={ 80,-90,-70,-70,-110,90,100,110,-90,-70,-90,60,170,130, 20,-140,70,100,-110,120};
+pen colors[]={blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,magenta, magenta, red, red};
+for (i=0; i<20; ++i) pt(labels[i],points[i],dir(dirs[i]),colors[i]);
+\end{asy}
+\end{center}
+Let $I_a$, etc. and $M_a$, etc. be the excenters and minor arc midpoints, respectively, and $A'$, etc. $\in (I_aI_bI_c)$ be the reflections of $I$ in $A$, etc. Observe that $I_aI=I_aX=I_aY$.
+\claim[Claim 1]{$(BYF), (CXE)$ pass through $(I_a,C')$ and $(I_a,B')$ respectively.}
+\begin{proof} The cyclic quads involving $I_a$ are handled as follows:
+\[\dangle I_aYF=-\dangle I_aIF=\dangle CIA=\dangle I_aBF;\]
+Meanwhile, since the tangent to $(I_aI_bI_c)$ at $I_b$ is parallel to $\overline{AC}$, $B'I_aCE$ is cyclic by Reim, and similarly for its cyclic variant. 
+This establishes the concyclicities. \end{proof}
+\claim[Claim 2]{$I,X, 2I_c-I_b$ are collinear.}
+\begin{proof} By Brocard on $AICI_b$, $\overline{I_aE}\perp\overline{M_bI_c}$, while we obviously have $\overline{IX}\perp\overline{I_aE}$. 
+    Since $\overline{IX}$ is just $\overline{M_bI_c}$ scaled at $I_b$ by a factor of $2$, the result follows.\end{proof}
+\begin{center}
+\begin{asy}
+//dimo6 inverted
+//setup
+size(10cm); defaultpen(fontsize(10pt)); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0);
+blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+int i=0;
+pair A,B,C,I,A1,B1,C1,Ia,Ib,Ic,M; A=(2,12); B=(0,0); C=(14,0); I=incenter(A,B,C); A1=2*A-I; B1=2*B-I; C1=2*C-I; 
+Ia=circumcenter(B1,I,C1); Ib=circumcenter(A1,I,C1); Ic=circumcenter(B1,I,A1); M=(Ib+Ic)/2;
+pair E,F,X1,Y1,E1,F1,P1;  E=extension(B,I,A,C); F=extension(C,I,A,B); 
+X1=2*Ic-Ib; Y1=2*Ib-Ic; E1=4*B-2*Ib-I; F1=4*C-2*Ic-I; P1=4*M-3*I;
+pair J=2*foot(foot(Ia,M,I),M,2*circumcenter(A,B,C)-I)-foot(Ia,M,I); pair J1=3*J-2*M;
+
+//draw
+filldraw(Ia--Ib--Ic--cycle,blu1,blu); draw(circumcircle(Ia,Ib,Ic),blu); draw(Ia--A1^^Ib--E1^^Ic--F1,blu+dashed); 
+draw(I--P1,purple); draw(A1--J1^^X1--Y1,blu);
+draw(circumcircle(A1,X1,Ib),magenta); draw(circumcircle(A1,Y1,Ic),magenta);
+draw(circumcircle(P1,X1,Y1),red); 
+draw(circumcircle(E1,2*Ia-I,F1),purple+dashed); draw(circumcircle(P1,I,J1),purple+dashed); 
+draw(circumcircle(2*Ic-I,2*Ib-I,P1),blu+dashdotted);
+clip(box((-60,-100),(85,60)) );
+
+//label
+void pt(string s,pair P,pair v, pen a){filldraw(circle(P,.7),a,linewidth(.3)); label(s,P,v);}
+string labels[]={"$A$","$B$","$C$","$I$","$A'$","$B'$","$C'$",
+"$I_a$","$I_b$","$I_c$","$M$",  "$E$","$F$","$X'$","$Y'$","$E'$","$F'$","$P'$","$J$","",""}; 
+pair points[]={A,B,C,I,A1,B1,C1,Ia,Ib,Ic,M,  E,F,X1,Y1,E1,F1,P1,J,J1,2*Ia-I}; //20
+real dirs[]={ 140,-100,-70,-80,110,-90,-100,-90,80,140,130, 10,150,130,30,-170,-10,90,20,0,0};
+pen colors[]={blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,blu, blu,blu,purple,purple,purple, purple, purple, purple, magenta,blu};
+for (i=0; i<21; ++i) pt(labels[i],points[i],dir(dirs[i]),colors[i]);
+\end{asy}
+\end{center}
+Next, we invert about $I$ preserving $(I_aI_bI_c)$. Denote image/preimage by $^*$.
+\begin{itemize}
+\item The circle at $I_a$ through $I$, on which $X,Y$ lie, gets mapped to $\overline{I_bI_c}$; hence $X^*=2I_c-I_b$.
+\item $2P-I$ is an orthocenter Miquel point of triangle $I_aI_bI_c$, so $P*=4M-3I$.
+\item $E,F$ get mapped to the images of $2B-I_b,2C-I_c$ when scaled at $I$ by a factor of $2$. (well-known)
+\item $A*=2I_a-I$ and $I_a^*=A'$;
+\end{itemize}
+This is enough to finish off part of the concurrency: $(P^*X^*Y^*)$ is $(I_aI_bI_c)$ scaled at $M$ by a factor of $3$. 
+If $J=\overline{A'M}\cap(I_aI_bI_c)$, then by power of a point at $M$, the first 3 circles all meet at $3J-2M$.\\[4pt]
+Next, to deal with the rest of the problem, we take a homothety at $I$ with scale factor $1/2$ and refactor:
+\begin{block}[Second half refactored]
+In triangle $ABC$ with orthocenter $H$, $D$, $E$, $F$ are the feet of the altitudes, and $M$ is the midpoint of $\overline{BC}$. 
+Let $A'$ be antipode of $A$ on $(ABC)$, and define $U=2E-B, V=2F-C$. 
+Define $J$ as the reflection of the $A$-orthocenter Miquel point in the perpendicular bisector of $\overline{BC}$ and 
+\[J'=\frac{H+3J-2M}2=\frac{3J-A'}2.\]
+Prove that $(AUV)$, $(ABC)$, $(A'J'H)$ are concurrent.
+\end{block}
+\begin{center}
+\begin{asy}
+//dimo6, part 2
+//setup
+size(13cm); defaultpen(fontsize(10pt)); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0);
+blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+int i=0;
+pair A,B,C,H,D,E,F,M,A1; A=(3,13); B=(0,0); C=(14,0); H=orthocenter(A,B,C); D=foot(A,B,C); E=foot(B,C,A); F=foot(C,A,B); M=(B+C)/2; A1=B+C-H; 
+pair Q,K,J,L,Z,U,V,Y,X,J1; Q=foot(H,A,M); K=foot(A,H,M); J=2*foot(K,M,(A+A1)/2)-K; L=extension(E,F,B,C); Z=extension(A,J,E,F); 
+U=2*E-B; V=2*F-C; Y=extension(E,F,U,V); X=foot(A1,A,Y); J1=1.5*J-.5*A1;
+//draw
+fill(A--B--C--cycle,blu1);  filldraw(X--J--J1--cycle,RGB(255,230,255),magenta);
+fill(X--K--H--cycle,RGB(255,230,255)); 
+fill(extension(A,B,X,K)--extension(A,B,H,K)--H--extension(X,H,A,C)--extension(X,K,A,C)--cycle,lightpurple);
+draw(X--K--H--cycle,magenta); draw(A--B--C--cycle,blu);
+draw(L--B--U^^C--V,blu); draw(A1--H^^A--J,blu+dashdotted); 
+draw(circumcircle(A,B,C),blu); draw(A--L,blu+dotted);
+draw(circumcircle(B,H,C),blu); draw(circumcircle(A,U,V),red); draw(circumcircle(U,H,V),purple);
+draw(A1--J,purple); draw(circumcircle(A1,H,J1),magenta);
+clip(box((-14,-5),(22,16)) );
+draw(L--Y,blu); draw(A--Y,red); draw(V--Y,magenta+dashed);
+
+//label
+void pt(string s,pair P,pair v, pen a){filldraw(circle(P,.15),a,linewidth(.3)); label(s,P,v);}
+string labels[]={"$A$","$B$","$C$","$H$","$D$","$E$","$F$","$M$","$A'$","$Q$","$K$","$J$","$L$","$Z$","$U$","$V$","$Y$","$X$","$J'$"}; 
+pair points[]={A,B,C,H,D,E,F,M,A1,Q,K,J, L,Z,  U,V,Y,X,J1}; //19
+real dirs[]={ 120,-120,0,-80,-90,90,140,-90,-80, 50,180,10,-90,-90,-70,90,0,90,40};
+pen colors[]={blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,blu,  purple,purple, magenta, red,magenta};
+for (i=0; i<19; ++i) pt(labels[i],points[i],dir(dirs[i]),colors[i]);
+\end{asy}
+\end{center}
+$U,V$ are just the reflections of $B,C$ over their respective opposite sides. We add in the $X=(AUV)\cap(ABC)$, and $K$ as the $A$-orthocenter Miquel point. 
+Since $(A',H,K)$ and $(A',J,J')$ are collinear, $A'J'HX$ being cyclic is equivalent to showing that a spiral similarity at $X$ takes $KH$ to $JJ'$, or $\frac{XK}{XJ} = \frac{KH}{JJ'}$.
+Let $r$ be the reflection in the angle bisector of $\angle BAC$ composed with a dilation, sending $A'\to H$, so that $KH/JJ'=2KH/AJ=2AH/AA'$.
+\claim[Claim 3]{$AX, UV, EF$ are concurrent.}
+\begin{proof} Let $Q$ be the $A$-Humpty point. Consider the spiral similarity $s$ at $Q$ mapping $(B,E)\to (C,F)$ and thus $U\to V$ as well.  
+As a result, $Q$ is also the Miquel point of $BCVU$, and thus lies on $(HUV)$. 
+It suffices to prove that $\overline{EF}$ is the radical axis of $(ABC), (UVHQ)$, since the claim will then follow from radical axis theorem on $(ABC), (AXUV), (UVHQ)$. 
+Indeed, this is obvious- $AE\cdot CE=HE\cdot UE$ and similarly for $F$.\end{proof}
+At this point, we add in a few intersections: $L=\overline{AK}\cap\overline{EF}\cap\overline{BC}$, $Z=\overline{AJ}\cap\overline{EF}=r(L)$, and $Y$ as the concurrency point from claim 3.
+\claim[Claim 4]{$Z$ is the midpoint of $\overline{LY}$.}
+\begin{proof} Instead we'll show $U,V,2Z-L$ are collinear, which is again by spiral similarity:\begin{itemize}
+\item Let $s'$ be the spiral similarity at $Q$ sending $B,C\to E,F$; then $BL/CL\overset r=EZ/FZ$, so $s'$ also sends $L$ to $Z$.
+\item Another one sends $B,C,L\to E,F,Z\to U,V,2Z-L$, so the last three are indeed collinear.\qedhere
+\end{itemize}\end{proof}
+Finally,
+\[\frac12=(\infty_{EF}Y;LZ)\overset A=(AX;KJ)\text{, so that }\frac{XK}{XJ}=\frac{2AK}{AJ}\overset r=\frac{2AH}{AA'},\]
+and we're done!
+
+
+\subsection{Brazil Revenge 2021/3, by Joao P.R. Viana Costa} 
+\solnoteprob{Let $I, C, \omega$ and $\Omega$ be the incenter, circumcenter,
+incircle and circumcircle, respectively, of the scalene triangle  $XYZ$ with $XZ
+> YZ > XY$. The incircle $\omega$ is tangent to the sides $YZ, XZ$ and $XY$ at
+the points $D, E$ and $F$. Let $S$ be the point on $\Omega$ such that $XS, CI$
+and $YZ$ are concurrent. Let $(XEF) \cap \Omega = R$, $(RSD) \cap (XEF) = U$,
+$SU \cap CI = N$, $EF \cap YZ = A$, $EF \cap CI = T$ and $XU \cap YZ =
+O$.\\[4pt]
+Prove that $NARUTO$ is cyclic.}
+Colloquially known as ``Naruto''.
+\begin{center}
+\begin{asy}
+//naruto main
+//main
+//setup;
+size(13cm); defaultpen(fontsize(10pt)); /*labelscalesize(.8);*/
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair A,B,C,O,I,D,E,F,Q; A=(1.25,12.5); B=(0,0); C=(14,0); O=circumcenter(A,B,C); I=incenter(A,B,C); D=foot(I,B,C); E=foot(I,C,A); F=foot(I,A,B); Q=foot(A,I,2*O-A); 
+pair reflect(pair P,pair A,pair B){return 2*foot(P,A,B)-P;}
+pair M,N,Ia,Ia1,G,D1,I1; M=circumcenter(B,I,C); N=2*O-M; Ia=2*M-I; Ia1=reflect(Ia,O,(B+C)/2); G=B+C-Ia; D1=reflect(D,E,F); I1=2*D-I;
+pair R,S,T,U,V,X; R=foot(I,A,G); S=extension(I1,M,O,I); T=extension(E,F,B,C); U=extension(E,F,O,I); V=extension(A,G,B,C); X=extension(A,D1,G,N); 
+pair K=extension(O,I,B,C);
+//draw
+filldraw(A--B--C--cycle,blu1,blu); filldraw(D--E--F--cycle,blu2,blu);
+filldraw(Ia1--B--C--cycle,lightpurple,purple); draw(incircle(A,B,C),blu); draw(B--G--C,purple+dotted);
+draw(U--T--V,blu); draw(circumcircle(A,E,F),blu); draw(circumcircle(A,B,C),blu); 
+draw(N--X^^A--V--S,purple); draw(circumcircle(B,I,C),purple+dotted); draw(K--D1--U--S--R^^A--D1,magenta); draw(circumcircle(Q,T,U),red);
+draw(Ia1--G,purple+dashdotted); draw(circumcircle(Q,R,D),red);
+clip(box((-15,15),(27,-12)) );
+//label
+void pt(string s,pair P,pair v, pen a) {filldraw(circle(P,0.13),a,linewidth(.3)); label(s,P,v);}
+pt("$A$",A,dir(110),blu); pt("$B$",B,-dir(60),blu); pt("$C$",C,dir(50),blu); pt("$D$",D,dir(-50),blu); pt("$E$",E,dir(150),blu); pt("$F$",F,dir(-30),blu); pt("$O$",O,dir(-80),blu); pt("$I$",I,dir(130),blu);
+pt("$I_a'$",Ia1,-dir(80),purple); pt("$G$",G,dir(100),purple); pt("$R$",R,dir(70),purple); pt("$S$",S,dir(170),magenta); pt("$T$",T,dir(130),blu); pt("$D'$",D1,dir(160)/2,magenta); pt("$Q$",Q,dir(150),blu);
+pt("$U$",U,dir(90),red); pt("$V$",V,dir(30),purple); pt("$X$",X,-dir(20),red);
+pt("$M$",M,dir(-90),purple); pt("$I'$",I1,dir(-80),purple);
+pt("$K$",extension(A,D1,B,C),-dir(60),magenta); pt("$N$",N,dir(90),purple);
+label("$\Omega$",(12.96,14.05),blu); label("$\omega$",(8.9,1.88),blu);
+\end{asy}
+\end{center}
+Solved with \emph{CyclicISLscelesTrapezoid} and help from \emph{Eyed}, \emph{v4913}. 
+We do a massive refactoring and simplification; consider the following equivalent problem, a breakdown of the given, despite being longer: 
+\begin{block}[Naruto simplified] 
+In triangle $ABC$ with circumcircle $\Omega$ centered at $O$, the incircle
+$\omega$ centered at $I$ touches the sides at $D,E,F$. Let $I',I_a'$ be the
+respective reflections of $I$ and the orthocenter of $\triangle BIC$ in
+$\ol{BC}$, and $M$ the midpoint of arc $BC$ on $\Omega$. Further define: 
+\begin{itemize} 
+\item $S$ as the intersection of the Euler lines $\ol{OI}$ of $\triangle DEF$, $\ol{MI'}$ of $\triangle I_a'BC$; 
+\item $T=\ol{EF}\cap\ol{BC}, U=\ol{EF}\cap\ol{OI}, V=\ol{MI'}\cap\ol{BC},R=\ol{AV}\cap (AI)$; \item $K=\ol{OI}\cap\ol{BC}$; 
+\end{itemize}
+Prove that (a) $Q,R,S,T,U,V$ are concyclic, and (b) $\ol{AK},\Omega,(QRD), \ol{RS}$ concurrent; 
+\end{block} 
+\emph{(a) The concyclicity} Let the spiral similarity $s$ at $Q$ with (directed)
+angle $\theta$ map $E,F\to C,B$ and thus $D,I$ and the orthocenter of $\triangle
+DEF$ to $I',M,I_a'$ respectively. Clearly, $S$ is the intersection of the Euler
+lines of two triangles related by $s$: $DEF,I_a'CB$.\\ 
+By design, we have $U\overset s\to V$, so 
+\[\dangle VQU=\theta=\dangle(\ol{BC},\ol{EF})\overset s=\dangle(\ol{MI'},\ol{OI})=\dangle VSU,\] 
+whence $Q,S,T,U,V$ concyclic. To see that the last point is also concyclic with
+the other five, let $N$ be the midpoint of $\widehat{BAC}$, so that $\ol{NA}$
+touches $(AI)$. Indeed, then \[\dangle QRV=\dangle QRA=\dangle QAN\overset
+s=\dangle QUV\] 
+as needed. 
+\begin{remark}In fact, by design, $S$ is the exsimilicenter of the incircle and
+the circle at $O$ with radius half that of $\Omega$, so it's actually the
+inverse of $I$ wrt $\Omega$.\end{remark} 
+\emph{(b) The concurrence} Let $D'$ be the reflection of $D$ in $\ol{EF}$, and $G$ the orthocenter of $\triangle BIC$,
+so that $D'\overset s\to G$. We easily have $DD'GQ$ cyclic. As
+$\dangle(\ol{AD'},\ol{NG})=\theta$, the point $X=\ol{AD'}\cap\ol{NG}$ lies on
+both $(DD'GQ), \Omega$. We require the following result(s): 
+\begin{thm}[Theorem: weird concurrences] In a scalene triangle $ABC$ with circumcenter $O$, circumcircle $\Omega$, and orthocenter $H$. 
+\begin{enumerate}[label=(\alph*)] 
+\item let $K$ be the polar of $\ol{BC}$ wrt $\Omega$, and $A'$ be the reflection
+of $A$ in $\ol{BC}$. Then $\ol{OH},\ol{A'K}$ and the tangent to $\Omega$ at $A$
+are concurrent. 
+\item Let $E$ be the reflection of the point $E_0$ (such that $A$ is the
+incenter or excenter of $\triangle E_0BC$) in the perpendi-cular bisector of
+$\ol{BC}$. Then $\ol{OH},\ol{BC},\ol{EA'}$ are also concurrent. 
+\end{enumerate}
+\end{thm} 
+(parentheses used above for easier grammatical parsing) 
+\begin{center}
+\begin{asy}
+//thm(a)
+//setup;
+size(9cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair A,B,C,O,H,A1,Ha; A=(3.71,9.95); B=(0,0); C=(14,0); O=circumcenter(A,B,C); H=orthocenter(A,B,C);
+A1=2*foot(A,B,C)-A; Ha=orthocenter(A1,B,C);
+pair K,J,X; K=2*circumcenter(O,B,C)-O; J=extension(O,(B+C)/2,A,A+rotate(90)*(A-O)); X=extension(O,H,K,A1);
+pair reflect(pair P,pair A,pair B){return 2*foot(P,A,B)-P;}
+pair E0,E,L; E0=extension(B,reflect(C,A,B),C,reflect(B,A,C)); E=reflect(E0,O,K); L=extension(O,H,B,C);
+//draw
+filldraw(A--B--C--cycle,blu1,blu); draw(circumcircle(A,B,C),blu); draw(A--A1^^J--K^^1.4*B-.4*C--L,blu); 
+draw(J--X--K,purple); draw(L--X,magenta); draw(B--K--C--A1--B,blu+dashdotted); draw(B--E--C,purple+dotted);
+draw(E--L,red);
+//label
+label("$A$",A,dir(120)); label("$B$",B,dir(60)); label("$C$",C,dir(-30)); label("$O$",O,dir(50)); label("$H$",H,dir(50)); label("$A'$",A1,-dir(70)); label("$H_a$",Ha,dir(50)); 
+label("$K$",K,dir(0)); label("$J$",J,dir(90)); label("$E$",E,-dir(90));
+\end{asy}
+\end{center}
+\begin{proof} These two parts actually aren't connected at all\dots\\[4pt]
+\emph{Part (a), by CyclicISLscelesTrapezoid} Let $J$ be the intersection of the
+tangent to $\Omega$ at $A$ with the perpendicular bisector of $\ol{BC}$, and
+$H_a\in\Omega$ be the reflection of $H$ in $\ol{BC}$. We contend that the
+triples $(A,H,A'),(J,O,K)$ are homothetic. Indeed, they lie on parallel lines.
+To finish, check that (if $R$ denotes the radius of $\Omega$) 
+\[JO=\frac R{\cos(B-C)},OK=\frac R{\cos A}, AH=2R\cos A,HA'=AH_a=2R\cos(B-C)\Rightarrow \frac{JO}{OK}=\frac{AH}{HA'}.\] 
+\begin{center}
+\begin{asy}
+//thm(b)
+//setup
+size(8cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair A,B,C,H,O,M,D; A=(4,9.4); B=(0,0); C=(14,0); H=orthocenter(A,B,C); O=circumcenter(A,B,C); M=(B+C)/2; D=extension(A,H,B,C);
+pair A2,Oa,X,L,F; A2=B+C-A; Oa=B+C-O; X=extension(H,A2,B,C); L=extension(O,H,B,C); F=extension(A,L,H,A2);
+//draw
+filldraw(A--B--C--cycle,blu1,blu); draw(D--A--A2,blu); draw(O--Oa,blu+dashdotted); draw(H--L--F,magenta); draw(B--F--C^^F--A2,purple);
+//label
+void pt(string s,pair P,pair v, pen a) {filldraw(circle(P,0.11),a,linewidth(.3)); label(s,P,v);} 
+pt("$A$",A,-dir(20),blu); pt("$B$",B,-dir(30),blu); pt("$C$",C,dir(-30),blu); pt("$H$",H,-dir(20),blu); pt("$O$",O,dir(60),blu); 
+pt("$M$",M,dir(30),blu); pt("$D$",D,-dir(80),blu); pt("$A_2$",A2,dir(0),blu); pt("$O_a$",Oa,-dir(40),blu); pt("$X$",X,-dir(60),purple); 
+pt("$L$",L,dir(-90),magenta); pt("$F$",F,dir(90),purple); 
+\end{asy}
+\end{center}
+\emph{Part (b), by crazyeyemoody907} Let $F=B+C-E_0$, and $A_2=B+C-A$, so that $A_2$ is an incenter or excenter of $\triangle FBC$. 
+Since $H$ is the antipode of $A_2$ on $(BA_2C)$, it is another incenter / excenter. 
+To prove that $A,L,F$ collinear where $X=\ol{FHA_2}\cap\ol{BC}, L=\ol{OH}\cap\ol{BC}$, 
+verify that (where $O_a\in\ol{H_aA_2}$ is the reflection of $O$ in $\ol{BC}$) \[(\ol{AF}\cap\ol{BC},X; D,M)\overset A=(FX;HA_2)=-1\text{ while } 
+(DM;XL)\overset H=(\infty_{\perp BC}M; O_aO)=-1.\qedhere\] 
+\end{proof} 
+Returning to the problem, applying respective parts of the theorem to $\triangle
+DEF,I_a'BC$, we obtain $(A,D',K)$ and $(A,G,V)$ collinear. Since
+$R\in(UVQ),\ol{GV}$, and $Q$ is the Miquel point of $D'GVU$, we must have
+$R=\ol{D'U}\cap\ol{GV}$-- an intersection of opposite sides. Hence, by
+definition of Miquel point, $R\in(QD'G)$.\\[4pt] It remains to prove that
+$R,X,S$ collinear. In fact, there is a spiral similarity at $Q$ mapping $D',X\to
+U,S$ since $Q\in(URS),(D'XR)$, so we're done!
+\end{document}
