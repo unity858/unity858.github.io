@@ -1,0 +1,90 @@
+\documentclass{seto}
+\title{Dummy file}
+\author{n}
+\date\today
+\begin{document}
+\section{24usemo3}
+\solnoteprob{
+Let $ABC$ be a triangle with incenter $I$. Two distinct points $P$ and $Q$ are chosen on the circumcircle of $ABC$ such that
+\[ \angle API = \angle AQI = 45^\circ. \]Lines $PQ$ and $BC$ meet at $S$. Let $H$ denote the foot of the altitude from $A$ to $BC$. Prove that $\angle AHI = \angle ISH$.
+}
+\begin{center}
+\begin{asy}
+//24usemo3
+//setup;
+size(10cm); defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair A,B,C,I,O; A=dir(105); B=dir(233); C=dir(-53); 
+I=incenter(A,B,C); O=(0,0);
+pair P1,P2,P11,P21; P1=rotate(90)*A; P2=rotate(-90)*A; 
+P11=foot(P2,P1,I); P21=foot(P1,P2,I); 
+pair A1,D,M,K,U,V,X,S; A1=-A; D=foot(I,B,C); M=circumcenter(B,I,C);
+K=foot(A,I,A1); U=2*circumcenter(O,K,M); V=2*circumcenter(O,P11,P21);
+X=extension(O,I,D,M); S=extension(P11,P21,B,C);
+pair H=foot(A,B,C);
+//draw
+draw(circle(O,1),blu); draw(A1--K,blu+dashed);
+draw(A--A1^^P1--P2^^S--C^^V--K--U--M,blu);
+draw(D--I^^O--M,blu+dotted); /*orz*/
+draw(U--I--V,magenta); draw(P11--U,purple); draw(P1--P11^^P2--P21,purple+dashed);
+draw(O--X,red); draw(A--H,magenta);
+//label
+void pt(string s,pair P,pair v,pen a){filldraw(circle(P,.011),a,linewidth(.3)); label(s,P,v);}
+pair points[]={A,B,C,I,O,P1,P2,P11,P21,A1,D,M,K,U,V,X,S,H}; //
+string labels[]={"$A$", "$B$", "$C$", "$I$", "$O$",
+"$P_1$", "$P_2$", "$P_1'$", "$P_2'$", 
+"$A'$", "$D$", "$M$", "$K$", "$U$", "$V$", 
+"$X$", "$S$", "$H$"};
+real dirs[]={100,-100,-80,110,-10, -160,20,-20,70, 
+-70,-130,-120,120,-90,0, 140,90,-110};
+pen colors[]={blu,blu,blu,blu,blu, blu,blu,purple,purple, 
+blu,blu,blu,blu,purple,magenta, red,purple,magenta}; 
+for (int i=0; i<18; ++i) { pt(labels[i], points[i], dir(dirs[i]), colors[i]); }
+\end{asy}
+\end{center}
+Define a multitude of points (and a circle):
+\begin{itemize}
+\item $\Omega=(ABC)$, $O$ as its center, $A'$ as the reflection of $A$ in $O$; 
+\item Choose points $P_1,P_2\in\Omega$ such that $AP_1A'P_2$ is square. 
+Then $\{\ol{P_1I}\cap\Omega,\ol{P_2I}\cap\Omega\}=\{P,Q\}$. 
+For ease of reference refactor $P,Q$ as $P_k'=\ol{P_kI}\cap\Omega$ in some order.
+\item $K=\ol{A'I}\cap\Omega$ as the so-called `Sharky-devil point',
+$M$ as the midpoint of arc $BC$ exc. $A$, 
+and $D$ as the foot from $I$ onto $\ol{BC}$;
+\item $(KM;P_1'P_2') \overset I=(AA';P_1P_2)=-1$, 
+the tangents to $\Omega$ at $K,M$ meet $\ol{P_1'P_2'S}$ 
+at some common point $U$. 
+\item $V\in\ol{KM}$ as the pole of $\ol{P_1P_2S}$.
+\end{itemize}
+
+\claim[Claim 1]{$\ol{UI}\parallel\ol{P_1P_2}$, $\ol{VI}\parallel\ol{AA'}$.}
+\begin{proof}Observe that $\ol{UI}$ is the polar of $\ol{AA'}\cap\ol{KM}$ which
+is evidently perpendicular to $\ol{AA'}$. Similarly $\ol{VI}\perp\ol{P_1P_2}$.
+\end{proof}
+\claim[Claim 2]{$\ol{P_1'P_2'},\ol{KM},\ol{OI}$ concurrent.}
+\begin{proof}
+To see that $\ol{OI}\cap\ol{KM}$ lies on the polar of $V$ in $\Omega$, check that
+\[-1=(AA';O\infty_{AA'})\overset I=(K,M;\ol{OI}\cap\ol{KM},V).\qedhere\]
+\end{proof}
+Call this last concurrency point $X$, 
+which is well known to be the exsimilicenter of the circumcircle and incircle.\\[4pt]
+Observe that because (right) triangles $SDI$ and $UMO$ have 
+two pairs of parallel sides and are perspective at $X$,
+they're homothetic.\\
+The remainder of the problem is a `config':
+\claim[Lemma]{$I$ is the Miquel point of $AKDH$, 
+so $\triangle IDH\sim\triangle IKA$.}
+\begin{proof}Consider (not shown) $R=\ol{AK}\cap\ol{BC}$.
+\begin{itemize}
+\item $\angle RKI=\angle AKI=90^\circ\Rightarrow R\in(KID)$;
+\item Radical axis on $(AI),(BIC),\Omega$ implies that 
+$R$ lies on the radical axis of the first two, which are evidently tangent.\\
+As a result $\ol{RI}$ is the common tangent of said circles and $\ol{AM}\perp\ol{RI}$,
+and $\angle AIR=\angle AHR=90^\circ$ means $R\in(AIH)$ as well.
+\end{itemize}
+\end{proof}
+Putting everything together gives this similar triangle chain, which 
+implies the problem:
+\[IDH\sim IKA\sim UMO\sim SDI.\]
+\end{document}
