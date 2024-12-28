@@ -1,6 +1,6 @@
 \documentclass{seto}
-\title{Dummy file}
-\author{n}
+\title{Random geo writeups}
+\author{Nyan}
 \date\today
 \begin{document}
 \section{24usemo3}
@@ -27,7 +27,7 @@ pair H=foot(A,B,C);
 draw(circle(O,1),blu); draw(A1--K,blu+dashed);
 draw(A--A1^^P1--P2^^S--C^^V--K--U--M,blu);
 draw(D--I^^O--M,blu+dotted); /*orz*/
-draw(U--I--V,magenta); draw(P11--U,purple); draw(P1--P11^^P2--P21,purple+dashed);
+draw(U--I--V,magenta); draw(P11--U,purple); draw(P1--P11^^P2--P21,lightpurple+dashed);
 draw(O--X,red); draw(A--H,magenta);
 //label
 void pt(string s,pair P,pair v,pen a){filldraw(circle(P,.011),a,linewidth(.3)); label(s,P,v);}
@@ -87,4 +87,78 @@ and $\angle AIR=\angle AHR=90^\circ$ means $R\in(AIH)$ as well.
 Putting everything together gives this similar triangle chain, which 
 implies the problem:
 \[IDH\sim IKA\sim UMO\sim SDI.\]
+\newpage
+\section{24rmm5}
+What a problem.
+\begin{center}
+\begin{asy}
+//24rmm5
+//setup;
+size(10cm);
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0); blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+pair U,B,V,C,O; U=(0,0.4); B=(-1,0); V=-U; C=-B; O=2*circumcenter(B,V,C)-V;
+real r=distance(O,B); pair A=O+r*dir(143.4); /*actually works well*/
+pair A1,X,Y,P,Q,R,Mb,Mc; A1=2*foot(A,U,V)-A;
+X=extension(B,U,A,C); Y=extension(C,U,A,B);
+P=extension(B,V,X,Y); Q=extension(C,V,X,Y); R=extension(X,Y,B,C);
+Mb=extension(A1,Y,B,C); Mc=extension(A1,X,B,C);
+//draw
+filldraw(A--B--U--C--cycle,blu1+opacity(.3),blu);
+filldraw(B--P--X--cycle,lightpurple+opacity(.3),purple);
+filldraw(C--Q--Y--cycle,lightpurple+opacity(.3),purple);
+draw(Q--R,purple); draw(Mb--R,blu);
+draw(Mb--A1--Mc,magenta);
+draw(circle(O,r),blu); draw(circumcircle(B,X,P)^^circumcircle(C,Y,Q),purple);
+//label
+void pt(string s,pair P,pair v,pen a){filldraw(circle(P,.04),a,linewidth(.3)); label(s,P,v);} 
+pair points[]={A,B,C,A1,X,Y,P,Q,R,Mb,Mc};
+string labels[]={"$A$","$B$", "$C$", "$A'$", "$X$", "$Y$", "$P$", "$Q$", "$R$", "$M_b$", "$M_c$"};
+real dirs[]={130,-90,-80,50,100,80,60,100,-90,-90,-90};
+pen colors[]={blu,blu,blu,blu, purple,purple,purple,purple,purple, magenta,magenta};
+for (int i=0; i< 11; ++i) { pt(labels[i], points[i], dir(dirs[i]), colors[i]); }
+\end{asy}
+\end{center}
+Define: 
+\begin{itemize}
+\item $M_b=(BXP)\cap\ol{BC}$ and $M_c$ similarly. 
+These are the centers of the desired circles
+because $M_b$ (by design) is the midpoint of one of the arcs
+$PX$, and similarly for $M_c$. 
+\item $\gamma_b$ be the circle at $M_b$ through $X$ and
+similarly for $\gamma_c$.   
+\item  $M=(B+C)/2$. The wording of the problem statement implies that 
+$M$ should have a fixed power wrt. each of these $\gamma$'s. 
+\item $R=\ol{XYPQ}\cap\ol{BC}$.
+\end{itemize}
+Indeed, I assert this fixed power is $\boxed{\frac34 a^2}$.
+(Here, we use $a=BC$, etc. for ease of computation.)
+\claim[Claim 1]{$A'$ is the Miquel point of $BCXY$.}
+\begin{proof}
+Check that $A'B/BY=a^2/bc=A'C/CX$, triangle similarity follows using
+equal angles.
+\end{proof}
+\claim[Claim 2]{Define $A'$ as the reflection of $A$ in the perpendicular
+bisector of $\ol{BC}$. Then $A'\in\ol{M_bY},\ol{M_cX}$.}
+\begin{proof}
+We assert that $CXYM_b$ is cyclic, so that the claim will follow by Reim converse:
+\[\dangle RCQ=\dangle M_bBX=\dangle M_bPX.\qedhere\]
+\end{proof}
+It immediately follows (by angles, say) that $A'\in(BXP),(CXQ)$.
+As a result, using power of a point and the so-called `shooting lemma'
+we may obtain
+\[M_bX^2=M_bY\cdot M_bA'=M_bM_c\cdot M_bC.\]
+The rest of the problem is computation, but we make use of directed lengths
+as well as 
+$BM_bY\overset+\sim AA'Y$ and the similar $CM_cX\overset+\sim AA'X$:
+\begin{align*}
+& M_bM^2-M_bM_c\cdot M_bC = -3a^2/4\\
+&\iff\frac12\parenth{M_bB^2+M_bC^2}-MB^2-M_bM_c\cdot M_bC =-3a^2/4\\
+&\iff M_bB^2+(M_bB+BC)^2-(M_bB+BC+CM_c)(M_bB+BC)+BC^2 =0\\
+&\iff \frac{AA'}{M_bB}+\frac{AA'}{BC}+\frac{AA'}{CM_c} =0\\
+&\iff \frac{AA'}{BC}
+=\frac{AY}{YB}-\frac{AX}{XC}=\frac{AB}{YB}-\frac{AC}{XC}=\frac{b^2-c^2}a
+\end{align*}
+which is evident.
+
 \end{document}
