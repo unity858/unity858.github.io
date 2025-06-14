@@ -11,10 +11,12 @@ and you need to accept them.}}{Aprameya Tripathy}
 G2 $2024$ and rewritten with much help from Patrick Suwanich. 
 \end{remark}
 \section{Motivation}
+The reason for making this lecture is because 
+I find Monge problems overrated in difficulty.\\
 The most-used characteristic of the similicenter is that it lies on the line of centers. This allows 
 one to connect otherwise unrelated lines. Plus, don't you think it's such a cool theorem? 
 \section{Theory}
-Depth limited, therefore this is jsut a list of fun facts apart from the first two results.
+Depth limited, therefore this is just a list of fun facts apart from the first two results.
 \begin{thm}[Fancy geometry parlance]
     Point $P$ is a \emph{similicenter} of two shapes $\mathcal A$, $\mathcal B$ if there's a homothety at 
     $P$ sending $\mathcal A\to\mathcal B$. 
@@ -25,18 +27,21 @@ Usually, the shapes in question are circles or polygons with $\le4$ sides.
 \begin{thm}[Theorem (Monge)]
 For any three circles $\omega_1,\omega_2,\omega_3$, pairwise exsimilicenters are collinear.
 Also, the insimilicenter of two pairs of circles and 
-the exsimilicenter of the third are collinear as well.
+the exsimilicenter of the third are collinear as well
 concur.
 \end{thm}
-\begin{thm}[Lemma: characterise exsimilicenter]
-Let circles $\omega_1,\omega_2$ intersect at $A,B$ and have exsimilicenter $X$. 
-Then \(\dangle AXB=\frac12\parenth{\widehat{AB}_{\omega_1}-\widehat{AB}_{\omega_2} }.\)
+\begin{thm}[Lemma: characterise similicenter]
+Let circles $\omega_1,\omega_2$ intersect at $A,B$. 
+Point $X$ is a similicenter iff $XA=XB$ and 
+\(\dangle AXB=\frac12\parenth{\widehat{AB}_{\omega_1}-\widehat{AB}_{\omega_2} }.\)
 \end{thm}
-\begin{thm}[Pitot]
+\begin{thm}[Theorem (Pitot)]
 Quadrilateral $ABCD$ has an incircle iff $AB+CD=AD+BC$, and has an excircle iff 
 $AB+BC=AD+DC$ or $BA+AD=BC+CD$.
 \end{thm}
 \section{Problems}
+Because Monge is either easy or hard to see, problems involving this
+are always IMO$1$ or $\ge$IMO$2.5$ difficulty.
 \exercise[Iran TST 2020] Let $ABC$ be an isosceles triangle with $AB=AC$ and incenter $I$. 
  Circle $\omega$ passes through $C$ and $I$ and is tangent to $AI$. 
  Circle $\omega$ intersects $AC$ and circumcircle of $ABC$ at $Q$ and $D$, respectively. 
@@ -44,10 +49,9 @@ $AB+BC=AD+DC$ or $BA+AD=BC+CD$.
  Prove that $AD$, $MN$ and $BC$ are concurrent.
 \footnote{Haruka Kimura found an absolutely brilliant radical axis solution
  so there are multiple nice ways to interpret the midpoints.}
-\exercise[ARML 2024/I10] Circles $\omega_A$ (radius $2$) and $\omega_B$ (radius $3$) 
-are internally tangent to circle $\gamma$ with center $O$ and radius $9$.
- The common external tangents of $\omega_A$ and $\omega_B$ meet at $T$. 
- Given that $TO = 2AB$, compute $AB$.
+\exercise[ARML 2024/I10] Circles $\omega_A,\omega_B,\gamma$ respectively 
+have centres $A,B,O$ and radii $2$, $3$, $9$. $\omega_A$, $\omega_B$ are internally tangent to $\gamma$. The common external tangents of $\omega_A$ and $\omega_B$ meet at $T$. 
+If $TO = 2AB$, what is $AB$?
 \exercise[USA TST 2023/2] In acute triangle $ABC$, 
 let $M$ be the midpoint of $BC$ and let $E$ and $F$ be the feet of the altitudes from $B$ and $C$, respectively. 
 Let $K$ be the intersection of the common external tangents of $(BME)$ and $(CMF)$. 
@@ -64,7 +68,7 @@ Show that if $K\in (ABC)$,then $\ol{AK}\perp\ol{BC}$.
  Prove that points $E$, $I$, and $F$ are collinear. 
 \exercise[IMO 2008/6] Let $ABCD$ be a convex quadrilateral with $BA \neq BC$. 
 Denote the incircles of triangles $ABC$, $ADC$ by $\omega_1$, $\omega_2$ respectively. 
-Suppose that there exists a circle $\omega$ tangent to ray $BA$ beyond $A$ and ray $BC$ beyond $C$, 
+Suppose that there exists a circle $\omega$ tangent to ray $BA$ beyond $A$ and $BC$ beyond $C$, 
 as well as to lines $AD$ and $CD$.
 Prove that the common external tangents to $\omega_1$ and $\omega_2$ intersect on $\omega$.
 \exercise[ELMO SL 2024/G4, by me] In quadrilateral $ABCD$ with incenter $I$,
@@ -74,12 +78,9 @@ Prove that the common external tangents to $\omega_1$ and $\omega_2$ intersect o
  Let points $O_a,O_b,O_c,O_d$ be such that 
  $\angle O_aZA=\angle O_aWA=90^\circ$ (and cyclic variants), 
  and $G=\ol{O_aO_c}\cap\ol{O_bO_d}$. Prove that $\ol{IL}\parallel\ol{TG}$.
-%\exercise[Serbia 2017/6] Let $k$ be the circumcircle of $\triangle ABC$ and let $k_a$ be the $A$-excircle.
-% Let the two common tangents of $k,k_a$ intersect $BC$ at $P,Q$. 
-% Prove that $\dangle PAB=\dangle CAQ$.
 \exercise[RMM 2010/3] Let $A_1A_2A_3A_4$ be a quadrilateral with no pair of parallel sides. 
 For each $1\le i\le 4$, define $\omega_i$ as the circle tangent to the interior of $\ol{A_iA_{i+1}}$
-and the extensions of $A_{i-1}A_i$, $A_{i+1}A_{i+2}$. (indices considered modulo $4$). 
+and the extensions of $\ol{A_{i-1}A_i}$, $\ol{A_{i+1}A_{i+2}}$ (indices considered modulo $4$). 
 Let $T_i=\omega_i\cap\ol{A_iA_{i+1}}$.
 Prove that $\ol{A_1A_2}$, $\ol{A_3A_4}$, $\ol{T_2T_4}$ concur if and only if 
 $\ol{A_2A_3}$, $\ol{A_4A_1}$, $\ol{T_1T_3}$ do.
@@ -88,10 +89,19 @@ $\ol{A_2A_3}$, $\ol{A_4A_1}$, $\ol{T_1T_3}$ do.
  Suppose that the common external tangents of $(AI_bI_d)$ and $(CI_bI_d)$ meet at $X$, 
  and those of the $(BI_aI_c)$ and $(DI_aI_c)$ meet at $Y$. 
  Prove that $\angle{XIY}=90^{\circ}$.
-\exercise[ISL 2020/G5] Let $ABCD$ be a cyclic quadrilateral. 
- Points $K, L, M, N$ are chosen on $\ol{AB}$, $\ol{BC}$, $\ol{CD}$, $\ol{DA}$ such that
- $KLMN$ is a rhombus with $KL \parallel AC$ and $LM \parallel BD$. 
+\exercise[ISL 2020/G5] Points $K, L, M, N$ are chosen on 
+$\ol{AB}$, $\ol{BC}$, $\ol{CD}$, $\ol{DA}$ of cyclic quadrilateral so that
+ $KLMN$ is a rhombus with $KL \parallel AC$, $LM \parallel BD$. 
  Let $\omega_A$, $\omega_B$, $\omega_C$, $\omega_D$ be the respective incircles of 
- triangles $ANK$, $BKL$, $CLM$, $DMN$. Prove that the common internal tangents to $(\omega_A, \omega_C)$ and  
+ triangles $ANK$, $BKL$, $CLM$, $DMN$. 
+ Prove that the common internal tangents to $(\omega_A, \omega_C)$ and  
  $(\omega_B,\omega_D)$ are concurrent.
- \end{document}
+%\exercise[Serbia 2017/6] Let $k$ be the circumcircle of $\triangle ABC$ and let $k_a$ be the $A$-excircle.
+%Let the two common tangents of $k,k_a$ intersect $BC$ at $P,Q$. 
+%Prove that $\dangle PAB=\dangle CAQ$.
+\exercise[ISL 2015/G7] (difficulty warning)
+Points $P$, $Q$, $R$, $S$ are on sides $AB$, $BC$, $CD$, $DA$
+of convex quadrilateral $ABCD$, respectively. Let $O=\ol{PR}\cap\ol{QS}$. 
+Given that $APOS$, $BQOP$, $CROQ$, $DSOR$ each have an incircle,
+show that $\ol{AC}$, $\ol{PQ}$, $\ol{RS}$ concur. 
+\end{document}
