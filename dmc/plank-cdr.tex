@@ -1,0 +1,160 @@
+\documentclass{tropical}
+\title{Plank Countdown}
+\author{Nyan}
+\date\today
+\begin{document}
+\begin{frame}
+\maketitle
+\end{frame}
+\begin{frame}{Sample problem}
+Please do not actually try this one manually.
+\begin{block}{Problem 0}
+What are the first four digits of $3^{15}$?
+\end{block}
+\end{frame}
+
+\begin{frame}{Answer 0}
+Source: well known joke in the math community.
+Answer: 1434
+\end{frame}
+
+\begin{frame}{Problem 1}
+Let $a$ and $b$ be five-digit palindromes 
+(without leading zeroes) such that $a<b$
+and there are no other
+five-digit palindromes strictly between $a$ and $b$.
+What are all possible values of $b-a$? 
+(A number is a palindrome if it reads 
+the same forwards and backwards in base 10.)
+\end{frame}
+
+\begin{frame}{Answer 1}
+Casework on how many `carries' there are between consecutives.
+$100$, $110$, $11$.\\
+Source: HMMT Feb 2018 C2.
+\end{frame}
+
+\begin{frame}{Problem 2}
+Quadrilateral $ABCD$ is cyclic with $AB = CD = 6$. Given that $AC = BD = 8$ and $AD+3 = BC$, what is $[ABCD]?$\\
+\begin{block}{Note}
+$[A_1\dots A_n]$ denotes the area of that polygon.
+\end{block}
+\end{frame}
+\begin{frame}{Answer 2}
+Ptolemy to find the missing lengths $AD$, $BC$, then Brahmagupta to find the area. $33\sqrt{15}/4$.
+\\
+Source: BMT 2020 TB G2.
+\end{frame}
+\begin{frame}{Problem 3}
+Every face of a cube is colored one of $3$ colors at random. What is the expected number of edges
+that lie along two faces of different colors?
+\end{frame}
+\begin{frame}{Answer 3}
+Linearity of expectation. Probability that two adjacent faces are different colours is $2/3$. $8$.
+\\
+Source: BMT 2018 TB C1.
+\begin{block}{Remark}
+BMT tiebreaker problems are also meant to be fast paced- 
+these problems are supposed to be solved in 
+$15$ mins though most contestants finish before then. 
+CMM TB does not work for this purpose, on the other hand....
+\end{block}
+\end{frame}
+\begin{frame}{Problem 4}
+There is a unique 4-digit positive integer
+$n=\underline{abcd}$ with $\underline{ab}\cdot\underline{cd} =n/3-2$.
+What is the sum of the digits
+of $n$?
+\end{frame}
+\begin{frame}{Answer 4}
+$12$. This is a 1434 joke invented by one of my friends.
+Source: 2023 AMC 12B*/13 (a mock AMC you can find on AoPS)
+\end{frame}
+\begin{frame}{Problem 5}
+Find the number of ordered pairs of integers $(a,b)$ such that $a,b$ are divisors of 720 
+but $ab$ is not.
+\end{frame}
+\begin{frame}{Answer 5}
+Complementary counting. 2520.\\
+Source: HMMT Feb 2016 C3
+\end{frame}
+\begin{frame}{Problem 6}
+Compute the probability that a random permutation of the letters in BERKELEY does not
+have the three E’s all on the same side of the Y.
+\end{frame}
+\begin{frame}{Answer 6}
+Shockingly this is a BMT problem again. (2018 TB C1)
+We only care about the locations of the Y's and the E's. $2\cdot 1/4=1/2$.
+\end{frame}
+\begin{frame}{Problem 7}
+Right triangle $ABC$ with its right angle at $B$ has angle bisector $\ol{AD}$ 
+with $D$ on $\ol{BC}$, as well
+as altitude $\ol{BE}$ with $E$ on $\ol{AC}$. 
+If $\ol{DE} \perp\ol{BC}$ and $AB = 1$, compute $AC$.
+\end{frame}
+\begin{frame}{Answer 7}
+Trig bash. $(1+\sqrt5)/2$.\\
+Source: BMT 2021 TB G2
+\end{frame}
+\begin{frame}{Problem 8}
+Let $\Omega$ and $\omega$ be circles with radii 123 and 61, respectively, 
+such that the center of $\Omega$ lies on $\omega$. 
+A chord of $\Omega$ is cut by $\omega$ into three segments, 
+whose lengths are in the ratio $1 : 2 : 3$ in that order. 
+Given that
+this chord is not a diameter of $\omega$, compute the length of this chord.
+\end{frame}
+\begin{frame}{Answer 8}
+Synthetic and power of a point. $42$.\\
+Source: 2024 HMMT Feb G3
+\end{frame}
+\begin{frame}{Problem 9}
+In triangle $ABC$ with $AB = 8$ and $AC = 10$, 
+the incenter $I$ is reflected across side $AB$ to point $X$ 
+and across side $AC$ to point $Y$. 
+Given that segment $XY$ bisects $\ol{AI}$, compute $BC^2$. 
+\end{frame}
+\begin{frame}{Answer 9}
+Use synthetic to get $\angle A=60^\circ$. $84$ by some bashing.\\
+Source: HMMT Nov 2020 General 7
+\end{frame}
+\begin{frame}{Problem 10}
+Find the integer closest to 
+\[\frac1{\sqrt[4]{5^4+1}-\sqrt[4]{5^4-1}}.\]
+\end{frame}
+\begin{frame}{Answer 10}
+Rationalise the denominator. 250.\\
+Source: HMMT Feb 2014 A6
+\end{frame}
+\begin{frame}{Problem 11}
+Greta writes $2, 3, . . . , 101$ on a chalkboard. 
+Every minute she erases two chosen numbers $x,y$ from the board,
+and writes $xy/(x+y-1)$ in their place. 
+After 99 minutes, what number remains?
+\end{frame}
+\begin{frame}{Answer 11}
+This is a contrived invariant problem. The invariant in question is 
+\[\prod_k \frac1{1-1/x_k}\]
+where the nums on the board are $x_1,...$.\\
+Source: BMT 2022 TB A3
+\end{frame}
+\begin{frame}{Problem 12}
+A positive integer is called extra-even if all of its digits are even. Compute the number of positive
+integers n less than or equal to 2022 such that both n and 2n are both extra-even.
+\end{frame}
+\begin{frame}{Answer 12}
+Figure out from experimenting that $0,2,4$ are the only legal digits. $31$.\\
+Source: BMT 2022 TB C2
+\end{frame}
+\begin{frame}{Problem}
+Let a and b be real numbers such that $a + b = 16$ and $a^3 - b^3 = ab^2 - a^2b + 2048$. 
+Compute $ab^2$.
+\end{frame}
+\begin{frame}{Answer}
+Factor, divide, etc to obtain $a,b$. $192$.\\
+Source: BMT 2025 TB A2
+\end{frame}
+\begin{frame}{I ran out of problem ideas}
+Thank you for playing!! :3
+\end{frame}
+\end{document}
