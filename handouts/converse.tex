@@ -1,0 +1,181 @@
+\documentclass{seto}
+\title{Taking the Converse}
+\author{Neal}
+\date\today
+\begin{document}
+\maketitle
+\section{Abstract}
+This was based on some random conversations I had with Haruka Kimura.\\[4pt]
+Now the proper, `official' name of this concept is called phantom points.
+But this is not how most geo mains I know think of it. Instead, 
+it is literally taking the converse. To justify that the phantom
+object is in fact equal to the original object, we 
+note a bunch of properties and then explain how those
+uniquely define something.
+\begin{block}[Motivating example (ISL 2025/G3)]
+Let $ABC$ be an acute triangle with $AB < AC$. 
+Let $\Gamma$ be the circumcircle of $ABC$. 
+The perpendicular from $B$ to $AC$ intersects $\Gamma$ again at $D\neq B$. 
+Let $Q$ be the point on $\Gamma$, different from $B$, such that $AB=AQ$.
+Lines $BQ$ and $AC$ intersect at $R$. 
+Line $DR$ intersects $\Gamma$ again at $S\neq D$. 
+Segment $BC$ intersects the circumcircle of triangle $QRS$ at $T$. 
+Lines $TQ$ and $RS$ intersect at $X$. 
+Prove that $CX$ is perpendicular to $AB$.
+\end{block}
+This problem derives a lot of difficulty from the contrived wording. In reality, line $QTX$ 
+could be more naturally defined via reflection of orthocenter in $\ol{BC}$. 
+After realizing this, the problem is not very hard.
+\begin{remark}[Credits] Tiger Zhang actually introduced this idea to me. See his solution of 
+ISL $2021$ G$8$ on the AoPS thread.
+\end{remark}
+But this sounds much more like proving the converse of a probelm (or a claim/lemma
+within the geo) and then explaining why they are equivalent. But having done so many geo problems,
+I realized that most geometry problems are equivalent to their converses anyway. 
+Though some problems are isomorphic to their converses, most problems 
+do not have such extreme symmetry and it is a common trope to artificially
+increase a problem's difficulty (i.e. no real ideas were introduced).
+\section{Lecture}
+Since this is a short lecture I am too lazy to add exercises.
+\begin{block}[Example (USAMO 2024/5)]
+Point $D$ is selected inside acute $\triangle ABC$ so that 
+$\angle DAC = \angle ACB$ and $\angle BDC = 90^\circ + \angle BAC$.
+Point $E$ is chosen on ray $BD$ so that $AE = EC$. Let $M$ be the midpoint of $BC$.
+Show that line $AB$ is tangent to the circumcircle of triangle $BEM$.
+\end{block}
+\begin{center}
+\begin{asy}
+//unnamed
+//setup
+size(8cm);
+defaultpen(fontsize(10pt));
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0);
+blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+int i=0;
+pair reflect(pair P,pair A,pair B) {return 2*foot(P,A,B)-P;}
+pair A,B1,C1,B,C;  A=(2,10); B1=(0,0); C1=(14,0); B=foot(B1,A,C1); C=foot(C1,A,B1);
+pair O1=extension(B,B+rotate(90)*(A-B), (B+C)/2,(B+C)/2+rotate(90)*(B-C)); path w=circle(O1,distance(O1,B));
+pair L=A+C-foot(B,A,C); pair L1=L+rotate(90)*(A-C); path ell= 2*L-L1--.8*L+.2*L1;
+pair[] E=intersectionpoints(ell,w); pair N=(B1+C1)/2;
+pair D[]={2*foot(N,E[0],B)-B,2*foot(N,E[1],B)-B };
+
+//draw
+filldraw(A--B1--C1--cycle,blu1,blu); draw(B--C,blu); draw(B1--B--C--C1,blu+dashdotted);
+draw(D[0]--C--D[1], red+dotted);
+draw(circle(N,distance(N,B)),blu); draw(w,purple); draw(ell,purple);
+draw(E[1]--B--D[0],magenta); draw(A--D[0],red);
+draw(shift(B)*scale(.5)*shift(-B)*w,purple+dotted);
+draw(shift(B)*scale(.5)*shift(-B)*ell,purple+dotted);
+//label
+void pt(string s,pair P,pair v, pen a){filldraw(circle(P,.08),a,linewidth(.3)); label(s,P,v);}
+string labels[]={"$A$","$B'$","$C'$","$B$","$C$","$E_2'$",
+"$E_1'$","$D_2$","$D_1$","$M$","$E_2$","$E_1$"};
+pair points[]={A,B1,C1,B,C, E[0],E[1],D[0],D[1],(B+C)/2, (B+E[0])/2, (B+E[1])/2}; //12
+real dirs[]={90,180,0,70,-170,30,120,-70,80,-70,0,120};
+pen colors[]={blu,blu,blu,blu,blu,purple,purple,red,red,blu,purple,purple};
+for (i=0; i<12; ++i) pt(labels[i],points[i],dir(dirs[i]),colors[i]);
+label("$\ell$",(8.5,3.1),purple);
+label("$\omega$", (3.3,1.6),purple);
+\end{asy}
+\end{center}
+Convert everything to direct angles.
+\begin{itemize}
+\item First, look at how $D$ is defined. The first angle condition implies that $D$ on a specific line thru $A$
+while the second implies that $D$ lies on a specific circle through $B,C$.
+\item Those two curves intersect twice\dots so we can replace $D$ with $D_1,D_2$. 
+\item We can also just define the circle from the $E$'s, as the perpendicular bisector of $\overline{AC}$
+intersects the circle thru $M$ tangent to $\ol{AB}$ at $B$ twice. 
+\begin{block}[Converse of problem]
+In acute triangle $AB'C'$, points $B$, $C$ are the feet of the altitudes from $B'$, $C'$. 
+Let $\ell$ be the perpendicular bisector of $\overline{AC}$ scaled at $B$ by $2$,
+and circle $\omega$ be tangent to $\overline{AB}$ and through $B,C$, 
+and suppose they meet at $E_1'$, $E_2'$. Define $D_k=\overline{BE_k'}\cap(BC)$ for $k=1,2$. 
+Then line $D_1D_2$ satisfies:
+\begin{enumerate}
+\item $\measuredangle(\overline{D_1D_2},\overline{AC})=\measuredangle ACB$;
+\item It passes through $A$.
+\end{enumerate}
+\end{block}
+\end{itemize}
+The rest of the problem is just using the elem construction principle to pin down what the line $D_1D_2$
+has to be. I actually wrote `take the converse' on the contest, and it received full credit!\\
+Conventionally, one would say I used phantom lines but `converse' felt more natural.
+\begin{block}[Example (RMM 2010/3)]
+Let $A_1A_2A_3A_4$ be a quadrilateral with no pair of parallel sides. 
+For each $i=1, 2, 3, 4$, define $\omega_i$ to be 
+the circle touching the quadrilateral externally, 
+and which is tangent to the lines $A_{i-1}A_i, A_iA_{i+1}$ and $A_{i+1}A_{i+2}$ 
+(indices considered modulo $4$). 
+Let $T_i$ be the point of tangency of $\omega_i$ with the side $A_iA_{i+1}$. 
+Prove that the lines $A_1A_2, A_3A_4$ and $T_2T_4$ are concurrent if and only if 
+the lines $A_2A_3, A_4A_1$ and $T_1T_3$ are concurrent.
+\end{block}
+\begin{center}
+\begin{asy}
+//10RMM3
+//setup;
+size(10cm);
+pen blu,grn,blu1,blu2,lightpurple; blu=RGB(102,153,255); grn=RGB(0,204,0);
+blu1=RGB(233,242,255); blu2=RGB(212,227,255); lightpurple=RGB(234,218,255);// blu1 lighter
+//defn
+int i=0;
+pair C,A1,A2,A3,A4,B; C=(0,0); A1=(15,5); A2=(9.4423853863, -3.228852914); A3=3.687645061*A2; A4=1.8721144373 *A1; B=extension(A1,A2,A3,A4);
+pair A[]={A1,A2,A3,A4,A1,A2,A3,A4};
+pair P[]={C,C,C,C};
+for (i=0; i<4; ++i) {P[i]= incenter(A[i],A[i+1],2*A[i]-A[i+3]); }
+pair X[]={C,C,C,C}; for (i=0; i<4; ++i) {X[i]=extension(A[i],P[i],A[i+1],P[(i+1)%4]); }
+pair T[]={C,C,C,C}; for (i=0; i<4; ++i) {T[i]=foot(X[i],A[i],A[i+1]);}
+pair U[]={C,C,C,C}; for (i=0; i<4; ++i) {U[i]=foot(X[i],A[i],A[i+3]);}
+pair V[]={C,C,C,C}; for (i=0; i<4; ++i) {V[i]=foot(X[i],A[i+1],A[i+2]);}
+
+pair O13,O24; O13=2*circumcenter(B,T[0],T[2])-B; O24=2*circumcenter(C,T[1],T[3])-C;
+path w (pair P,pair A,pair B)
+{return circle( 2*circumcenter(P,A,B)-P, distance(2*circumcenter(P,A,B)-P, A) ); }
+
+//draw
+fill(A1--A2--A3--A4--cycle,blu1);
+draw( 1.1*B-.1*V[1]--1.1*V[1]-.1*B ^^ 1.1*B-.1*U[1]--1.2*U[1]-.2*B ^^
+1.1*C-.1*V[2]--1.1*V[2]-.1*C ^^ 1.1*C-.1*U[2]--1.1*U[2]-.1*C,blu);
+for (i=0; i<4; ++i) {draw(circle(X[i],distance(X[i],T[i]) ),purple);}
+draw(B--T[1]^^C--T[2],red); //sic, 0-based index
+draw(w(B,T[0],T[2]),magenta); draw(w(C,T[1],T[3]), magenta);
+clip(box((-10,-27),(50,25)) );
+
+//label
+void pt(string s,pair P,pair v, pen a){filldraw(circle(P,.2),a,linewidth(.3)); label(s,P,v);}
+string labels[]={"$B$","$A_1$","$A_2$","$A_3$","$A_4$","$C$", "$T_1$","$T_2$","$T_3$","$T_4$", "$U_1$","$U_2$","$U_3$","$U_4$", "$V_1$","$V_2$","$V_3$","$V_4$"}; //18
+pair points[]={B,A1,A2,A3,A4,C,T[0],T[1],T[2],T[3], U[0],U[1],U[2],U[3], V[0],V[1],V[2],V[3]};
+real dirs[]={90,130,230,-60,70,80, 110,-110,60,130, 110,140,-110,40, 220,20,100,140};
+pen colors[]={blu,blu,blu,blu,blu,blu, purple,purple,purple,purple,
+purple,purple,purple,purple, purple,purple,purple,purple};
+for (i=0; i<18; ++i) {pt(labels[i],points[i],dir(dirs[i]),colors[i]); }
+//circlabel
+string circlabels[]={"$\omega_1$","$\omega_2$","$\omega_3$","$\omega_4$", "$\gamma_{13}$", "$\gamma_{24}$"};
+pair circpts[]={(7.63,.46),(17.15,-9.58),(38.14,-10.1), (22.51,10.51),(17.38,-18.07),(39.26,0) };
+pen circcolors[]={purple,purple,purple,purple,magenta,magenta};
+for (i=0; i<6; ++i) {label(circlabels[i],circpts[i],circcolors[i]); } 
+\end{asy} 
+\end{center}
+\begin{itemize}
+\item After drawing in the four excircles/incircles, the concurrencies in the problem
+statement looked awfully like Monge. Indeed, if there existed a circle touching opposite
+sides at $T_1,T_3$, then it would fit Monge and the 3 lines would concur.
+\item Thus, the concurrence boils down to the existence of a circle.
+How do you show there exists a circle tangent to opposite sides like this?
+\item The natural choice is to intersect $X_1=\ol{A_1A_2}\cap\ol{A_3A_4}$,
+then use the length condition $X_1T_1=X_1T_3$.
+If we define $X_2$ similarly, it becomes apparent that we just want $X_1T_1=X_1T_3$
+to be equivalent to $X_2T_2=X_2T_4$!
+\item We do need to add in more tangency points of the existing circles,
+but it's literally just adding and subtracting lengths because 
+how else would I conclude the problem?
+\end{itemize}
+Here the problem uses another geo heuristic: a lot of problems of the form $A\iff B$
+where $A$ and $B$ are symmetric variants can be solved by finding a third intermediary $C$
+with $A\iff C$ and $C\iff B$.\\
+This problem, to use the `phantom' language, would involve a phantom circle. 
+\section{Conclusion}
+The idea of converses helps us generalize phantoms from not just redefining points.
+\end{document}
+
